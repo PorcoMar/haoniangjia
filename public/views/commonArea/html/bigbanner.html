@@ -1,0 +1,193 @@
+<style type="text/css">
+/*#bigBanner .wangdian{width:890px;height:110px;}
+[waDin="wa1"]{font-size:26px;text-align:center;color:#343434;font-weight:bold;}
+[waDin="wa2"]{font-size:12px;text-align:center;height:42px;line-height:42px;color:#acacac;margin-bottom:33px;}*/
+
+.bammer{width:1200px;height:320px;}
+
+/*  修改输出屏大小  */
+.bammer .banner2 {/*  修改输出屏大小  */ width: 1200px; height: 320px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
+.bammer .banner2 .img { width: 99999px; position: absolute; left: 0px; top: 0; }
+.bammer .banner2 .img li { float: left;}
+.bammer .banner2 .img img {height: 320px;width:1200px;}
+.bammer .banner2 li .blockn1,.bammer .banner2 li .blockn2,.bammer .banner2 li .blockn3{width:390px;height:320px;margin-right:15px;}
+.bammer .banner2 li .blockn3{margin-right:0;}
+.bammer .banner2 li .overF{width:390px;height:230px;overflow:hidden;margin-bottom:25px;}
+.bammer .banner2 li .wwwd1{width:390px;height:230px;background: url(img/wd1.jpg);transition: all 1s;}
+.bammer .banner2 li .wwwd1:hover,.wwwd2:hover,.wwwd3:hover{transform: scale(1.2);}
+.bammer .banner2 li .wwwd2{width:390px;height:230px;background: url(img/wd2.png);transition: all 1s;}
+.bammer .banner2 li .wwwd3{width:390px;height:230px;background: url(img/wd3.jpg);transition: all 1s;}
+/*/ 小圆圈 /*/
+/*.bammer .banner2 .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
+.bammer .banner2 .num li { width: 100px; height: 8px; background: #fff;border-radius:4px;  display: inline-block; margin: 0 3px; cursor: pointer; opacity:0.8;}
+.bammer .banner2 .num li.on { background: #F60; }*/
+/*/ 按钮 /*/
+.bammer .banner2 .btn,.bammer .banner2 .btn2 { width: 36px; height: 36px;border-radius:50px; background:#cecece;opacity:0.6; position: absolute; top: 50%; margin-top: -59px; cursor: pointer; text-align: center; line-height: 36px; color: #fff; font-size: 20px; font-family: "宋体";
+}
+.bammer .banner2 .btn{left:15px;}
+.bammer .banner2 .btn2{right:15px;}
+/*.bammer .banner2:hover .btn { display: block;}*/
+.bammer .banner2 .btn_l,.bammer .banner2 .btn_r  { width: 36px; height: 36px; line-height: 36px; position: absolute; top: 34%;color:#fff;text-align:center;margin-top:-9px;font-size:24px;cursor: pointer;}
+.bammer .banner2 .btn_l{left:15px;}
+.bammer .banner2 .btn_r { right: 15px;} 
+.wdTitle{height:20px;line-height:20px;font-size:20px;}
+.wdCont{color:#797979;font-size:14px;height:40px;line-height:40px;}
+.btn,.btn2{opacity: 0.6}
+.mouse{z-index:99;}
+</style>
+	<div id="bigBanner">
+			<div class="bammer w">
+			  <div class="banner2">
+			    <ul class="img">
+			    	<li>
+			    		<div class="blockn1 l">
+			    			<div class="overF">		    				
+				    			<div class="wwwd1"></div>
+			    			</div>
+			    			<p class="wdTitle">COCODEMER浦东.金茂会所</p>
+			    			<p class="wdCont">浦东新区世纪大道88号金茂大厦时尚生活中心3F</p>
+			    		</div>
+			    		<div class="blockn2 l">
+			    			<div class="overF">		    				
+				    			<div class="wwwd2"></div>
+			    			</div>
+			    			<p class="wdTitle">COCODEMER浦东.金茂会所</p>
+			    			<p class="wdCont">浦东新区世纪大道88号金茂大厦时尚生活中心3F</p>			    				
+			    						    			
+			    		</div>
+			    		<div class="blockn3 l">
+			    			<div class="overF">		    				
+				    			<div class="wwwd3"></div>
+			    			</div>
+				    		<p class="wdTitle">COCODEMER浦东.金茂会所</p>
+			    			<p class="wdCont">浦东新区世纪大道88号金茂大厦时尚生活中心3F</p>		    				
+			    						    			
+			    		</div>
+			    	</li>
+			    	
+			    </ul>
+			    <ul class="num">
+			    </ul>
+			    <div class="btn"></div>
+			    <div class="btn2"></div>
+			    <div class="btn_l mouse">&lt;</div>
+			    <div class="btn_r mouse">&gt;</div>
+			 </div>
+	            
+			</div>			
+	</div>
+	
+<script type="text/javascript">
+	 imgscrooll('.bammer',5000);
+	function imgscrooll(obj,timer){
+		var moving = false;		
+		var width = 1200;
+		//console.log(width)
+		var i=0;
+		var clone=$(obj+" .banner2 .img li").first().clone();
+		$(obj+" .banner2 .img").append(clone);	
+		var size=$(obj+" .banner2 .img li").size();	
+		for(var j=0;j<size-1;j++){
+			$(obj+" .banner2 .num").append("<li></li>");
+		}
+		$(obj+" .banner2 .num li").first().addClass("on");
+		
+		/*鼠标划入圆点*/
+		if ($(obj+" .banner2 .num li")) {
+	
+		$(obj+" .banner2 .num li").hover(function(){
+			var index=$(this).index();
+			i=index;
+			$(obj+" .banner2 .img").stop().animate({left:-index*width},1000)	
+			$(this).addClass("on").siblings().removeClass("on")		
+		})
+		};
+	
+			
+		/*自动轮播*/
+		var t=setInterval(function(){
+			i++;
+			moveTo();
+		},timer)
+			
+		/*对banner2定时器的操作*/
+		$(obj+" .banner2").hover(function(){
+			clearInterval(t);
+		},function(){
+			t=setInterval(function(){
+				i++;
+				moveTo();
+			},timer)
+		})
+		$(".banner2 .l").mouseenter(function(){
+			$(this).find(".wdTitle").css("color","#ff8188")	
+		})
+		$(".banner2 .l").mouseleave(function(){
+			$(this).find(".wdTitle").css("color","#333")	
+		})		
+		//移入变左右箭头颜色
+		$(".bammer .banner2 .btn_l").mouseenter(function(){
+			$(".bammer .banner2 .btn").css("background","#ff8188")	
+		})
+		$(".bammer .banner2 .btn_r").mouseenter(function(){
+			$(".bammer .banner2 .btn2").css("background","#ff8188")	
+		})
+		$(".bammer .banner2 .btn_l").mouseleave(function(){
+			$(".bammer .banner2 .btn").css("background","#cecece")	
+		})
+		$(".bammer .banner2 .btn_r").mouseleave(function(){
+			$(".bammer .banner2 .btn2").css("background","#cecece")	
+		})
+
+		if ($(obj+" .banner2 .btn_l")) {
+	
+		/*向左的按钮*/
+		$(obj+" .banner2 .btn_l").stop(true).click(function(){// background:#f5aca6;
+		if(moving){
+		return;
+		};
+		moving=true;
+			i--
+			moveTo();	
+		})
+		
+		/*向右的按钮*/
+		$(obj+" .banner2 .btn_r").stop(true).click(function(){
+		if(moving){
+		return;
+		}
+		moving=true;
+			i++
+			moveTo()				
+		})
+	
+		};
+		
+		function moveTo(){
+			
+			if(i==size){
+				$(obj+" .banner2  .img").css({left:0})			
+				i=1;
+			}
+			
+			// 修改轮播每屏宽度
+			if(i==-1){
+				$(obj+" .banner2 .img").css({left:-(size-1)*width})
+				i=size-2;
+			}	
+			$(obj+" .banner2 .img").stop(true).delay(200).animate({left:-i*width},1000,function(){
+				moving = false;
+			})
+			
+			if(i==size-1){
+				$(obj+" .banner2 .num li").eq(0).addClass("on").siblings().removeClass("on")	
+			}else{		
+				$(obj+" .banner2 .num li").eq(i).addClass("on").siblings().removeClass("on")	
+			}
+		}
+		
+		$("#bigBanner li").click(function(){
+			window.location.href="#/test"
+		})
+	}	
+</script>

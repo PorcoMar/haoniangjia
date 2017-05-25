@@ -1,0 +1,29 @@
+#box_ri{width:297px;height:440px;border:1px solid #ededed;box-sizing:border-box;overflow: hidden;position: relative;float:left;}
+#box_ri .botomm{position:absolute;bottom:0;width:100%;height:30px;background: #fff;}
+ #demoScro{
+    overflow:hidden;
+    width:100%;
+    font-size:18px;line-height:18px;
+   }
+#express li{
+      cursor:pointer;
+      margin-bottom:42px;font-size:14px;
+ }
+#express span{display:inline-block;margin-left:48px;}
+#express p{margin-top:10px;margin-left:13px;color:#343434}
+#express b{display:inline-block;font-weight:normal;color:#ff7077;margin-left:10px;margin-right:10px;}
+
+#hunm{padding-top:36px;height:774px;width:;}
+.zuo{width:591px;height:772px;border:1px solid #eeeeee;padding-left:5px;margin-right:13px;}
+
+.yued{padding-top:5px;color:#ff6e78;font-size:20px;height:45px;line-height:45px;}
+.kn{width:568px;height:67px;background:#fef2dc;color:#ff9800;border:1px solid #ffdba7;padding-left:14px;margin-top:16px;margin-bottom:36px;padding-top:9px;font-size:16px;line-height:29px;}
+.nR{width:590px;height:50px;margin-bottom:40px;}
+.nR span{display:inline-block;width:98px;text-align:right;font-size:15px;height:50px;line-height:50px;margin-right:24px;}
+.nR span b{color:#ff6f79;font-weight:normal;display:inline-block;line-height:50px;height:40px;margin-right:10px;}
+.nR .inpm{width:426px;height:48px;padding-left:20px;}
+
+#subm{width:300px;height:50px;margin-left:120px;}
+#subm .submitm{width:148px;height:50px;line-height:50px;color:#fff;background:#ff7177;text-align:center;margin-right:30px;cursor: pointer;}
+#subm p{font-size:16px;height:50px;line-height:50px;}
+#subm p span{color:#ff6f78}

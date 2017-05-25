@@ -1,0 +1,74 @@
+<link rel="stylesheet" type="text/css" href="views/News/News.css"/>
+<P ng-include="'views/commonArea/html/header.html'"></P>
+<P ng-include="'views/commonArea/html/rightScrollBlock.html'"></P>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			
+	<div id="banTun">
+		<img src="img/serviceBa.png"/>
+		<div id="naver" class="w">
+			<a href="#/index">您的位置： 首页 - </a><a href="#/AboutUs">关于我们 - </a><span>预约月嫂</span>
+		</div>
+	</div>
+	<div id="hunm" class="w">
+		<div class="zuo l">
+			<p class="yued">预约月嫂</p>
+			<img src="img/sss.png"/>
+			<div class="kn">马上预约，会有专职母婴顾问为您解答月嫂相关问题，也便于提前为您进入月嫂<br/>派工匹配，更能优先匹配到好月嫂</div>
+			<div class="nR">
+				<span class="mz l"><b>*</b>姓名</span>
+				<input type="text" placeholder="李美丽" class="inpm oc1" />
+			</div>
+			<div class="nR">
+				<span class="mz l"><b>*</b>电话</span>
+				<input type="text" placeholder="" class="inpm oc2" />
+			</div>
+			<div class="nR">
+				<span class="mz l"><b>*</b>预产期</span>
+				<input type="text" placeholder="2018-05-07" class="inpm oc3" />
+			</div>
+			<div class="nR">
+				<span class="mz l"><b>*</b>所在城市</span>
+				<input type="text" placeholder="上海市" class="inpm oc4" />
+			</div>
+			<div class="nR" style="margin-bottom:64px;">
+				<span class="mz l">预约级别</span>
+				<input type="text" placeholder="经济型/舒适性/尊享型" class="inpm oc5" />
+			</div>
+			
+			<div id="subm">
+				<div class="submitm l" ng-click="subTn()">提交</div>
+				<p>"<span>*</span>"为必填</p>
+			</div>
+		</div>
+
+			<div id="box_ri"  contbox="a4">
+				<img src="img/jilu.png" style="width:100%;"/>
+				<div id="demoScro" ng-mouseenter="mouover()" ng-mouseleave = "mouleave()">
+				  <div id="demoScro1" >
+				    <ul id="express">
+				    	<li ng-repeat="i in shopList"><a href="#"><b>{{i.name}}</b>({{i.cellPhone}}) <span>{{i.createdTime}}</span><p>预约 {{i.level}}服务 26天,预产期{{i.preBirthTime}}月</p></a></li>             
+						<li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li>
+						<li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li>
+						<li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li>
+
+				    </ul>
+				  </div>
+				  <div id="demoScro2"></div>
+				</div>				
+				
+				
+			<div class="botomm"></div>	
+			</div>
+
+
+
+	</div>
+
+
+			</div>
+		</div>
+	</div>
+	
+<P ng-include="'views/commonArea/html/footer.html'"></P>

@@ -1,0 +1,73 @@
+<style type="text/css">
+/*右滑块*/	
+	#div1 {
+	width: 56px;
+	height: 250px;
+	position: absolute;
+	right: 20px;
+	top:500px;
+	z-index:99;
+	}	
+	.nn{width:56px;height:56px;border-radius: 100px;margin-bottom:2px;cursor: pointer;position:relative;z-index:200;}
+	.bk1{background: url(img/km.png);}	
+	.bk2{background: url(img/kn.png);}	
+	.bk3{background: url(img/kb.png);}	
+	.bk4{background: url(img/kv.png);}
+	.nmb{width:30px;height:20px;position:absolute;top:139px;right:5px;z-index:100;background: red;overflow:hidden;}	
+/*	.flp{width:50px;height:60px;position:absolute;top:139px;right:0px;z-index:110;background: #fff;}*/
+</style>
+<div id="div1" >
+	<a target="_blank" href="http://www.haoniangjia.cn/dialog_3.htm"><div class="bk1 nn"></div></a>
+	<a href="#/News"><div class="bk2 nn"></div></a>
+	<div class="bk3 nn"></div>
+	<div class="bk4 nn"  id="returnTop"></div>
+<!--	<div class="flp"></div>-->
+	<p class="nmb"><img src="img/aaaa.png"/></p>
+</div>
+<script type="text/javascript">
+var offsetTo = ($(window).height()-$("#div1").height())/2
+	var h_div1 = document.getElementById('div1')
+	var h_hvttop = offsetTo//移动后的距离顶部的高度	
+	HoverTreeMove(h_div1, h_hvttop)//init top	
+	$(window).scroll(function () {
+	/*右滑块*/
+		HoverTreeMove(h_div1, h_hvttop)
+	})
+	
+/*return top*/
+	$("#returnTop").click(function(){
+		var speed=200;//滑动的速度
+		$('body,html').animate({ scrollTop: 0 }, speed);
+		return false;	
+	})
+
+	$(".bk1").mouseenter(function(){
+		$(this).css("background"," url(img/km1.png)")
+	})
+	$(".bk1").mouseleave(function(){
+		$(this).css("background"," url(img/km.png)")
+	})
+	$(".bk2").mouseenter(function(){
+		$(this).css("background"," url(img/kn1.png)")
+	})
+	$(".bk2").mouseleave(function(){
+		$(this).css("background"," url(img/kn.png)")
+	})
+	$(".bk3").mouseenter(function(){
+		$(this).css("background"," url(img/kb1.png)")
+		$(".nmb").animate({right:"62px",width:"100px"});
+		$("#div1").css("overflow","visible");
+	})
+	$(".bk3").mouseleave(function(){
+		$(this).css("background"," url(img/kb.png)")
+		$(".nmb").animate({right:"5px",width:"20px"})	
+		
+		
+	})
+	$(".bk4").mouseenter(function(){
+		$(this).css("background"," url(img/kv1.png)")
+	})
+	$(".bk4").mouseleave(function(){
+		$(this).css("background"," url(img/kv.png)")
+	})
+</script>

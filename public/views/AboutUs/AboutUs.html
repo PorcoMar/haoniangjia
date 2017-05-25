@@ -1,0 +1,51 @@
+<link rel="stylesheet" type="text/css" href="views/AboutUs/AboutUs.css"/>
+<P ng-include="'views/commonArea/html/header.html'"></P>
+<P ng-include="'views/commonArea/html/rightScrollBlock.html'"></P>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			
+	<div id="banTun">
+		<img src="img/abou.png"/>
+		<div id="naver" class="w">
+			<a href="#/index">您的位置： 首页 - </a><a href="#/AboutUs">关于我们 - </a><span>公司介绍</span>
+		</div>
+	</div>
+	<div id="commt" class="w">
+		<div id="leftm" class="l">
+			<div class="comp">
+				<img src="img/lll.png" class="m1" style="visibility:visible;"/>
+				<span class="navv" ng-click="comP()" style="color:#ff7077">公司介绍</span>
+			</div>
+			<div class="comp">
+				<img src="img/lll.png"/>
+				<span class="navv"  ng-click="conC()">联系我们</span>
+			</div>
+			<div class="comp">
+				<img src="img/lll.png"/>
+				<span class="navv"  ng-click="way()">企业足迹</span>
+			</div>
+			<div class="comp">
+				<img src="img/lll.png"/>
+				<span class="navv" ng-click="manage()">管理团队</span>
+			</div>
+			<div class="comp">
+				<img src="img/lll.png"/>
+				<span class="navv"  ng-click="newS()">好娘家资讯</span>
+			</div>
+		</div>
+		<div id="rightm" class="l">
+			 <div id="company" ng-include="'views/commonArea/html/companyIntroduce.html'" ng-show="boolen1"></div>
+			 <div id="conC" ng-include="'views/commonArea/html/contactPerson.html'" ng-show="boolen2"> </div>
+			 <div id="way" ng-include="'views/commonArea/html/way.html'" ng-show="boolen3"> </div>
+			 <div id="manage" ng-include="'views/commonArea/html/manage.html'" ng-show="boolen4"> </div>
+			 <div id="newS" ng-include="'views/commonArea/html/newS.html'" ng-show="boolen5"> </div>
+
+		</div>
+	</div>
+	
+		</div>
+	</div>
+</div>
+<P ng-include="'views/commonArea/html/footer.html'"></P>
+

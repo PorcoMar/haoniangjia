@@ -1,0 +1,72 @@
+
+#num{height:200px;padding-top:96px;border-top:1px solid #f1f1f1;background:#f7f7f7;text-align:center;}
+#num p{font-size:20px;height:50px;line-height:50px;color:#181818;}
+#num p span{font-size:38px;height:50px;line-height:50px;color:#e85a5e}
+[im="im1"],[im="im2"],[im="im3"]{margin:0 auto;}
+[im="im1"]{width:1200px;height:536px;}
+[im="im2"]{width:1200px;height:149px;}
+[im="im3"]{width:1200px;height:882px;}
+
+#youshi{height:271px;margin-top:65px;margin-bottom:15px;}
+#youshi [pp]{text-align:center;line-height:34px;font-size:16px;color:#212121}
+#youshi [pp] span{font-size:21px;color:#4a1016}
+#youshi [pp="pm1"]{font-size:26px;line-height:26px;font-weight:bold;}
+#youshi [pp="pm2"]{font-size:12px;line-height:46px;color:#999999;margin-bottom:20px;}
+
+#shop{margin-top:80px;}
+[waDin="wa1"]{font-size:26px;text-align:center;color:#343434;font-weight:bold;}
+[waDin="wa2"]{font-size:12px;text-align:center;height:42px;line-height:42px;color:#acacac;margin-bottom:33px;}
+
+.oHeader{font-size:27px;height:27px;line-height:27px;color:#343434;font-weight:bold;text-align:center;margin-top:80px;}
+.oDes{font-size:12px;height:42px;line-height:42px;color:#acacac;text-align:center;margin-bottom:20px;}
+
+#wenzi{height:55px;width:1200px;margin:0 auto;}
+#wenzi [wz]{height:55px;line-height:23px;font-weight:bold;float:left;}
+#wenzi [wz="w1"]{margin-right:129px;}
+#wenzi [wz="w2"]{margin-right:144px;}
+#wenzi [wz="w3"]{margin-right:123px;}
+#wenzi [wz="w4"]{margin-right:124px;}
+#wenzi [wz="w5"]{margin-right:150px;}
+
+.oHeader1{font-size:27px;height:27px;line-height:27px;color:#343434;font-weight:bold;text-align:center;}
+#fill{height:441px;padding-left:28px;}
+#fill .leftn{width:478px;height:441px;margin-right:110px;margin-left:127px;}
+#fill .leftn p{width:348px;border-bottom:1px solid #d2d2d2;font-size:14px;height:48px;line-height:48px;margin-bottom:46px;}
+#fill .leftn .btnm{width:226px;height:44px;border:1px solid #d3d3d3;text-align: center;line-height:44px;font-size:14px;color:#7f7f7f;cursor: pointer;}
+#fill .rightn{width:350px;height:441px;font-size:14px;}
+#fill .rightn .chex{height:50px;line-height:50px;margin-bottom:45px;}
+.ri{display:inline-block;margin-left:6px;border-radius:10px;}
+.mm{display:inline-block;margin-right:62px;}
+#fill .rightn p{width:324px;border-bottom:1px solid #d2d2d2;font-size:14px;height:48px;line-height:48px;margin-bottom:46px;}
+#fill .inm{width:200px;height:22px;border:0;padding-left:10px;}
+#fill .btnm{position:relative;top:43px;left:348px;}
+
+
+ .banner2 {/*  修改输出屏大小  */ width: 1200px; height: 320px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
+ .banner2 .img { width: 99999px; position: absolute; left: 0px; top: 0; }
+ .banner2 .img li { float: left;}
+ .banner2 .img img {height: 320px;width:1200px;}
+ .banner2 li .blockn1, .banner2 li .blockn2, .banner2 li .blockn3{width:390px;height:320px;margin-right:15px;}
+ .banner2 li .blockn3{margin-right:0;}
+ .banner2 li .overF{width:390px;height:230px;overflow:hidden;margin-bottom:25px;}
+ .banner2 li .wwwd1{width:390px;height:230px;background: url(../../img/wd1.jpg);transition: all 1s;}
+ .banner2 li .wwwd1:hover,.wwwd2:hover,.wwwd3:hover{transform: scale(1.2);}
+ .banner2 li .wwwd2{width:390px;height:230px;background: url(../../img/wd2.png);transition: all 1s;}
+ .banner2 li .wwwd3{width:390px;height:230px;background: url(../../img/wd3.jpg);transition: all 1s;}
+/*/ 小圆圈 /*/
+/* .banner2 .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
+ .banner2 .num li { width: 100px; height: 8px; background: #fff;border-radius:4px;  display: inline-block; margin: 0 3px; cursor: pointer; opacity:0.8;}
+ .banner2 .num li.on { background: #F60; }*/
+/*/ 按钮 /*/
+ .banner2 .btn, .banner2 .btn2 { width: 36px; height: 36px;border-radius:50px; background:#cecece;opacity:0.6; position: absolute; top: 50%; margin-top: -59px; cursor: pointer; text-align: center; line-height: 36px; color: #fff; font-size: 20px; font-family: "宋体";
+}
+ .banner2 .btn{left:15px;}
+ .banner2 .btn2{right:15px;}
+/* .banner2:hover .btn { display: block;}*/
+ .banner2 .btn_l, .banner2 .btn_r  { width: 36px; height: 36px; line-height: 36px; position: absolute; top: 34%;color:#fff;text-align:center;margin-top:-9px;font-size:24px;cursor: pointer;}
+ .banner2 .btn_l{left:15px;}
+ .banner2 .btn_r { right: 15px;} 
+.wdTitle{height:20px;line-height:20px;font-size:20px;}
+.wdCont{color:#797979;font-size:14px;height:40px;line-height:40px;}
+.btn,.btn2{opacity: 0.6}
+.mouse{z-index:99;}
