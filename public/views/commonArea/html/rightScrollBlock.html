@@ -13,7 +13,7 @@
 	.bk2{background: url(img/kn.png);}	
 	.bk3{background: url(img/kb.png);}	
 	.bk4{background: url(img/kv.png);}
-	.nmb{width:30px;height:20px;position:absolute;top:139px;right:5px;z-index:100;background: red;overflow:hidden;}	
+	.nmb{width:20px;height:24px;line-height:24px;position:absolute;top:139px;right:5px;z-index:100;overflow:hidden;background:url(img/bg.png) ;background-size:100% ;color:#fff;}	
 /*	.flp{width:50px;height:60px;position:absolute;top:139px;right:0px;z-index:110;background: #fff;}*/
 </style>
 <div id="div1" >
@@ -22,7 +22,7 @@
 	<div class="bk3 nn"></div>
 	<div class="bk4 nn"  id="returnTop"></div>
 <!--	<div class="flp"></div>-->
-	<p class="nmb"><img src="img/aaaa.png"/></p>
+	<p class="nmb">400-668-0707</p>
 </div>
 <script type="text/javascript">
 var offsetTo = ($(window).height()-$("#div1").height())/2
@@ -55,12 +55,12 @@ var offsetTo = ($(window).height()-$("#div1").height())/2
 	})
 	$(".bk3").mouseenter(function(){
 		$(this).css("background"," url(img/kb1.png)")
-		$(".nmb").animate({right:"62px",width:"100px"});
+		$(".nmb").animate({right:"62px",width:"115px"});
 		$("#div1").css("overflow","visible");
 	})
 	$(".bk3").mouseleave(function(){
 		$(this).css("background"," url(img/kb.png)")
-		$(".nmb").animate({right:"5px",width:"20px"})	
+		$(".nmb").animate({right:"7px",width:"20px"})	
 		
 		
 	})

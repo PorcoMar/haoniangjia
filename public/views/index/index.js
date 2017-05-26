@@ -341,12 +341,12 @@ function interB(time,times,obj,Start){
 	})
 	$(".bk3").mouseenter(function(){
 		$(this).css("background"," url(img/kb1.png)")
-		$(".nmb").animate({right:"62px",width:"100px"});
+		$(".nmb").animate({right:"62px",width:"115px"});
 		$("#div1").css("overflow","visible");
 	})
 	$(".bk3").mouseleave(function(){
 		$(this).css("background"," url(img/kb.png)")
-		$(".nmb").animate({right:"5px",width:"20px"})	
+		$(".nmb").animate({right:"6px",width:"20px"})	
 		
 	})
 	$(".bk4").mouseenter(function(){

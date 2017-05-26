@@ -13,7 +13,7 @@
 	.bk2{background: url(../../img/kn.png);}	
 	.bk3{background: url(../../img/kb.png);}	
 	.bk4{background: url(../../img/kv.png);}
-	.nmb{width:30px;height:20px;position:absolute;top:139px;right:5px;z-index:100;background: red;overflow:hidden;}	
+	.nmb{width:20px;height:24px;line-height:24px;position:absolute;top:139px;right:5px;z-index:100;overflow:hidden;background:url(../../img/bg.png) ;background-size:100% ;color:#fff;}	
 /*	.flp{width:50px;height:60px;position:absolute;top:139px;right:0px;z-index:110;background: #fff;}*/
 
 #mianCont{width:100%;overflow-y:auto;}	
