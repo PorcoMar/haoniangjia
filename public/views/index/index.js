@@ -6,7 +6,7 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 //轮播图设高
 $(".liCont").width($(window).width())
 $.ajax({
-	url:req()+"h5_api/yuesaoAppointmentList",//h5_api/yuesaoAppointmentListWithType
+	url:req()+"h5_api/yuesaoAppointmentList",
 	type:"POST",
 		success:function(data){
 			$scope.list=new Array();
