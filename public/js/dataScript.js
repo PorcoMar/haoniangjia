@@ -296,7 +296,7 @@ function over(a){
 	
 	function imgscrool3(obj,timer){
 		var moving = false;		
-		var width= 1200;
+		var width= 1168;
 		//console.log(width)
 		var i=0;
 		var clone=$(obj+" .banner3 .img li").first().clone();

@@ -13,7 +13,7 @@
 	.bk2{background: url(../../img/kn.png);}	
 	.bk3{background: url(../../img/kb.png);}	
 	.bk4{background: url(../../img/kv.png);}
-	.nmb{width:20px;height:24px;line-height:24px;position:absolute;top:139px;right:5px;z-index:100;overflow:hidden;background:url(../../img/bg.png) ;background-size:100% ;color:#fff;}	
+	.nmb{width:20px;height:28px;line-height:28px;position:absolute;top:133px;right:5px;z-index:100;overflow:hidden;background:url(../../img/bg.png) ;background-size:100% ;color:#fff;}	
 /*	.flp{width:50px;height:60px;position:absolute;top:139px;right:0px;z-index:110;background: #fff;}*/
 
 #mianCont{width:100%;overflow-y:auto;}	
@@ -66,15 +66,15 @@
 #bandShow ul{width:1200px;height:200px;}
 #bandShow li{width:240px;height:150px;text-align:center;padding-top:50px;color:#333;}
 #bandShow li [numA]{width:240px;height:150px;}
-#bandShow li [numB]{font-size:45px;line-height:45px;font-weight:100;margin-bottom: 10px;}
+#bandShow li [numB]{font-size:45px;line-height:45px;font-weight:400;margin-bottom: 10px;}
 #bandShow li  [posAb="abs1"]{padding-left:44px;}
 #bandShow li  [posAb="abs2"]{padding-left:74px;}
 #bandShow li  [posAb="abs3"]{padding-left:124px;}
-#bandShow li p{font-weight:bold;}
+#bandShow li p{font-weight:300;}
 .posAb #bandShow li{position:absolute;}
 
 
-.hotPoint1{width:250px;height:45px;position:absolute;right:198px;top:448px;cursor: pointer;}
+.hotPoint1{width:178px;height:52px;position:absolute;right:985px;top:451px;cursor: pointer;}
 
 #serviceLevel{height:100%;margin-bottom:85px;}
 #contBoxn{height:475px;}
@@ -206,16 +206,18 @@
 #logoband .banner3 .img { width: 99999px; position: absolute; left: 0px; top: 0px; }
 #logoband .banner3 .img li { float: left;}
 #logoband .banner3 .img .l{height: 60px;}
-.gray1{background: url(../../img/demer.png) no-repeat;width:208px;margin-left:33px;}
-.gray2{background: url(../../img/love.png) no-repeat;width:161px;}
-.gray3{background: url(../../img/yoyo.png) no-repeat;width:191px;}
-.gray4{background: url(../../img/happy.png) no-repeat;width:210px;}
-.gray5{background: url(../../img/home.png) no-repeat;width:164px;}
-.gray6{background: url(../../img/open.png) no-repeat;width:208px;}
+.gray1{background: url(../../img/demer.png) no-repeat;width:146px;margin-left:3px;}
+.gray2{background: url(../../img/love.png) no-repeat;width:146px;}
+.gray3{background: url(../../img/yoyo.png) no-repeat;width:146px;}
+.gray4{background: url(../../img/happy.png) no-repeat;width:146px;}
+.gray5{background: url(../../img/home.png) no-repeat;width:146px;}
+.gray6{background: url(../../img/open.png) no-repeat;width:146px;}
+.gray7{background: url(../../img/dio.png) no-repeat;width:146px;}
+.gray8{background: url(../../img/last.png) no-repeat;width:146px;}
 
 
 #logoband .banner3 .btn{position: absolute; cursor: pointer;display:none;}
 
 #logoband .banner3 .btn_l { left: 0px; }
-#logoband .banner3 .btn_r { right: 0px; }
+#logoband .banner3 .btn_r { right:0px; }
 

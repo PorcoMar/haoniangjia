@@ -34,10 +34,10 @@ li span{display:inline-block;width:3px;height:3px;border-radius: 3px;background:
 #sinpleCont .Tuwen{width:397px;height:285px;position: relative;margin-right:3px;margin-bottom:30px;overflow: hidden;}
 #sinpleCont .Tuwen img{width:397px;height:285px;}
 #sinpleCont .Tuwen .ppacity{width:397px;height:65px;position: absolute;bottom:0;}
-#sinpleCont .Tuwen .ppacity .opacit{width:397px;height:65px;background: #fff;opacity: 0.5;}
+#sinpleCont .Tuwen .ppacity .opacit{width:397px;height:65px;background: #fff;opacity: 0.9;}
 #sinpleCont .Tuwen .ppacity p{width:397px;height:65px;line-height:65px;margin-left:30px;position: absolute;top:0;left:0;z-index:3;}
 #sinpleCont .Tuwen .ppacity p span{color:#ff6b6b}
-.flotIn{width:397px;height:285px;color:#fff; position: absolute;top:-285px;z-index: 8;}
+.flotIn{width:397px;height:285px;color:#fff; position: absolute;top:-285px;z-index: 8;overflow:hidden;}
 .flotIn .flopacity{width:397px;height:285px;background: #252525;position:absolute;top:0;opacity: 0.7;z-index:7;}
 .flotIn .tite{font-size:16px;height:75px;line-height:75px;margin:22px 0px 0px 30px;z-index:9;position: relative; }
 .flotIn .tite span{color:#fe6a6a;}

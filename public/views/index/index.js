@@ -49,6 +49,10 @@ $scope.liContA = function(){
 		$rootScope.a = true;
 		$location.path("/AboutUs")
 	}
+	$scope.exe = function(){
+		$rootScope.a = true;
+		$location.path("/execcess")
+	}
 /*移入变色*/
 	$("[promis]").mouseenter(function(){
 		$(this).find(".head").css({"color":"#fff"}).parent().find(".cont").css({"color":"#fff"})
@@ -341,7 +345,7 @@ function interB(time,times,obj,Start){
 	})
 	$(".bk3").mouseenter(function(){
 		$(this).css("background"," url(img/kb1.png)")
-		$(".nmb").animate({right:"62px",width:"115px"});
+		$(".nmb").animate({right:"62px",width:"117px","padding-left":"5px"});
 		$("#div1").css("overflow","visible");
 	})
 	$(".bk3").mouseleave(function(){
