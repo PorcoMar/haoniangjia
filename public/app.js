@@ -7,8 +7,6 @@
 /*服务的URL配置*/
 			app.constant('ServiceConfig', {		
 				yizhenjia_shoping:'https://test.yizhenjia.com/xcxapi/',
-				movies_api: 'https://api.douban.com/v2/movie/',
-				tngou:'http://www.tngou.net/api/top/list'
 			});		
 			app.config(["$routeProvider",function($routeProvider){
 				$routeProvider
