@@ -49,10 +49,10 @@
  .banner2 li .blockn1, .banner2 li .blockn2, .banner2 li .blockn3{width:390px;height:320px;margin-right:15px;}
  .banner2 li .blockn3{margin-right:0;}
  .banner2 li .overF{width:390px;height:230px;overflow:hidden;margin-bottom:25px;}
- .banner2 li .wwwd1{width:390px;height:230px;background: url(../../img/wd1.jpg);transition: all 1s;}
+ .banner2 li .wwwd1{width:390px;height:230px;background: url(../../img/yp.jpg);transition: all 1s;}
  .banner2 li .wwwd1:hover,.wwwd2:hover,.wwwd3:hover{transform: scale(1.2);}
- .banner2 li .wwwd2{width:390px;height:230px;background: url(../../img/wd2.png);transition: all 1s;}
- .banner2 li .wwwd3{width:390px;height:230px;background: url(../../img/wd3.jpg);transition: all 1s;}
+ .banner2 li .wwwd2{width:390px;height:230px;background: url(../../img/dl.jpg);transition: all 1s;}
+ .banner2 li .wwwd3{width:390px;height:230px;background: url(../../img/tu.jpg);transition: all 1s;}
 /*/ 小圆圈 /*/
 /* .banner2 .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
  .banner2 .num li { width: 100px; height: 8px; background: #fff;border-radius:4px;  display: inline-block; margin: 0 3px; cursor: pointer; opacity:0.8;}
