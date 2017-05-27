@@ -4,7 +4,7 @@ app.controller("TeamMatron", ["$scope","$location",function($scope,$location){
 	$scope.Img.width($scope.wid);
 	$scope.banH = Math.floor($("#anim .banner .img").find("img:first").width()/3.84);
 	$("#anim .banner").height($scope.banH);
-	$scope.Img.height($scope.bannerH);	
+	$scope.Img.height($scope.banH);	
 	//console.log($scope.wid / $scope.banH)
 	Iscroll('#anim',3000);
 	function Iscroll(obj,timer){
