@@ -5,7 +5,7 @@ app.controller("TeamMatron", ["$scope","$location",function($scope,$location){
 	$scope.banH = Math.floor($("#anim .banner .img").find("img:first").width()/3.84);
 	$("#anim .banner").height($scope.banH);
 	$scope.Img.height($scope.bannerH);	
-	console.log($scope.wid / $scope.banH)
+	//console.log($scope.wid / $scope.banH)
 	Iscroll('#anim',3000);
 	function Iscroll(obj,timer){
 		var moving = false;		
