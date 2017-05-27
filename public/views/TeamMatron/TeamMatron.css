@@ -8,7 +8,7 @@
 .banner {/*  修改输出屏大小  */ width: 100%; height: 500px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
 .banner .img { width: 99999px; position: absolute; left: 0px; top: 0; }
 .banner .img li { float: left;}
-.banner .img img {height: 650px; }
+.banner .img img {height: 500px; }
 
 /*/ 小圆圈 /*/
 .banner .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
@@ -41,7 +41,7 @@
 #bantu1 .Tuwen .ppacity p.comtn{width:360px;padding:0 15px;height:80px;line-height:24px;font-size:16px;position: absolute;top:40px;left:0;z-index:3;color:#fff;}
 
 #flm{height:360px;margin-bottom:104px;}
-#flmt{height:490px;margin-bottom:120px;}
+#flmt{height:490px;margin-bottom:120px;margin-top:80px;}
 .contm{padding:0 10px;width:380px;height:360px;}
 .contm .top,#flm .contm .bottom{height:180px;width:380px;}
 .contm .tle{height:73px;line-height:73px;font-size:23px;color:#343434}

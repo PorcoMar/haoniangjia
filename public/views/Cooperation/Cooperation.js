@@ -3,7 +3,7 @@ $scope.numStart1 = 0;$scope.numStart2 = 0;$scope.numStart3 = 0;$scope.numStart4 
 
 //inter(50,20,".pop4",$scope.numStart4)
 
-inter(20,70,".pop1 span",$scope.numStart1,1000000)
+inter(20,70,".pop1 span",$scope.numStart1,20000000)
 inter(14,72,".pop2 span",$scope.numStart2,250000)
 inter(20,48,".pop3 span",$scope.numStart3,1250)
 inter(50,20,".pop4 span",$scope.numStart4,1)
@@ -54,7 +54,7 @@ $("#cl2").click(function(){
 
 
 
-
+//
 //var name=["张中牟","李中牟","王中牟","周中牟","赵中牟","钱中牟","马中牟","孙中牟","金中牟"]
 //var num=["18699999145","13599999178","18799999464","15999999978","15699999967","13899999895","15699999564","18699999096"]
 //var lev=["尊享型","舒适型","经济型"]
@@ -71,23 +71,23 @@ $("#cl2").click(function(){
 //	var levn = lev[c]
 //	var timen = time[d]
 //	var typen = type[e]
-////		$.ajax({
-////		    url:req()+"h5_api/yuesaoAppointmentSave",
-////		    type: "POST",
-////		    data: {
-////		        name:namen,
-////		        cellPhone: numn,
-////		        city:"上海",
-////		        level:levn,
-////		        preBirthTime:timen
-////		    },
-////		    success: function(data) {
-////		    	console.log(JSON.parse(data))
-////		    },
-////		    error : function(){
-////		    	console.log("error")
-////		    }
-////		})
+//		$.ajax({
+//		    url:req()+"h5_api/yuesaoAppointmentSave",
+//		    type: "POST",
+//		    data: {
+//		        name:namen,
+//		        cellPhone: numn,
+//		        city:"上海",
+//		        level:levn,
+//		        preBirthTime:timen
+//		    },
+//		    success: function(data) {
+//		    	console.log(JSON.parse(data))
+//		    },
+//		    error : function(){
+//		    	console.log("error")
+//		    }
+//		})
 //
 ////		$.ajax({
 ////			url:req()+"h5_api/yuesaoAppointmentSaveWithType",

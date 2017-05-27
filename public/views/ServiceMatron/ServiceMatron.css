@@ -46,12 +46,12 @@ li span{display:inline-block;width:3px;height:3px;border-radius: 3px;background:
 
 
 
-#serviHome{height:1105px;}
+#serviHome{height:100%;}
 #serviHome p{text-align: center;height:29px;line-height:29px;}
 #serviHome img{margin:0 auto;}
 
 
-#process{height:400px;width:100%;}
+#process{height:400px;width:100%;margin-top:80px;}
 #process img{margin:0 auto;}
 #process img.img1{margin-top:40px;}
 

@@ -24,7 +24,16 @@ $scope.kkkk = function(){
 	})	
 
 /*mouse animate effect*/
-		controller("[root]","rotateIn","0.8s","0s");
+//通过浏览器类型输出效果事件
+		var userAgent = navigator.userAgent;
+		if (!!window.ActiveXObject || "ActiveXObject" in window){
+			//alert("IE") ;
+		}else if (userAgent.indexOf("Edge") > -1) {
+			//alert("Edge")  
+		}
+		else {
+		}
+		controller("[root]","rotateIn","0.8s","0s");			
 
 /*contBoxn移入阴影 && other*/
 	mouShade("#eco");

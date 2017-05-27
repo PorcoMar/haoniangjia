@@ -5,7 +5,7 @@
 	height: 250px;
 	position: absolute;
 	right: 20px;
-	top:500px;
+	top:400px;
 	z-index:99;
 	}	
 	.nn{width:56px;height:56px;border-radius: 100px;margin-bottom:2px;cursor: pointer;position:relative;z-index:200;}
@@ -19,31 +19,12 @@
 #mianCont{width:100%;overflow-y:auto;}	
 /*banner area*/
 
-#hwslider{width: 100%;height:650px;}
-.hwslider{ position: relative; overflow: hidden;border:1px solid red;}
-.hwslider ul{width: 100%; height:650px; position: absolute; z-index: 1}
-.hwslider ul li{position:absolute; left:0; top:0; width: 100%;height:650px; overflow: hidden;}
-.hwslider ul li.active{display: block;height:650px;}
-.hwslider ul li img{width:100%;height:650px;}
-/*点*/
-.dots{position: absolute; bottom:20px; left:200px; min-width:60px; height: 12px; z-index: 2;}
-.dots span{float: left; width:12px;height: 12px; border: 1px solid #fff; border-radius: 50%; background: #333; margin-right: 8px; cursor: pointer;}
-.dots span.active{background:orangered}
-
-.arr{display:none;position: absolute; top: 140px; z-index: 2;width: 40px; height: 40px; line-height: 38px; text-align: center;; font-size: 36px; background: rgba(0,0,0,.3); color: #fff; text-decoration: none}
-.arr:hover{background: rgba(0,0,0,.7); text-decoration: none;}
-.hwslider:hover .arr{display: block; text-decoration: none;color: #fff}
-.prev{left: 20px}
-.next{right: 20px}
-
-		
-		
 
 /*  修改输出屏大小  */
-.banner {/*  修改输出屏大小  */ width: 100%; height: 500px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
+.banner {/*  修改输出屏大小  */ width: 100%; height: 650px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
 .banner .img { width: 99999px; position: absolute; left: 0px; top: 0; }
 .banner .img li { float: left;}
-.banner .img img {height: 650px; }
+.banner .img img {height: 650px;}
 
 /*/ 小圆圈 /*/
 .banner .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
@@ -105,11 +86,11 @@
 #express span{display:inline-block;margin-left:48px;}
 #express p{margin-top:10px;margin-left:13px;color:#343434}
 #express b{display:inline-block;font-weight:normal;color:#ff7077;margin-left:10px;margin-right:10px;}
-#bann{width:100%;height:300px;position:relative;background:url(../../img/sao.jpg) no-repeat;overflow:hidden;cursor: pointer;}
+#bann{width:100%;height:300px;position:relative;background:url(../../img/sao.jpg) no-repeat;background-size:100% 100%;overflow:hidden;cursor: pointer;}
 
 #bann .flo_hot{width:256px;height:46px;position:absolute;top:218px;left:1166px;cursor: pointer;}
 
-#processCom{height:400px;width:100%;margin-top:60px;}
+#processCom{/*height:400px;*/width:100%;margin-top:60px;}
 #processCom img{margin:0 auto;}
 #processCom img.img1{margin-top:40px;}
 
@@ -153,9 +134,9 @@
 #honorRight .bcm .bottn .av{margin-right:23px;}
 #more{font-size:14px;height:36px;line-height:36px;color:#fe697c;cursor: pointer;}
 
-#bigBanner{width:100%;height:1089px;}
+#bigBanner{width:100%;}
 #bigBanner img{width:100%;}
-#bigBanner .wangdian{width:890px;height:110px;}
+#bigBanner .wangdian{width:890px;height:80px;}
 [waDin="wa1"]{font-size:26px;text-align:center;color:#343434;font-weight:bold;}
 [waDin="wa2"]{font-size:12px;text-align:center;height:42px;line-height:42px;color:#acacac;margin-bottom:33px;}
 

@@ -1,9 +1,6 @@
-//if($(window).width()<500){
-//	
-//}
 
 function req(){
-	return "http://mobile.api-test.yizhenjia.com/"
+	return "http://appapi.yizhenjia.com/"
 }
 function name(a){
 	return a.substr(0,1)+"女士";
@@ -122,12 +119,7 @@ function over(a){
 				move();
 			},timer)
 		})
-//		$(".banner .btn").mouseenter(function(){
-//			$(this).css("background","#f5aca6")
-//		})
-//		$(".banner .btn").mouseleave(function(){
-//			$(this).css("background","#c4c5c2")
-//		})
+
 	
 		if ($(obj+" .banner .btn_l")) {
 	

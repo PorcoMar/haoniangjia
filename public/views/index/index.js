@@ -1,10 +1,17 @@
 app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfig","$interval",function($scope,$rootScope,$location,$http,ServiceConfig,$interval){
-	$("#ban1 .banner .img img").width($(window).width())
-	$("#mianCont").height($("body").height())
+	$scope.winH = $(window).width();
+	$scope.Img = $("#ban1 .banner .img img");
+	$("#mianCont").height($(window).height()).width($("body").width());
+	$scope.Img.width($scope.winH);
+	$scope.bannerH = Math.floor($("#ban1 .banner .img").find("img:first").width()/3);
+	$("#ban1 .banner").height($scope.bannerH);
+	$scope.Img.height($scope.bannerH);
 	//console.log($(window).height(),$(document).height(),$("body").height())
-
+	$scope.bannH = Math.floor($("#bann").width()/6.4);
+	$("#bann").height($scope.bannH);
+	//console.log($("#bann").height())
 //轮播图设高
-$(".liCont").width($(window).width())
+$(".liCont").width($scope.winH);
 $.ajax({
 	url:req()+"h5_api/yuesaoAppointmentList",
 	type:"POST",
@@ -21,38 +28,27 @@ $.ajax({
 						level:$list.level,
 						preBirthTime:preBirthTime($list.preBirthTime)
 					}
-				$scope.list.push(item)
+				$scope.list.push(item);
 			}
 			$scope.shopList = $scope.list;
 		}
 })
 
-$scope.liContA = function(){
-
-}
 /*预约服务*/
-	$scope.ecoo = function(){
-		$location.path("/News")
-	}
-	$scope.shus = function(){
-		$location.path("/News")
-	}
-	$scope.zunx = function(){
-		$location.path("/News")
-	}
+	$scope.ecoo = function(){$location.path("/News")};
+	$scope.shus = function(){$location.path("/News")};
+	$scope.zunx = function(){$location.path("/News")};
 /*21条嫂规*/
-	$scope.saogui = function(){
-		$location.path("/TeamMatron")
-	}
+	$scope.saogui = function(){$location.path("/TeamMatron")};
 /*查看新闻*/
 	$scope.lookA1 = function(){
 		$rootScope.a = true;
 		$location.path("/AboutUs")
-	}
+	};
 	$scope.exe = function(){
 		$rootScope.a = true;
 		$location.path("/execcess")
-	}
+	};
 /*移入变色*/
 	$("[promis]").mouseenter(function(){
 		$(this).find(".head").css({"color":"#fff"}).parent().find(".cont").css({"color":"#fff"})
@@ -66,14 +62,8 @@ $scope.liContA = function(){
 	mouShade("#eco");
 	mouShade("#shushi");
 	mouShade("#zunxiang");
-
-
-//	var url = ServiceConfig.tngou
-//	var moveUrl = ServiceConfig.movies_api
-//	console.log(moveUrl)
-
 //启动轮播图
- imgscrool('#ban1',3000);
+ imgscrool('#ban1',5000);
  imgscrool2('#ban2',5000);
  imgscrool3('#logoband',8000);
 //移入变网点名称颜色
@@ -96,27 +86,6 @@ $("#ban2 .banner2 .btn_l").mouseleave(function(){
 $("#ban2 .banner2 .btn_r").mouseleave(function(){
 	$("#ban2 .banner2 .btn2").css("background","#cecece")	
 })
-
-// $("#hwslider").hwSlider({
-//  autoPlay: true,
-//  arrShow: true,
-//  dotShow: true,
-//  touch: true
-//});
- /*鼠标移入效果*/
-
-		controller("[rot]","rotateIn","0.8s","0s");
-	//logoband	
-		controller("[bounce]","rubberBand","0.8s","0s");
-		//controller("[bounce='c6']","hinge","1.8s","0s");
-	//#bann	
-		//controller("[butnm]","swing","0.8s","0s");
-	//bandShow && bigBanner
-		//controller("[pulse]","pulse","0.8s","0s");
-	//honor 查看
-		//controller("[see]","swing","1s","0s");
-	
-	
 /*右滑块*/	
 //	var offsetTo = ($(window).height()-$("#div1").height())/2
 //	var h_div1 = document.getElementById('div1')
@@ -134,7 +103,7 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 $scope.numStart1 = 0;$scope.numStart2 = 0;$scope.numStart3 = 0;$scope.numStart4 = 0;$scope.numStart5 = 0;
 inter(125,8,"[numB='numB1']",$scope.numStart1)
 inter(100,10,"[numB='numB2']",$scope.numStart2)
-inter(50,20,"[numB='numB3']",$scope.numStart3)
+inter(20,50,"[numB='numB3']",$scope.numStart3)
 inter(33,30,"[numB='numB4']",$scope.numStart4)
 interB(50,20,"[numB='numB5']",$scope.numStart5)
 function inter(time,times,obj,Start){	
@@ -166,7 +135,7 @@ function interB(time,times,obj,Start){
 		$scope.process = document.getElementById("processCom").offsetTop;
 		$scope.bao = document.getElementById("bao").offsetTop;
 		$scope.honor = document.getElementById("honor").offsetTop;
-		$scope.bigBanner = document.getElementById("bigBanner").offsetTop;
+//		$scope.bigBanner = document.getElementById("bigBanner").offsetTop;
 //		$scope.logoband = document.getElementById("logoband").offsetTop;  
 		$scope.shop = document.getElementById("shop").offsetTop;  
 		
@@ -175,11 +144,6 @@ function interB(time,times,obj,Start){
 		$scope.sc_Height150 = $("#mianCont").scrollTop()+$(window).height()-150;
 		$scope.sc_Height300 = $("#mianCont").scrollTop()+$(window).height()-300;
 		
-		//console.log($scope.serviceLevel)
-//	console.log(_cua[1]);	
-//	if(_cua[1] !="未知浏览器"){
-//		scrollShow();
-//	}
 //	function scrollShow(){
 	/*serviceLevel 区*/
 		if ($scope.serviceLevel >= $scope.scrollTop && $scope.serviceLevel < $scope.sc_Height150) {
@@ -223,8 +187,8 @@ function interB(time,times,obj,Start){
 	/*bao 区*/
 		if ($scope.bao >= $scope.scrollTop && $scope.bao < $scope.sc_Height150) {
 			if(!$scope.onOffF){
-					active("[pro]","slideInUp" ,"1.5s","0s")
-					active("[promis]","slideInUp" ,"1.5s","0.5s")
+					active("[pro]","fadeInUp" ,"1.5s","0s")
+					active("[promis]","fadeInUp" ,"1.5s","0.5s")
 					mySwiper();
 					$scope.onOffF =true;
 			}
@@ -242,13 +206,13 @@ function interB(time,times,obj,Start){
 	
 		
 	/*bigbanner 区*/
-		if ($scope.bigBanner >= $scope.scrollTop && $scope.bigBanner < $scope.sc_Height150) {
-			if(!$scope.onOffB){
-					active("[bigBanner]","fadeIn" ,"1.5s","0.2s")
-					mySwiper();
-					$scope.onOffB =true;
-			}
-		}
+//		if ($scope.bigBanner >= $scope.scrollTop && $scope.bigBanner < $scope.sc_Height150) {
+//			if(!$scope.onOffB){
+//					active("[bigBanner]","fadeIn" ,"1.5s","0.2s")
+//					mySwiper();
+//					$scope.onOffB =true;
+//			}
+//		}
 	/*wangdian 区*/
 		if ($scope.shop >= $scope.scrollTop && $scope.shop < $scope.sc_Height150) {
 			if(!$scope.onOffH){
@@ -269,12 +233,8 @@ function interB(time,times,obj,Start){
 //		}
 
 	
-	});
-	
+});
 
-
-
-	
 /*滚动显示内容*/
   var demoScro=document.getElementById("demoScro");
   var demoScro1=document.getElementById("demoScro1");
@@ -315,19 +275,6 @@ function interB(time,times,obj,Start){
 		$scope.timer.then(success, error, notify);
 	}
 	
-	
-	
-
-
-//var offsetTo = ($(window).height()-$("#div1").height())/2
-//	var h_div1 = document.getElementById('div1')
-//	var h_hvttop = offsetTo//移动后的距离顶部的高度	
-//	HoverTreeMove(h_div1, h_hvttop)//init top	
-//	$(window).scroll(function () {
-//	/*右滑块*/
-//		HoverTreeMove(h_div1, h_hvttop)
-//	})
-	
 	$("#returnTop").click(function(){
 		$("#mianCont").scrollTop(0)
 	})
@@ -360,8 +307,29 @@ function interB(time,times,obj,Start){
 		$(this).css("background"," url(img/kv.png)")
 	})
 	
-	
-	
-	
-	
+
+
+ /*鼠标移入效果*/
+
+		//controller("[rot]","rotateIn","0.8s","0s");
+	//logoband	
+		//controller("[bounce]","rubberBand","0.8s","0s");
+		//controller("[bounce='c6']","hinge","1.8s","0s");
+	//#bann	
+		//controller("[butnm]","swing","0.8s","0s");
+	//bandShow && bigBanner
+		//controller("[pulse]","pulse","0.8s","0s");
+	//honor 查看
+		//controller("[see]","swing","1s","0s");
+		
+//通过浏览器类型输出效果事件
+		var userAgent = navigator.userAgent;
+		if (!!window.ActiveXObject || "ActiveXObject" in window){
+			//alert("IE") ;
+		}else if (userAgent.indexOf("Edge") > -1) {
+			//alert("Edge")  
+		}
+		else {
+			controller("[rot]","rotateIn","0.8s","0s");
+		}
 }])

@@ -1,6 +1,6 @@
 app.controller("TeamMatron", ["$scope","$location","$sce",function($scope,$location,$sce){
 	$(".banner .img img").width($(window).width())
-	Iscroll('#anim',3000);
+	Iscroll('#anim',5000);
 	function Iscroll(obj,timer){
 		var moving = false;		
 		var width = $(obj+" .banner .img img").width();
