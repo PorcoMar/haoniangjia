@@ -20,7 +20,7 @@
 .oHeader{font-size:27px;height:27px;line-height:27px;color:#343434;font-weight:bold;text-align:center;}
 .oDes{font-size:12px;height:42px;line-height:42px;color:#acacac;text-align:center;margin-bottom:20px;}
 
-#wenzi{height:55px;width:1200px;margin:0 auto;}
+#wenzi{height:55px;width:1200px;margin:0 auto;margin-bottom:60px;}
 #wenzi [wz]{height:55px;line-height:23px;font-weight:bold;float:left;}
 #wenzi [wz="w1"]{margin-right:129px;}
 #wenzi [wz="w2"]{margin-right:144px;}

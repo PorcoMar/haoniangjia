@@ -54,7 +54,7 @@
 .hotPoint1{width:178px;height:52px;position:absolute;right:985px;top:451px;cursor: pointer;}
 
 #serviceLevel{height:100%;margin-bottom:85px;}
-#contBoxn{height:475px;}
+#contBoxn{height:430px;}
 #contBoxn .box_le{width:900px;height:440px;}
 #contBoxn .box_le .opacit{width:297px;height:155px;position:absolute;bottom:0;left:0;z-index:1;background:#fff;opacity: 0.8;}
 #eco,#shushi,#zunxiang{width:297px;height:440px;margin-right:4px;float:left;position: relative;overflow:hidden;}
