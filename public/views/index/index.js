@@ -63,7 +63,7 @@ $.ajax({
 	mouShade("#shushi");
 	mouShade("#zunxiang");
 //启动轮播图
- ingSrc('#ban1',3000);
+ ingSrc('#ban1',4000);
  //imgscrool2('#ban2',5000);
  //imgscrool3('#logoband',8000);
 //移入变网点名称颜色

@@ -21,22 +21,21 @@
 
 
 /*  修改输出屏大小  */
-.banner {/*  修改输出屏大小  */ width: 100%; height: 650px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
-.banner .img { width: 99999px; position: absolute; left: 0px; top: 0; }
-.banner .img li { float: left;}
-.banner .img img {height: 650px;}
+#ban1 .banner {/*  修改输出屏大小  */ width: 100%; height: 650px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
+#ban1 .banner .img { width: 99999px; position: absolute; left: 0px; top: 0; }
+#ban1 .banner .img li { float: left;}
+#ban1 .banner .img img {height: 650px;}
 
 /*/ 小圆圈 /*/
-.banner .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
-.banner .num li { width: 100px; height: 8px; background: #fff;border-radius:4px;  display: inline-block; margin: 0 3px; cursor: pointer; opacity:0.8;}
-.banner .num li.on { background: #F60; }
+#ban1 .banner .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
+#ban1 .banner .num li { width: 100px; height: 8px; background: #fff;border-radius:4px;  display: inline-block; margin: 0 3px; cursor: pointer; opacity:0.8;}
+#ban1 .banner .num li.on { background: #F60; }
 /*/ 按钮 /*/
-.banner .btn { width: 45px; height: 85px; background:#c4c5c2; position: absolute; top: 50%; margin-top: -42px; cursor: pointer; text-align: center; line-height: 85px; color: #fff; font-size: 40px; font-family: "宋体";display:none;
+#ban1 .banner .btn { width: 45px; height: 85px; background:#c4c5c2; position: absolute; top: 50%; margin-top: -42px; cursor: pointer; text-align: center; line-height: 85px; color: #fff; font-size: 40px; font-family: "宋体";display:none;
 }
-.banner:hover .btn { display: block;}
-.banner .btn_l { left: 0px; }
-.banner .btn_r { right: 0px; }
-/*/ 第一个轮播 / 原本有固定样式。所以第二个轮播我就没写 */
+#ban1 .banner:hover .btn { display: block;}
+#ban1 .banner .btn_l { left: 0px; }
+#ban1 .banner .btn_r { right: 0px; }
 
 
 #bandShow{height:538px;position:relative;margin-bottom: 110px;}

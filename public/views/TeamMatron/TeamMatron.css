@@ -5,21 +5,21 @@
 #banTun img{width:100%;}
 
 /*  修改输出屏大小  */
-.banner {/*  修改输出屏大小  */ width: 100%; height: 500px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
-.banner .img { width: 99999px; position: absolute; left: 0px; top: 0; }
-.banner .img li { float: left;}
-.banner .img img {height: 500px; }
+#anim .banner {/*  修改输出屏大小  */ width: 100%; height: 500px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
+#anim .banner .img { width: 99999px; position: absolute; left: 0px; top: 0; }
+#anim .banner .img li { float: left;}
+#anim .banner .img img {height: 500px; }
 
 /*/ 小圆圈 /*/
-.banner .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
-.banner .num li { width: 100px; height: 8px; background: #fff;border-radius:4px;  display: inline-block; margin: 0 3px; cursor: pointer; opacity:0.8;}
-.banner .num li.on { background: #F60; }
+#anim .banner .num { position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0px; }
+#anim .banner .num li { width: 100px; height: 8px; background: #fff;border-radius:4px;  display: inline-block; margin: 0 3px; cursor: pointer; opacity:0.8;}
+#anim .banner .num li.on { background: #F60; }
 /*/ 按钮 /*/
-.banner .btn { width: 45px; height: 85px; background:#c4c5c2; position: absolute; top: 50%; margin-top: -42px; cursor: pointer; text-align: center; line-height: 85px; color: #fff; font-size: 40px; font-family: "宋体";display:none;
+#anim .banner .btn { width: 45px; height: 85px; background:#c4c5c2; position: absolute; top: 50%; margin-top: -42px; cursor: pointer; text-align: center; line-height: 85px; color: #fff; font-size: 40px; font-family: "宋体";display:none;
 }
-.banner:hover .btn { display: block;}
-.banner .btn_l { left: 0px; }
-.banner .btn_r { right: 0px; }
+#anim .banner:hover .btn { display: block;}
+#anim .banner .btn_l { left: 0px; }
+#anim .banner .btn_r { right: 0px; }
 
 
 .pai{width:950px;height:285px;padding:66px 0px 0px 238px;}
