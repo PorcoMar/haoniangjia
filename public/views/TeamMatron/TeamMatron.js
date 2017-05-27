@@ -1,4 +1,4 @@
-app.controller("TeamMatron", ["$scope","$location",function($scope,$location){
+app.controller("TeamMatron", ["$scope","$interval","$location",function($scope,$interval,$location){
 	$scope.wid = $(window).width();
 	$scope.Img = $("#anim .banner .img img");
 	$scope.Img.width($scope.wid);
@@ -6,8 +6,34 @@ app.controller("TeamMatron", ["$scope","$location",function($scope,$location){
 	$("#anim .banner").height($scope.banH);
 	$scope.Img.height($scope.banH);	
 	//console.log($scope.wid / $scope.banH)
-	Iscroll('#anim',4000);
-	function Iscroll(obj,timer){
+	Iscroll('#anim',3000);
+	
+	
+	$scope.$on("$destroy", function() {
+	    if (angular.isDefined($scope.inTerver)) {
+	        $interval.cancel($scope.inTerver);
+	        $scope.inTerver = undefined;
+	    }
+	});	
+/*$interval*/
+	$scope.timer = $interval(function(){},100000);
+	
+	$scope.timer.then(success, error, notify);
+	
+	function success(){
+	    //console.log("done");
+	}
+	
+	function error(){
+	    //console.log("error");
+	}
+	
+	function notify(){
+	
+	}
+
+/*banner script*/
+	function Iscroll(obj,gapTime){
 		var moving = false;		
 		var width = $(obj+" .banner .img img").width();
 		var i=0;
@@ -31,32 +57,33 @@ app.controller("TeamMatron", ["$scope","$location",function($scope,$location){
 		};
 	
 			
-		/*自动轮播*/
-		var t=setInterval(function(){
+	/*自动轮播*/
+	$scope.inTerver = $interval(function(){},gapTime);
+	$scope.inTerver.then(success, error, c1);		
+		function c1(){
 			i++;
-			move();
-		},timer)
+			console.log("index--"+i)
+			move();			
+		}
 			
 		/*对banner定时器的操作*/
 		$(obj+" .banner").hover(function(){
-			clearInterval(t);
+			$interval.cancel($scope.inTerver); 
 		},function(){
-			t=setInterval(function(){
-				i++;
-				move();
-			},timer)
+			$scope.inTerver = $interval(function(){},gapTime);
+			$scope.inTerver.then(success, error, c1);		
+				function c1(){
+					i++;
+					console.log("teamMaron--"+i)
+					move();			
+				}
 		})
-//		$(".banner .btn").mouseenter(function(){
-//			$(this).css("background","#f5aca6")
-//		})
-//		$(".banner .btn").mouseleave(function(){
-//			$(this).css("background","#c4c5c2")
-//		})
+
 	
 		if ($(obj+" .banner .btn_l")) {
 	
 		/*向左的按钮*/
-		$(obj+" .banner .btn_l").stop(true).click(function(){// background:#f5aca6;
+		$(obj+" .banner .btn_l").stop(true).click(function(){
 		if(moving){
 		return;
 		};
@@ -99,8 +126,6 @@ app.controller("TeamMatron", ["$scope","$location",function($scope,$location){
 				$(obj+" .banner .num li").eq(i).addClass("on").siblings().removeClass("on")	
 			}
 		}	
-	}	 
-	 
-	 
+	}
 	 
 }])

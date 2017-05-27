@@ -63,7 +63,7 @@ $.ajax({
 	mouShade("#shushi");
 	mouShade("#zunxiang");
 //启动轮播图
- ingSrc('#ban1',4000);
+ ingSrc('#ban1',3000);
  //imgscrool2('#ban2',5000);
  //imgscrool3('#logoband',8000);
 //移入变网点名称颜色
@@ -332,9 +332,19 @@ function interB(time,times,obj,Start){
 		else {
 			controller("[rot]","rotateIn","0.8s","0s");
 		}
-		
+
+
+
+$scope.$on("$destroy", function() {
+    if (angular.isDefined($scope.inTerver)) {
+        $interval.cancel($scope.inTerver);
+        $scope.inTerver = undefined;
+    }
+});	
+
+
 /*banner script*/
-	function ingSrc(obj,timer){
+	function ingSrc(obj,gapTime){
 		var moving = false;		
 		var width = $(obj+" .banner .img img").width();
 		var i=0;
@@ -358,20 +368,27 @@ function interB(time,times,obj,Start){
 		};
 	
 			
-		/*自动轮播*/
-		var t=setInterval(function(){
+	/*自动轮播*/
+	$scope.inTerver = $interval(function(){},gapTime);
+	$scope.inTerver.then(success, error, c1);		
+		function c1(){
 			i++;
-			move();
-		},timer)
+			console.log("index--"+i)
+			move();			
+		}
 			
 		/*对banner定时器的操作*/
 		$(obj+" .banner").hover(function(){
-			clearInterval(t);
+			//clearInterval(t);
+			$interval.cancel($scope.inTerver); 
 		},function(){
-			t=setInterval(function(){
-				i++;
-				move();
-			},timer)
+			$scope.inTerver = $interval(function(){},gapTime);
+			$scope.inTerver.then(success, error, c1);		
+				function c1(){
+					i++;
+					console.log("index--"+i)
+					move();			
+				}
 		})
 
 	
