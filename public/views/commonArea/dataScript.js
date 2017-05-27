@@ -85,17 +85,15 @@ function over(a){
 	function mouShade(a){
 		$(a).mouseenter(function(){
 			var _this = $(this)
-			$(".opacit").hide();
 			_this.css({"box-shadow":"-5px 6px 30px #ccc"})//.animate({top:"-2px",left:"1px"},300)
 			_this.find("[hovern]").stop().animate({bottom:"-5px"},300).animate({bottom:"0px"},300)
 			_this.find(".opacit").hide();
 			
 		})
 		$(a).mouseleave(function(){
-			var _this = $(this)
-			$(".opacit").show();
-			_this.css({"box-shadow":"0px 0px 0px #000"})//.animate({top:"0px",left:"0px"},300)
-			_this.find("[hovern]").stop().animate({bottom:"-440px"},300)
+			var _this = $(this);
+			_this.css({"box-shadow":"0px 0px 0px #000"});//.animate({top:"0px",left:"0px"},300)
+			_this.find("[hovern]").stop().animate({bottom:"-440px"},300);
 			_this.find(".opacit").show();
 		})	
 	}	
