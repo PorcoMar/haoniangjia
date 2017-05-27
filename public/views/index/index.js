@@ -64,13 +64,13 @@ $.ajax({
 	mouShade("#zunxiang");
 //启动轮播图
  ingSrc('#ban1',3000);
- imgscrool2('#ban2',5000);
+ //imgscrool2('#ban2',5000);
  //imgscrool3('#logoband',8000);
 //移入变网点名称颜色
-$(".banner2 .l").mouseenter(function(){
+$("#center .l").mouseenter(function(){
 	$(this).find(".wdTitle").css("color","#ff8188")	
 })
-$(".banner2 .l").mouseleave(function(){
+$("#center .l").mouseleave(function(){
 	$(this).find(".wdTitle").css("color","#333")	
 })
 //移入变左右箭头颜色

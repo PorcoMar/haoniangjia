@@ -17,24 +17,25 @@ app.controller("execcess", ["$scope","$location","$sce",function($scope,$locatio
 	mou("#bantu4 .Tuwen","-245px")
 	
 	
-	imgscrool2('.bammer',5000);	
-		$(".banner2 .l").mouseenter(function(){
-		$(this).find(".wdTitle").css("color","#ff8188")	
-	})
-	$(".banner2 .l").mouseleave(function(){
-		$(this).find(".wdTitle").css("color","#333")	
-	})
+	//imgscrool2('.bammer',5000);	
+//移入变网点名称颜色
+$("#center .l").mouseenter(function(){
+	$(this).find(".wdTitle").css("color","#ff8188")	
+})
+$("#center .l").mouseleave(function(){
+	$(this).find(".wdTitle").css("color","#333")	
+})
 	//移入变左右箭头颜色
-	$(".banner2 .btn_l").mouseenter(function(){
-		$(".banner2 .btn").css("background","#ff8188")	
-	})
-	$(".banner2 .btn_r").mouseenter(function(){
-		$(".banner2 .btn2").css("background","#ff8188")	
-	})
-	$(".banner2 .btn_l").mouseleave(function(){
-		$(".banner2 .btn").css("background","#cecece")	
-	})
-	$(".banner2 .btn_r").mouseleave(function(){
-		$(".banner2 .btn2").css("background","#cecece")	
-	})	
+//	$(".banner2 .btn_l").mouseenter(function(){
+//		$(".banner2 .btn").css("background","#ff8188")	
+//	})
+//	$(".banner2 .btn_r").mouseenter(function(){
+//		$(".banner2 .btn2").css("background","#ff8188")	
+//	})
+//	$(".banner2 .btn_l").mouseleave(function(){
+//		$(".banner2 .btn").css("background","#cecece")	
+//	})
+//	$(".banner2 .btn_r").mouseleave(function(){
+//		$(".banner2 .btn2").css("background","#cecece")	
+//	})	
 }])
