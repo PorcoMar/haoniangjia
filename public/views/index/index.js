@@ -148,6 +148,7 @@ function interB(time,times,obj,Start){
 	/*serviceLevel 区*/
 		if ($scope.serviceLevel >= $scope.scrollTop && $scope.serviceLevel < $scope.sc_Height150) {
 			if(!$scope.onOffA){
+				console.log(1)
 					active("[serlevel='a1']","fadeInUp" ,"1.5s","0s")
 					active("[serlevel='a2']","fadeInUp" ,"1.5s","0.2s")
 					active("[serlevel='a3']","fadeInUp" ,"1.5s","0.4s")
@@ -159,6 +160,7 @@ function interB(time,times,obj,Start){
 	/*contBoxn 区*/
 		else if ($scope.contBoxn >= $scope.scrollTop && $scope.contBoxn < $scope.sc_Height150) {
 			if(!$scope.onOffD){
+				console.log(2)
 					active("[contbox='a3']","fadeInLeft" ,"1.5s","0.2s")
 					active("[contbox='a2']","fadeInLeft" ,"1.5s","0.4s")
 					active("[contbox='a1']","fadeInLeft" ,"1.5s","0.6s")
@@ -170,6 +172,7 @@ function interB(time,times,obj,Start){
 	/*process 区*/
 		else if ($scope.process >= $scope.scrollTop && $scope.process < $scope.sc_Height150) {
 			if(!$scope.onOffE){
+				console.log(3)
 					active("[pros='a1']","fadeInUp" ,"1.5s","0s")
 					active("[pros='a2']","fadeInUp" ,"1.5s","0s")
 					active("[ng='b1']","fadeInUp" ,"0.8s","0.2s")
@@ -187,6 +190,7 @@ function interB(time,times,obj,Start){
 	/*bao 区*/
 		else if ($scope.bao >= $scope.scrollTop && $scope.bao < $scope.sc_Height150) {
 			if(!$scope.onOffF){
+				console.log(4)
 					active("[pro]","fadeInUp" ,"1.5s","0s")
 					active("[promis]","fadeInUp" ,"1.5s","0.5s")
 					mySwiper();
@@ -197,6 +201,7 @@ function interB(time,times,obj,Start){
 	/*honor 区*/
 		else if ($scope.honor >= $scope.scrollTop && $scope.honor < $scope.sc_Height150) {
 			if(!$scope.onOffG){
+				console.log(5)
 					active("[fadein='left']","bounceInLeft" ,"1.5s","0.1s")
 					active("[fadein='right']","bounceInRight" ,"1.5s","0.1s")
 					mySwiper();

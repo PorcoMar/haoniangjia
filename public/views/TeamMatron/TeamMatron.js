@@ -2,7 +2,7 @@ app.controller("TeamMatron", ["$scope","$location","$sce",function($scope,$locat
 	$scope.winH = $(window).width();
 	$scope.Img = $("#anim .banner .img img");
 	$scope.Img.width($scope.winH);
-	$scope.bannerH = Math.floor($("#anim .banner .img").find("img:first").width()/3);
+	$scope.bannerH = Math.floor($("#anim .banner .img").find("img:first").width()/3.84);
 	$("#anim .banner").height($scope.bannerH);
 	$scope.Img.height($scope.bannerH);	
 	
