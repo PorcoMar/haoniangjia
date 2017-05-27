@@ -1,4 +1,4 @@
-app.controller("TeamMatron", ["$scope","$location","$sce",function($scope,$location,$sce){
+app.controller("TeamMatron", ["$scope","$location",function($scope,$location){
 	$scope.winH = $(window).width();
 	$scope.Img = $("#anim .banner .img img");
 	$scope.Img.width($scope.winH);
