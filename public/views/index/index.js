@@ -157,7 +157,7 @@ function interB(time,times,obj,Start){
 		}
 	
 	/*contBoxn 区*/
-		if ($scope.contBoxn >= $scope.scrollTop && $scope.contBoxn < $scope.sc_Height150) {
+		else if ($scope.contBoxn >= $scope.scrollTop && $scope.contBoxn < $scope.sc_Height150) {
 			if(!$scope.onOffD){
 					active("[contbox='a3']","fadeInLeft" ,"1.5s","0.2s")
 					active("[contbox='a2']","fadeInLeft" ,"1.5s","0.4s")
@@ -168,7 +168,7 @@ function interB(time,times,obj,Start){
 			}
 		}
 	/*process 区*/
-		if ($scope.process >= $scope.scrollTop && $scope.process < $scope.sc_Height150) {
+		else if ($scope.process >= $scope.scrollTop && $scope.process < $scope.sc_Height150) {
 			if(!$scope.onOffE){
 					active("[pros='a1']","fadeInUp" ,"1.5s","0s")
 					active("[pros='a2']","fadeInUp" ,"1.5s","0s")
@@ -185,7 +185,7 @@ function interB(time,times,obj,Start){
 			}
 		}
 	/*bao 区*/
-		if ($scope.bao >= $scope.scrollTop && $scope.bao < $scope.sc_Height150) {
+		else if ($scope.bao >= $scope.scrollTop && $scope.bao < $scope.sc_Height150) {
 			if(!$scope.onOffF){
 					active("[pro]","fadeInUp" ,"1.5s","0s")
 					active("[promis]","fadeInUp" ,"1.5s","0.5s")
@@ -195,7 +195,7 @@ function interB(time,times,obj,Start){
 		}
 	
 	/*honor 区*/
-		if ($scope.honor >= $scope.scrollTop && $scope.honor < $scope.sc_Height150) {
+		else if ($scope.honor >= $scope.scrollTop && $scope.honor < $scope.sc_Height150) {
 			if(!$scope.onOffG){
 					active("[fadein='left']","bounceInLeft" ,"1.5s","0.1s")
 					active("[fadein='right']","bounceInRight" ,"1.5s","0.1s")
@@ -214,7 +214,7 @@ function interB(time,times,obj,Start){
 //			}
 //		}
 	/*wangdian 区*/
-		if ($scope.shop >= $scope.scrollTop && $scope.shop < $scope.sc_Height150) {
+		else if ($scope.shop >= $scope.scrollTop && $scope.shop < $scope.sc_Height150) {
 			if(!$scope.onOffH){
 					active("[waDin='wa1']","fadeInUp" ,"1.5s","0s")
 					active("[waDin='wa2']","fadeInUp" ,"1.5s","0.2s")
