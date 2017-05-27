@@ -165,4 +165,7 @@ app.controller("newDetial", ["$scope","$rootScope","$location","$sce",function($
 		$rootScope.a = true;
 		$location.path("/AboutUs")
 	}
+
+		var speed=200;//滑动的速度
+		$('body,html').animate({ scrollTop: 0 }, speed);
 }])

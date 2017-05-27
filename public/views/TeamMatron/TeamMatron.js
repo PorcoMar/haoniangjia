@@ -1,5 +1,11 @@
 app.controller("TeamMatron", ["$scope","$location","$sce",function($scope,$location,$sce){
-	$(".banner .img img").width($(window).width())
+	$scope.winH = $(window).width();
+	$scope.Img = $("#anim .banner .img img");
+	$scope.Img.width($scope.winH);
+	$scope.bannerH = Math.floor($("#anim .banner .img").find("img:first").width()/3);
+	$("#anim .banner").height($scope.bannerH);
+	$scope.Img.height($scope.bannerH);	
+	
 	Iscroll('#anim',5000);
 	function Iscroll(obj,timer){
 		var moving = false;		
