@@ -62,7 +62,7 @@ app.controller("TeamMatron", ["$scope","$interval","$location",function($scope,$
 	$scope.inTerver.then(success, error, c1);		
 		function c1(){
 			i++;
-			console.log("index--"+i)
+			//console.log("index--"+i)
 			move();			
 		}
 			
@@ -74,7 +74,7 @@ app.controller("TeamMatron", ["$scope","$interval","$location",function($scope,$
 			$scope.inTerver.then(success, error, c1);		
 				function c1(){
 					i++;
-					console.log("teamMaron--"+i)
+					//console.log("teamMaron--"+i)
 					move();			
 				}
 		})
