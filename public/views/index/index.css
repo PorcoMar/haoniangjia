@@ -40,17 +40,25 @@
 
 #bandShow{height:538px;position:relative;margin-bottom: 110px;}
 #bandShow ul{width:1200px;height:200px;}
-#bandShow li{width:240px;height:150px;text-align:center;padding-top:50px;color:#333;}
+#bandShow li{width:240px;height:150px;text-align:center;padding-top:50px;color:#333;position:relative;}
 #bandShow li [numA]{width:240px;height:150px;}
 #bandShow li [numB]{font-size:45px;line-height:45px;font-weight:400;margin-bottom: 10px;}
-#bandShow li  [posAb="abs1"]{padding-left:44px;}
+#bandShow li  [posAb]{background:#ff696a;font-size:16px;border-radius: 3px;text-align:center;position:absolute;top:75px;color:#fff;}
+#bandShow li  [posAb="abs1"],[posAb="abs2"]{width:18px;}
+#bandShow li  [posAb="abs3"],[posAb="abs4"],[posAb="abs5"]{width:30px;}
+[posAb="abs1"]{left:150px;}
+[posAb="abs2"]{left:137px;}
+[posAb="abs3"]{left:150px;}
+[posAb="abs4"]{left:183px;}
+[posAb="abs5"]{left:209px;}
+/*#bandShow li  [posAb="abs1"]{padding-left:44px;}
 #bandShow li  [posAb="abs2"]{padding-left:74px;}
-#bandShow li  [posAb="abs3"]{padding-left:124px;}
+#bandShow li  [posAb="abs3"]{padding-left:124px;}*/
 #bandShow li p{font-weight:300;}
 .posAb #bandShow li{position:absolute;}
 
 
-.hotPoint1{width:178px;height:52px;position:absolute;right:985px;top:451px;cursor: pointer;}
+.hotPoint1{width:178px;height:52px;position:absolute;right:382px;top:451px;cursor: pointer;}
 
 #serviceLevel{height:100%;margin-bottom:85px;}
 #contBoxn{height:430px;}
@@ -87,7 +95,7 @@
 #express span{display:inline-block;margin-left:30px;}
 #express p{margin-top:10px;margin-left:13px;color:#343434}
 #express b{display:inline-block;font-weight:normal;color:#ff7077;margin-left:10px;margin-right:10px;}
-#bann{width:100%;height:300px;position:relative;background:url(../../img/sao.jpg) no-repeat;background-size:100% 100%;overflow:hidden;cursor: pointer;}
+#bann{width:100%;height:320px;position:relative;background:url(../../img/sao.jpg) no-repeat;background-size:100% 100%;overflow:hidden;cursor: pointer;}
 
 #bann .flo_hot{width:256px;height:46px;position:absolute;top:218px;left:1166px;cursor: pointer;}
 
@@ -105,6 +113,10 @@
 [cla="pm1"] .pn1,[cla="pm1"] .pn2{margin-left:-30px;}
 [cla="pm3"] .pn1,[cla="pm3"] .pn2{margin-left:30px;}
 
+#bgColor{width:100%;height:575px;background:#fafafa;}
+#baozhang{width:172px;height:77px;padding-top:7px;margin:0 auto;text-align:center;}
+#baozhang [pro="a0"]{font-size:25px;height:47px;line-height:47px;}
+#baozhang [pro="a1"]{font-size:16px;line-height:16px;}
 #baoCon{width:1200px;height:382px;margin-bottom:109px;}
 #baoCon [promis]{width:300px;height:100%;text-align:center;}
 #baoCon [promis] img{margin:0 auto;margin-top:62px;margin-bottom:42px;}
@@ -138,7 +150,7 @@
 #bigBanner{width:100%;}
 #bigBanner img{width:100%;}
 #bigBanner .wangdian{width:890px;height:80px;}
-[waDin="wa1"]{font-size:26px;text-align:center;color:#343434;font-weight:bold;}
+[waDin="wa1"]{font-size:26px;text-align:center;color:#343434;}
 [waDin="wa2"]{font-size:12px;text-align:center;height:42px;line-height:42px;color:#acacac;margin-bottom:33px;}
 
 #ban2{width:1200px;height:320px;}
@@ -195,4 +207,4 @@
 
 #logoband .banner3 .btn_l { left: 0px; }
 #logoband .banner3 .btn_r { right:0px; }
-
+#world{width:210px;height:110px;line-height:110px;font-size:25px;margin:0 auto;}

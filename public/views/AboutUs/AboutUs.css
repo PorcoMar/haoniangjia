@@ -1,6 +1,6 @@
 #banTun{border-bottom:1px solid #f1f1f1;}
 
-#commt{margin-top:43px;}
+#commt{margin-top:43px;overflow:hidden;}
 
 #leftm{width:156px;height:300px;margin-left:47px;margin-right:64px;float:left;}
 #leftm .comp{width:156px;height:54px;border-bottom:1px solid #eaeaea;}
@@ -8,7 +8,7 @@
 #leftm span{display:inline-block;line-height:54px;height:54px;float:left;margin-left:22px;cursor: pointer;font-size:14px;}
 #leftm .comp img{visibility:hidden;}
 
-#rightm{width:933px;height:100%;;float:left;box-sizing:border-box;}
+#rightm{width:933px;height:100%;float:left;box-sizing:border-box;}
 
 
 /*.m1{visibility:visible;}

@@ -17,8 +17,10 @@
 </div>
 <script type="text/javascript">
 	var hash = window.location.hash.split("/")[1];
+	hash.indexOf("?") > 0 ?hash = hash.split("?")[0] :hash;
+	//console.log(hash)
 	var $li = $(".headUl li");
-	if(hash=="index"){
+	if(hash=="index" || hash=="News"){
 		css($li.eq(4))
 	}else if(hash=="ServiceMatron"){
 		css($li.eq(3))
@@ -26,7 +28,7 @@
 		css($li.eq(2))
 	}else if(hash=="Cooperation"){
 		css($li.eq(1))
-	}else if(hash=="AboutUs" || hash=="News" ){
+	}else if(hash=="AboutUs" || hash =="newDetial"){
 		css($li.eq(0))
 	}
 	else{

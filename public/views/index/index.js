@@ -1,38 +1,41 @@
-app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfig","$interval",function($scope,$rootScope,$location,$http,ServiceConfig,$interval){
-	$scope.winH = $(window).width();
-	$scope.Img = $("#ban1 .banner .img img");
-	$("#mianCont").height($(window).height()).width($("body").width());
-	$scope.Img.width($scope.winH);
-	$scope.bannerH = Math.floor($("#ban1 .banner .img").find("img:first").width()/3);
-	$("#ban1 .banner").height($scope.bannerH);
-	$scope.Img.height($scope.bannerH);
-	//console.log($(window).height(),$(document).height(),$("body").height())
-	$scope.bannH = Math.floor($("#bann").width()/6.4);
-	$("#bann").height($scope.bannH);
-	//console.log($("#bann").height())
-//轮播图设高
-$(".liCont").width($scope.winH);
-$.ajax({
-	url:req()+"h5_api/yuesaoAppointmentList",
-	type:"POST",
-		success:function(data){
-			$scope.list=new Array();
-			var data = JSON.parse(data).result;
-			//console.log(data);
-			for(var i in data){
-				var $list = data[i];
-				var item = {
-						name:name($list.name),
-						cellPhone:phoNumber($list.cellPhone),
-						createdTime:createTime(),
-						level:$list.level,
-						preBirthTime:preBirthTime($list.preBirthTime)
-					}
-				$scope.list.push(item);
-			}
-			$scope.shopList = $scope.list;
-		}
-})
+app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfig","$interval","$timeout",function($scope,$rootScope,$location,$http,ServiceConfig,$interval,$timeout){
+		$scope.winH = $(window).width();
+		$scope.Img = $("#ban1 .banner .img img");
+		$("#mianCont").height($(window).height()).width($("body").width());
+		$scope.Img.width($scope.winH);
+		$scope.bannerH = Math.floor($("#ban1 .banner .img").find("img:first").width()/3);
+		$("#ban1 .banner").height($scope.bannerH);
+		$scope.Img.height($scope.bannerH);
+		//console.log($(window).height(),$(document).height(),$("body").height())
+		$scope.bannH = Math.floor($("#bann").width()/6);
+		$("#bann").height($scope.bannH);		
+
+	window.onresize = function(){
+		$(window).width()>$("#mianCont").width()?window.location.reload():1			
+	}
+	$http({
+		url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentList",
+		method:'POST'
+	}).success(function(data,header,config,status){
+				//console.log(data)
+				$scope.list=new Array();
+				var data = data.result;
+				for(var i in data){
+					var $list = data[i];
+					var item = {
+							name:name($list.name),
+							cellPhone:phoNumber($list.cellPhone),
+							createdTime:createTime(),
+							level:$list.level,
+							preBirthTime:preBirthTime($list.preBirthTime)
+						}
+					$scope.list.push(item);
+				}
+				$scope.shopList = $scope.list;
+	
+	}).error(function(data,header,config,status){
+		console.log(data,header,config,status)
+	});
 
 /*预约服务*/
 	$scope.ecoo = function(){$location.path("/News")};
@@ -101,29 +104,26 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 	
 /*数字滚动*/
 $scope.numStart1 = 0;$scope.numStart2 = 0;$scope.numStart3 = 0;$scope.numStart4 = 0;$scope.numStart5 = 0;
-inter(125,8,"[numB='numB1']",$scope.numStart1)
-inter(100,10,"[numB='numB2']",$scope.numStart2)
-inter(20,50,"[numB='numB3']",$scope.numStart3)
-inter(33,30,"[numB='numB4']",$scope.numStart4)
-interB(50,20,"[numB='numB5']",$scope.numStart5)
-function inter(time,times,obj,Start){	
+inter(125,8,"[numB='numB1']",$scope.numStart1,1)
+inter(100,10,"[numB='numB2']",$scope.numStart2,1)
+inter(20,50,"[numB='numB3']",$scope.numStart3,1)
+//inter(33,30,"[numB='numB4']",$scope.numStart4,1)
+//inter(50,20,"[numB='numB5']",$scope.numStart5,250)
+inter(25,40,"[numB='numB4']",$scope.numStart4,125)
+inter(20,50,"[numB='numB5']",$scope.numStart5,6000)
+function inter(time,times,obj,Start,lang){	
 	$scope.numberScroll = $interval(function(){},time,times);
 	$scope.numberScroll.then(success, error, B1);
 		function B1(){
-			Start++;
-			$(obj).html(Start)
+			Start+=lang;
+			$(obj).text(Start)
 		}
 }
-function interB(time,times,obj,Start){	
-	$scope.numberScroll = $interval(function(){},time,times);
-	$scope.numberScroll.then(success, error, B2);
-		function B2(){
-			Start+=250;
-			$(obj).html(Start)
-		}	
-}
+$timeout(function(){
+	$("[numB='numB4']").html("5,000");
+	$("[numB='numB5']").html("300,000");
+},1300);
 
-	
 	angular.element("#mianCont").bind('scroll',function(){
 	//$("#mianCont").scroll(function () {
 
@@ -138,6 +138,7 @@ function interB(time,times,obj,Start){
 //		$scope.bigBanner = document.getElementById("bigBanner").offsetTop;
 //		$scope.logoband = document.getElementById("logoband").offsetTop;  
 		$scope.shop = document.getElementById("shop").offsetTop;  
+		$scope.world = document.getElementById("world").offsetTop;  
 		
 		$scope.scrollTop = $("#mianCont").scrollTop();
 		$scope.sc_Height0 = $("#mianCont").scrollTop()+$(window).height();
@@ -187,7 +188,8 @@ function interB(time,times,obj,Start){
 	/*bao 区*/
 		if ($scope.bao >= $scope.scrollTop && $scope.bao < $scope.sc_Height150) {
 			if(!$scope.onOffF){
-					active("[pro]","fadeInUp" ,"1.5s","0s")
+					active("[pro='a0']","fadeInUp" ,"1.5s","0s")
+					active("[pro='a1']","fadeInUp" ,"1.5s","0.3s")
 					active("[promis]","fadeInUp" ,"1.5s","0.5s")
 					mySwiper();
 					$scope.onOffF =true;
@@ -214,7 +216,7 @@ function interB(time,times,obj,Start){
 //			}
 //		}
 	/*wangdian 区*/
-		if ($scope.shop >= $scope.scrollTop && $scope.shop < $scope.sc_Height150) {
+		if ($scope.shop >= $scope.scrollTop && $scope.shop < $scope.sc_Height0) {
 			if(!$scope.onOffH){
 					active("[waDin='wa1']","fadeInUp" ,"1.5s","0s")
 					active("[waDin='wa2']","fadeInUp" ,"1.5s","0.2s")
@@ -223,14 +225,13 @@ function interB(time,times,obj,Start){
 			}
 		}		
 	/*logoband 区*/
-//		if ($scope.logoband >= $scope.scrollTop && $scope.logoband < $scope.sc_Height150) {
-//			if(!$scope.onOffC){
-//					active("[bandlogo]","fadeInUp" ,"1.5s","0.2s")
-//					active("[bandlogon]","fadeInUp" ,"1.2s","0s")
-//					mySwiper();
-//					$scope.onOffC =true;
-//			}
-//		}
+		if ($scope.world >= $scope.scrollTop && $scope.world < $scope.sc_Height0) {
+			if(!$scope.onOffC){
+					active("[laster]","fadeInUp" ,"1.5s","0s")
+					mySwiper();
+					$scope.onOffC =true;
+			}
+		}
 
 	
 });
@@ -306,22 +307,7 @@ function interB(time,times,obj,Start){
 	$(".bk4").mouseleave(function(){
 		$(this).css("background"," url(img/kv.png)")
 	})
-	
 
-
- /*鼠标移入效果*/
-
-		//controller("[rot]","rotateIn","0.8s","0s");
-	//logoband	
-		//controller("[bounce]","rubberBand","0.8s","0s");
-		//controller("[bounce='c6']","hinge","1.8s","0s");
-	//#bann	
-		//controller("[butnm]","swing","0.8s","0s");
-	//bandShow && bigBanner
-		//controller("[pulse]","pulse","0.8s","0s");
-	//honor 查看
-		//controller("[see]","swing","1s","0s");
-		
 //通过浏览器类型输出效果事件
 		var userAgent = navigator.userAgent;
 		if (!!window.ActiveXObject || "ActiveXObject" in window){
@@ -333,15 +319,12 @@ function interB(time,times,obj,Start){
 			controller("[rot]","rotateIn","0.8s","0s");
 		}
 
-
-
 $scope.$on("$destroy", function() {
     if (angular.isDefined($scope.inTerver)) {
         $interval.cancel($scope.inTerver);
         $scope.inTerver = undefined;
     }
 });	
-
 
 /*banner script*/
 	function ingSrc(obj,gapTime){
@@ -390,8 +373,6 @@ $scope.$on("$destroy", function() {
 					move();			
 				}
 		})
-
-	
 		if ($(obj+" .banner .btn_l")) {
 	
 		/*向左的按钮*/
@@ -403,7 +384,6 @@ $scope.$on("$destroy", function() {
 			i--
 			move();	
 		})
-		
 		/*向右的按钮*/
 		$(obj+" .banner .btn_r").stop(true).click(function(){
 		if(moving){
@@ -413,16 +393,13 @@ $scope.$on("$destroy", function() {
 			i++
 			move()				
 		})
-	
 		};
 		
 		function move(){
-			
 			if(i==size){
 				$(obj+" .banner  .img").css({left:0})			
 				i=1;
 			}
-			
 			// 修改轮播每屏宽度
 			if(i==-1){
 				$(obj+" .banner .img").css({left:-(size-1)*width})

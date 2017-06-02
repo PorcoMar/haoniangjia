@@ -6,7 +6,7 @@
 			}]);
 /*服务的URL配置*/
 			app.constant('ServiceConfig', {		
-				yizhenjia_shoping:'https://test.yizhenjia.com/xcxapi/',
+				haoniangjia:'http://appapi.yizhenjia.com/'
 			});		
 			app.config(["$routeProvider",function($routeProvider){
 				$routeProvider
