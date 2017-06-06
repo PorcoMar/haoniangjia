@@ -1,17 +1,21 @@
 app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfig","$interval","$timeout",function($scope,$rootScope,$location,$http,ServiceConfig,$interval,$timeout){
-		$scope.winH = $(window).width();
+	$scope.winH = $(window).width();
+//	if($scope.winH<500){
+//		$location.path("/test");
+//	}else{
 		$scope.Img = $("#ban1 .banner .img img");
-		$("#mianCont").height($(window).height()).width($("body").width());
+		$("#mianCont").height($(window).height());
 		$scope.Img.width($scope.winH);
-		$scope.bannerH = Math.floor($("#ban1 .banner .img").find("img:first").width()/3);
+		$scope.bannerH = Math.floor($scope.Img.width()/3);
 		$("#ban1 .banner").height($scope.bannerH);
 		$scope.Img.height($scope.bannerH);
 		//console.log($(window).height(),$(document).height(),$("body").height())
-		$scope.bannH = Math.floor($("#bann").width()/6);
+		$scope.bannH = Math.floor($scope.winH/6);
 		$("#bann").height($scope.bannH);		
-
+	
 	window.onresize = function(){
-		$(window).width()>$("#mianCont").width()?window.location.reload():1			
+		$scope.newWH = $(window).width();
+		$scope.newWH>$scope.winH?window.location.reload():$("#mianCont").height($(window).height());$("#bann").height(Math.floor($scope.newWH/6));
 	}
 	$http({
 		url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentList",
@@ -36,7 +40,27 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 	}).error(function(data,header,config,status){
 		console.log(data,header,config,status)
 	});
-
+/*数字滚动*/
+$scope.numStart1 = 0;$scope.numStart2 = 0;$scope.numStart3 = 0;$scope.numStart4 = 0;$scope.numStart5 = 0;
+inter(125,8,"[numB='numB1']",$scope.numStart1,1);
+inter(100,10,"[numB='numB2']",$scope.numStart2,1);
+inter(20,50,"[numB='numB3']",$scope.numStart3,1);
+//inter(33,30,"[numB='numB4']",$scope.numStart4,1)
+//inter(50,20,"[numB='numB5']",$scope.numStart5,250)
+inter(25,40,"[numB='numB5']",$scope.numStart4,125);
+inter(20,50,"[numB='numB4']",$scope.numStart5,6000);
+function inter(time,times,obj,Start,lang){	
+	$scope.numberScroll = $interval(function(){},time,times);
+	$scope.numberScroll.then(success, error, B1);
+		function B1(){
+			Start+=lang;
+			$(obj).text(Start)
+		}
+}
+$timeout(function(){
+	$("[numB='numB4']").html("300,000");
+	$("[numB='numB5']").html("5,000");
+},1300);
 /*预约服务*/
 	$scope.ecoo = function(){$location.path("/News")};
 	$scope.shus = function(){$location.path("/News")};
@@ -46,18 +70,18 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 /*查看新闻*/
 	$scope.lookA1 = function(){
 		$rootScope.a = true;
-		$location.path("/AboutUs")
+		$location.path("/AboutUs");
 	};
 	$scope.exe = function(){
 		$rootScope.a = true;
-		$location.path("/execcess")
+		$location.path("/execcess");
 	};
 /*移入变色*/
 	$("[promis]").mouseenter(function(){
-		$(this).find(".head").css({"color":"#fff"}).parent().find(".cont").css({"color":"#fff"})
+		$(this).find(".head").css({"color":"#fff"}).parent().find(".cont").css({"color":"#fff"});
 	})
 	$("[promis]").mouseleave(function(){
-		$(this).find(".head").css({"color":"#333"}).parent().find(".cont").css({"color":"#333"})
+		$(this).find(".head").css({"color":"#333"}).parent().find(".cont").css({"color":"#333"});
 	})
 	
 	
@@ -71,23 +95,23 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
  //imgscrool3('#logoband',8000);
 //移入变网点名称颜色
 $("#center .l").mouseenter(function(){
-	$(this).find(".wdTitle").css("color","#ff8188")	
+	$(this).find(".wdTitle").css("color","#ff8188");	
 })
 $("#center .l").mouseleave(function(){
-	$(this).find(".wdTitle").css("color","#333")	
+	$(this).find(".wdTitle").css("color","#333");	
 })
 //移入变左右箭头颜色
 $("#ban2 .banner2 .btn_l").mouseenter(function(){
-	$("#ban2 .banner2 .btn").css("background","#ff8188")	
+	$("#ban2 .banner2 .btn").css("background","#ff8188");	
 })
 $("#ban2 .banner2 .btn_r").mouseenter(function(){
-	$("#ban2 .banner2 .btn2").css("background","#ff8188")	
+	$("#ban2 .banner2 .btn2").css("background","#ff8188");	
 })
 $("#ban2 .banner2 .btn_l").mouseleave(function(){
-	$("#ban2 .banner2 .btn").css("background","#cecece")	
+	$("#ban2 .banner2 .btn").css("background","#cecece");	
 })
 $("#ban2 .banner2 .btn_r").mouseleave(function(){
-	$("#ban2 .banner2 .btn2").css("background","#cecece")	
+	$("#ban2 .banner2 .btn2").css("background","#cecece");	
 })
 /*右滑块*/	
 //	var offsetTo = ($(window).height()-$("#div1").height())/2
@@ -97,33 +121,11 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 
 /*自动播放*/
 	//console.log($("#serviceLevel").offset().top)
-	active("[posAb]","fadeInDown" ,"1.5s","0s")
-	active("[numB]","fadeInUp" ,"1.5s","0s")
-	active("[pp]","fadeInUp" ,"1.2s","0.5s")
+	active("[posAb]","fadeInDown" ,"1.5s","0s");
+	active("[numB]","fadeInUp" ,"1.5s","0s");
+	active("[pp]","fadeInUp" ,"1.2s","0.5s");
 	mySwiper();
 	
-/*数字滚动*/
-$scope.numStart1 = 0;$scope.numStart2 = 0;$scope.numStart3 = 0;$scope.numStart4 = 0;$scope.numStart5 = 0;
-inter(125,8,"[numB='numB1']",$scope.numStart1,1)
-inter(100,10,"[numB='numB2']",$scope.numStart2,1)
-inter(20,50,"[numB='numB3']",$scope.numStart3,1)
-//inter(33,30,"[numB='numB4']",$scope.numStart4,1)
-//inter(50,20,"[numB='numB5']",$scope.numStart5,250)
-inter(25,40,"[numB='numB4']",$scope.numStart4,125)
-inter(20,50,"[numB='numB5']",$scope.numStart5,6000)
-function inter(time,times,obj,Start,lang){	
-	$scope.numberScroll = $interval(function(){},time,times);
-	$scope.numberScroll.then(success, error, B1);
-		function B1(){
-			Start+=lang;
-			$(obj).text(Start)
-		}
-}
-$timeout(function(){
-	$("[numB='numB4']").html("5,000");
-	$("[numB='numB5']").html("300,000");
-},1300);
-
 	angular.element("#mianCont").bind('scroll',function(){
 	//$("#mianCont").scroll(function () {
 
@@ -149,9 +151,9 @@ $timeout(function(){
 	/*serviceLevel 区*/
 		if ($scope.serviceLevel >= $scope.scrollTop && $scope.serviceLevel < $scope.sc_Height150) {
 			if(!$scope.onOffA){
-					active("[serlevel='a1']","fadeInUp" ,"1.5s","0s")
-					active("[serlevel='a2']","fadeInUp" ,"1.5s","0.2s")
-					active("[serlevel='a3']","fadeInUp" ,"1.5s","0.4s")
+					active("[serlevel='a1']","fadeInUp" ,"1.5s","0s");
+					active("[serlevel='a2']","fadeInUp" ,"1.5s","0.2s");
+					active("[serlevel='a3']","fadeInUp" ,"1.5s","0.4s");
 					mySwiper();
 					$scope.onOffA =true;
 			}
@@ -160,10 +162,10 @@ $timeout(function(){
 	/*contBoxn 区*/
 		if ($scope.contBoxn >= $scope.scrollTop && $scope.contBoxn < $scope.sc_Height150) {
 			if(!$scope.onOffD){
-					active("[contbox='a3']","fadeInLeft" ,"1.5s","0.2s")
-					active("[contbox='a2']","fadeInLeft" ,"1.5s","0.4s")
-					active("[contbox='a1']","fadeInLeft" ,"1.5s","0.6s")
-					active("[contbox='a4']","fadeInRight" ,"1.7s","0.4s")
+					active("[contbox='a3']","fadeInLeft" ,"1.5s","0.2s");
+					active("[contbox='a2']","fadeInLeft" ,"1.5s","0.4s");
+					active("[contbox='a1']","fadeInLeft" ,"1.5s","0.6s");
+					active("[contbox='a4']","fadeInRight" ,"1.7s","0.4s");
 					mySwiper();
 					$scope.onOffD =true;
 			}
@@ -171,15 +173,15 @@ $timeout(function(){
 	/*process 区*/
 		if ($scope.process >= $scope.scrollTop && $scope.process < $scope.sc_Height150) {
 			if(!$scope.onOffE){
-					active("[pros='a1']","fadeInUp" ,"1.5s","0s")
-					active("[pros='a2']","fadeInUp" ,"1.5s","0s")
-					active("[ng='b1']","fadeInUp" ,"0.8s","0.2s")
-					active("[ng='b2']","fadeInUp" ,"0.9s","0.3s")
-					active("[ng='b3']","fadeInUp" ,"1s","0.4s")
-					active("[ng='b4']","fadeInUp" ,"1.1s","0.5s")
-					active("[ng='b5']","fadeInUp" ,"1.2s","0.6s")
-					active("[ng='b6']","fadeInUp" ,"1.3s","0.7s")
-					active("[ng='b7']","fadeInUp" ,"1.4s","0.8s")
+					active("[pros='a1']","fadeInUp" ,"1.5s","0s");
+					active("[pros='a2']","fadeInUp" ,"1.5s","0s");
+					active("[ng='b1']","fadeInUp" ,"0.8s","0.2s");
+					active("[ng='b2']","fadeInUp" ,"0.9s","0.3s");
+					active("[ng='b3']","fadeInUp" ,"1s","0.4s");
+					active("[ng='b4']","fadeInUp" ,"1.1s","0.5s");
+					active("[ng='b5']","fadeInUp" ,"1.2s","0.6s");
+					active("[ng='b6']","fadeInUp" ,"1.3s","0.7s");
+					active("[ng='b7']","fadeInUp" ,"1.4s","0.8s");
 					
 					mySwiper();
 					$scope.onOffE =true;
@@ -188,9 +190,9 @@ $timeout(function(){
 	/*bao 区*/
 		if ($scope.bao >= $scope.scrollTop && $scope.bao < $scope.sc_Height150) {
 			if(!$scope.onOffF){
-					active("[pro='a0']","fadeInUp" ,"1.5s","0s")
-					active("[pro='a1']","fadeInUp" ,"1.5s","0.3s")
-					active("[promis]","fadeInUp" ,"1.5s","0.5s")
+					active("[pro='a0']","fadeInUp" ,"1.5s","0s");
+					active("[pro='a1']","fadeInUp" ,"1.5s","0.3s");
+					active("[promis]","fadeInUp" ,"1.5s","0.5s");
 					mySwiper();
 					$scope.onOffF =true;
 			}
@@ -199,8 +201,8 @@ $timeout(function(){
 	/*honor 区*/
 		if ($scope.honor >= $scope.scrollTop && $scope.honor < $scope.sc_Height150) {
 			if(!$scope.onOffG){
-					active("[fadein='left']","bounceInLeft" ,"1.5s","0.1s")
-					active("[fadein='right']","bounceInRight" ,"1.5s","0.1s")
+					active("[fadein='left']","bounceInLeft" ,"1.5s","0.1s");
+					active("[fadein='right']","bounceInRight" ,"1.5s","0.1s");
 					mySwiper();
 					$scope.onOffG =true;
 			}
@@ -218,8 +220,8 @@ $timeout(function(){
 	/*wangdian 区*/
 		if ($scope.shop >= $scope.scrollTop && $scope.shop < $scope.sc_Height0) {
 			if(!$scope.onOffH){
-					active("[waDin='wa1']","fadeInUp" ,"1.5s","0s")
-					active("[waDin='wa2']","fadeInUp" ,"1.5s","0.2s")
+					active("[waDin='wa1']","fadeInUp" ,"1.5s","0s");
+					active("[waDin='wa2']","fadeInUp" ,"1.5s","0.2s");
 					mySwiper();
 					$scope.onOffH =true;
 			}
@@ -227,7 +229,7 @@ $timeout(function(){
 	/*logoband 区*/
 		if ($scope.world >= $scope.scrollTop && $scope.world < $scope.sc_Height0) {
 			if(!$scope.onOffC){
-					active("[laster]","fadeInUp" ,"1.5s","0s")
+					active("[laster]","fadeInUp" ,"1.5s","0s");
 					mySwiper();
 					$scope.onOffC =true;
 			}
@@ -417,5 +419,5 @@ $scope.$on("$destroy", function() {
 		}	
 	}
 
-		
+//	}		
 }])

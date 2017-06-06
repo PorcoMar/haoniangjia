@@ -43,14 +43,14 @@
 #bandShow li{width:240px;height:150px;text-align:center;padding-top:50px;color:#333;position:relative;}
 #bandShow li [numA]{width:240px;height:150px;}
 #bandShow li [numB]{font-size:45px;line-height:45px;font-weight:400;margin-bottom: 10px;}
-#bandShow li  [posAb]{background:#ff696a;font-size:16px;border-radius: 3px;text-align:center;position:absolute;top:75px;color:#fff;}
+#bandShow li  [posAb]{background:#ff696a;font-size:16px;border-radius: 3px;text-align:center;position:absolute;top:70px;color:#fff;}
 #bandShow li  [posAb="abs1"],[posAb="abs2"]{width:18px;}
 #bandShow li  [posAb="abs3"],[posAb="abs4"],[posAb="abs5"]{width:30px;}
 [posAb="abs1"]{left:150px;}
 [posAb="abs2"]{left:137px;}
 [posAb="abs3"]{left:150px;}
-[posAb="abs4"]{left:183px;}
-[posAb="abs5"]{left:209px;}
+[posAb="abs4"]{left:209px;}
+[posAb="abs5"]{left:183px;}
 /*#bandShow li  [posAb="abs1"]{padding-left:44px;}
 #bandShow li  [posAb="abs2"]{padding-left:74px;}
 #bandShow li  [posAb="abs3"]{padding-left:124px;}*/

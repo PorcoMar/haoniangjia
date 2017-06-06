@@ -18,10 +18,11 @@
 
 .yued{padding-top:5px;color:#ff6e78;font-size:20px;height:45px;line-height:45px;}
 .kn{width:568px;height:67px;background:#fef2dc;color:#ff9800;border:1px solid #ffdba7;padding-left:14px;margin-top:16px;margin-bottom:36px;padding-top:9px;font-size:16px;line-height:29px;}
-.nR{width:590px;height:50px;margin-bottom:40px;}
+.nR{width:590px;height:50px;margin-bottom:40px;position:relative;}
 .nR span{display:inline-block;width:98px;text-align:right;font-size:15px;height:50px;line-height:50px;margin-right:24px;}
 .nR span b{color:#ff6f79;font-weight:normal;display:inline-block;line-height:50px;height:40px;margin-right:10px;}
 .nR .inpm{width:426px;height:48px;padding-left:20px;}
+.nR .datev{position:absolute;top:2px;right:20px;width:446px;height:48px;cursor: pointer;}
 
 #subm{width:300px;height:50px;margin-left:120px;}
 #subm .submitm{width:148px;height:50px;line-height:50px;color:#fff;background:#ff7177;text-align:center;margin-right:30px;cursor: pointer;}
