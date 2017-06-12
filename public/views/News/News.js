@@ -1,8 +1,7 @@
-app.controller("fuck", ["$scope","$location","$sce","$interval","$timeout",function($scope,$location,$sce,$interval,$timeout){
-
+app.controller("fuck", ["$scope","$location","$http","ServiceConfig","$interval",function($scope,$location,$http,ServiceConfig,$interval){
 
 $.ajax({
-	url:req()+"h5_api/yuesaoAppointmentList",
+	url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentList",
 	type:"POST",
 		success:function(data){
 			$scope.list=new Array();
@@ -23,14 +22,13 @@ $.ajax({
 		}
 })
 /*滚动显示内容*/
-  var demoScro=document.getElementById("demoScro");
-  var demoScro1=document.getElementById("demoScro1");
-  var demoScro2=document.getElementById("demoScro2");
-  //$("#demoScro").height("350");
-  demoScro2.innerHTML=demoScro1.innerHTML;
-  demoScro.style.height=document.getElementById("express").offsetHeight+"px";
-  demoScro2.style.height=demoScro.offsetHeight+"px";
-
+var demoScro=document.getElementById("demoScro");
+var demoScro1=document.getElementById("demoScro1");
+var demoScro2=document.getElementById("demoScro2");
+//$("#demoScro").height("350");
+demoScro2.innerHTML=demoScro1.innerHTML;
+demoScro.style.height=document.getElementById("express").offsetHeight+"px";
+demoScro2.style.height=demoScro.offsetHeight+"px";
 /*$interval*/
 	$scope.timer = $interval(function(){},80);
 	
@@ -53,7 +51,6 @@ $.ajax({
 	      demoScro.scrollTop++;
 	    }
 	}
-
 	$scope.mouover = function(){
 		 $interval.cancel($scope.timer);
 	}
@@ -73,7 +70,7 @@ $scope.subTn = function(){
 	}else{
 		
 		$.ajax({
-		    url:req()+"h5_api/yuesaoAppointmentSave",
+		    url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentSave",
 		    type: "POST",
 		    data: {
 		        name:$scope.name,
@@ -95,5 +92,41 @@ $scope.subTn = function(){
 	}
 	
 }
+
+/*citypicker*/	
+		mui.init();
+		mui.ready(function() {
+			var cityPicker3 = new mui.PopPicker({
+				layer: 3
+			});
+			cityPicker3.setData(cityData3);
+			var showCityPickerButton = document.getElementById('showCityPicker3');
+			var cityResult3 = document.getElementById('cityResult3');
+			showCityPickerButton.addEventListener('tap', function(event) {
+				cityPicker3.show(function(items) {
+					cityResult3.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+					//返回 false 可以阻止选择框的关闭
+					//return false;
+				});
+			}, false);	
+		});
 	
+/*timepicker*/	
+	(function($) {
+		$.init();
+		var result = $('#result')[0];
+		var btns = $('.btn');
+		btns.each(function(i, btn) {
+			btn.addEventListener('tap', function() {
+				var optionsJson = this.getAttribute('data-options') || '{}';
+				var options = JSON.parse(optionsJson);
+				var id = this.getAttribute('id');
+				var picker = new $.DtPicker(options);
+				picker.show(function(rs) {
+					result.value = rs.text;
+					picker.dispose();
+				});
+			}, false);
+		});
+	})(mui);	
 }])

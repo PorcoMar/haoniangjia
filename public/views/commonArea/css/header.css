@@ -1,6 +1,7 @@
 #top_header{height:100px;background: #fff;}
 #float_left{width:350px;height:100%;}
-#float_right{width:700px;height:100%;}
+#float_right{width:550px;height:100%;}
 #float_right ul li{height:100px;line-height:100px;margin-left:50px;font-size:16px;cursor: pointer;}
 .firP{color:#ed5259;}
 .headUl li{box-sizing: border-box;}
+.numb{width:250px;height:60px;margin-left:43px;padding-top:40px;}

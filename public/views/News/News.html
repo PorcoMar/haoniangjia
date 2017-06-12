@@ -1,10 +1,7 @@
 <link rel="stylesheet" type="text/css" href="views/News/News.css"/>
 <P ng-include="'views/commonArea/html/header.html'"></P>
 <P ng-include="'views/commonArea/html/rightScrollBlock.html'"></P>
-<div class="swiper-container">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			
+		
 	<div id="banTun">
 		<div id="naver" class="w">
 			<a href="#/index">您的位置： 首页 - </a><a href="#/AboutUs">关于我们 - </a><span>预约月嫂</span>
@@ -24,12 +21,14 @@
 				<input type="text" placeholder="" class="inpm oc2" />
 			</div>
 			<div class="nR">
+				<div class="datev btn" id='demo1' data-options='{"type":"date","beginYear":1900,"endYear":2100}' ></div>
 				<span class="mz l"><b>*</b>预产期</span>
-				<input type="text" placeholder="2018-05-07" class="inpm oc3" />
+				<input type="text" placeholder="2018-05-07" class="inpm oc3 ui-alert" id='result'/>
 			</div>
 			<div class="nR">
+				<div class="datev" id='showCityPicker3'></div>
 				<span class="mz l"><b>*</b>所在城市</span>
-				<input type="text" placeholder="上海市" class="inpm oc4" />
+				<input type="text" placeholder="上海市" class="inpm oc4" id='cityResult3'/>
 			</div>
 			<div class="nR" style="margin-bottom:64px;">
 				<span class="mz l">预约级别</span>
@@ -61,13 +60,7 @@
 			<div class="botomm"></div>	
 			</div>
 
-
-
 	</div>
 
-
-			</div>
-		</div>
-	</div>
-	
 <P ng-include="'views/commonArea/html/footer.html'"></P>
+<P ng-include="'views/commonArea/html/baidutongji.html'"></P>

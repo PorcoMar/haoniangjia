@@ -1,8 +1,5 @@
 app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfig","$interval","$timeout",function($scope,$rootScope,$location,$http,ServiceConfig,$interval,$timeout){
 	$scope.winH = $(window).width();
-//	if($scope.winH<500){
-//		$location.path("/test");
-//	}else{
 		$scope.Img = $("#ban1 .banner .img img");
 		$("#mianCont").height($(window).height());
 		$scope.Img.width($scope.winH);
@@ -16,7 +13,7 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 	window.onresize = function(){
 		$scope.newWH = $(window).width();
 		$scope.newWH>$scope.winH?window.location.reload():$("#mianCont").height($(window).height());$("#bann").height(Math.floor($scope.newWH/6));
-	}
+	};
 	$http({
 		url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentList",
 		method:'POST'
@@ -418,6 +415,5 @@ $scope.$on("$destroy", function() {
 			}
 		}	
 	}
-
-//	}		
+		
 }])

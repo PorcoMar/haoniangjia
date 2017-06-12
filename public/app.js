@@ -10,7 +10,7 @@
 			});		
 			app.config(["$routeProvider",function($routeProvider){
 				$routeProvider
-				.when("/index",{					
+				.when("/",{					
 					templateUrl:"views/index/index.html",		
 					controller:"index"
 				})
@@ -46,8 +46,16 @@
 					templateUrl:"views/newDetial/newDetial.html",		
 					controller:"newDetial"
 				})
+				.when("/activity_phone",{				
+					templateUrl:"views/activity_phone/activity_phone.html",		
+					controller:"activity_phone"
+				})
+				.when("/webActivity",{				
+					templateUrl:"views/webActivity/webActivity.html",		
+					controller:"webActivity"
+				})
 				.otherwise({
-					redirectTo:"/index"
+					redirectTo:"/"
 				})
 				
 			}])

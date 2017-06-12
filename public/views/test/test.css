@@ -1,29 +1,106 @@
-	#block{width:100%;height:1000px;}
-	#eq{width:100%;height:800px;background: greenyellow;margin-bottom:30px;}
-	#eq1{width:100%;height:1300px;background: #ccc;margin-bottom:30px;}
-	#eq2{width:100%;height:500px;background: yellowgreen;margin-bottom:30px;}
-	#eq3{width:100%;height:800px;background: orange;margin-bottom:30px;}
-	
-#topFix{width:100%;height:50px;position: fixed;top:0;background: #ccc;z-index:99;}
-.li{float:left;height:40px;line-height:40px;width:20%;font-size:30px;text-align:center;}
+#block{width:100%;}
+#showBand{width:100%;height:12.8rem;}
+#showBand img.imh{width:50%;float:left;}
+#showBand img.img{width:100%;float:left;}
+
+#logen{width:100%;height:1.07rem;border-bottom:1px solid #e0e0e0;}	
+#logen img{width:5.55rem;}	
+.topFix{width:100%;height:50px;position: fixed;top:0;background: #ccc;z-index:99;display:none;}
+.li{float:left;height:50px;line-height:50px;width:20%;font-size:30px;text-align:center;}
 /*.li:first-child{border-bottom:1px solid red;}*/	
+#nav{width:100%;height:50px;background: #ccc;}
 
-#banmer{width: 300px; height: 600px;position: relative;margin:0 auto;}
-#banmer .banner {width: 300px; height: 600px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; }
-#banmer .banner .img { width: 99999px; position: absolute; left: 0px; top: 40px; }
-#banmer .banner .img li { float: left;}
-#banmer .banner .img img {/*height: 300px;*/width:300px;}
-
-/*/ 小圆圈 /*/
-#banmer .banner .num { position: absolute; width: 100%; bottom: 10px; left: 0; top:0;text-align: center;}
-#banmer .banner .num li { width: 40px; height: 40px; background: #fff;border-radius:60px;  display: inline-block;margin-right:20px; }
-#banmer .banner .num li.on { background: #F60; }
-/*/ 按钮 /*/
-#banmer .btn { width: 45px; height: 85px; position: absolute; top: 50%; margin-top: -42px; cursor: pointer; text-align: center; line-height: 85px; color: #fff; font-size: 40px;
+.swiper-container{
+	width:100%;height:16rem;background: #fff;
 }
-#banmer .btn_l { left: -30px; }
-#banmer .btn_r { right: -30px; }
+.swiper-wrapper{
+	width:100%;height:100%;
+}
+.swiper-slide{width:100%;height:100%}
+/*.swiper-slide img{height:16rem;}*/
+.swiper-slide a{display:block;width:100%;height:16rem;background: url(../../img/top.png) no-repeat;background-position: center;background-size:16rem 16rem;}
+
+#eq{width:100%;margin-bottom:2.22rem;}
+.ysfw{font-size:0.555rem;width:100%;height:1.152rem;margin-top:1.07rem;margin-bottom:1.4rem;}
+.ysfw p{height:0.896rem;line-height:0.896rem;width:2.5rem;text-align:center;margin:0 auto;font-weight:bold;border-bottom:1px solid #ff7076;}
+.ysfw img{width:0.3rem;height:0.17rem;margin:0 auto;}
+#banmer{width:12rem; height:18.8rem;position: relative;margin:0 auto;border-bottom:1px solid red;}
+#banmer .banner {width: 9.6rem; height: 18.8rem; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;margin:0 auto; margin-top:1rem;}
+#banmer .banner .img { width: 99999px; position: absolute; left: 0px;}
+#banmer .banner .img li { float: left;}
+#banmer .banner .img img {/*height: 300px;*/width:9.6rem;height:9.6rem;border-radius: 300px;}
+
+.pri{width:9.6rem;height:1.96rem;font-size:0.725rem;margin-top:0.21rem;margin:0 auto;font-weight:bold;}
+.pri .l{line-height:1.96rem;margin-left:0.2rem;}
+.pri .r{line-height:1.96rem;color:#ff7177;margin-right:0.2rem;}
+.listm{width:9.6rem;min-height:3rem;}
+.listm span{display: inline-block;width: 0.1rem;height: 0.1rem;border-radius: 6px;background: #333;margin-bottom:0.1rem;margin-right:0.1rem;}
+.listm p{height:0.64rem;line-height:0.64rem;font-size:0.384rem;}
+/*/ 小圆圈 /*/
+#banmer .num {position: relative; width: 100%;height:1.07rem;left: 0rem;font-size:0.597rem; top:0;text-align: center;}
+#banmer .num li { width: 3.4rem; height: 1.07rem;line-height: 1.07rem; background: #fff;border-radius:5px;  display: inline-block;margin-right:0.384rem; }
+#banmer .num li.on { background: #ff7076; color:#fff;}
+/*/ 按钮 /*/
+#banmer .btnm { width: 0.68rem; height: 0.68rem; position: absolute; top: 39%;cursor: pointer; text-align: center; line-height: 0.64rem; color:#ff7076; font-size: 0.6rem;
+}
+#banmer .btn_l { left: -1.7em;background:red;background: url(../../img/zuo.png) no-repeat;background-size:100% ; }
+#banmer .btn_r { right: -1rem; background: url(../../img/you.png) no-repeat;background-size:100% ; }
+.submitm{width:4.864rem;height:1.28rem;line-height:1.28rem;border:1px solid #ff7076;text-align:center;color:#ff7076;font-size:0.512rem;margin:0.64rem auto;border-radius: 6px;}
+
+#eq1{width:100%;}
+.yuding_progress{font-size:0.555rem;width:100%;height:1.152rem;}
+.yuding_progress p{height:0.896rem;line-height:0.896rem;width:3.6rem;text-align:center;margin:0 auto;font-weight:bold;border-bottom:1px solid #ff7076;}
+.yuding_progress img{width:0.3rem;height:0.17rem;margin:0 auto;}
+.fwnr{font-size:0.555rem;width:100%;height:1.152rem;margin-bottom:1.2rem;}
+.fwnr p{height:0.896rem;line-height:0.896rem;width:2.5rem;text-align:center;margin:0 auto;font-weight:bold;border-bottom:1px solid #ff7076;}
+.fwnr img{width:0.3rem;height:0.17rem;margin:0 auto;}
+#pading{width:15.36rem;margin:0 auto;border-bottom:3px double blue;}
+.switchShow{width:100%;height:1.24rem;display:flex;box-orient:horizontal;align-items:center;justify-content: space-between;}
+.switchShow li{width:4rem;height:1.24rem;line-height:1.24rem;text-align:center;border-radius: 5px;font-size:0.42rem;border:1px solid #999999;}
+.switchShow li:nth-child(1){background: #fc5a5f;color:#fff;border:0;}
+.serCont{width:100%;min-height:3rem;/*border: 1px solid red;*/}
+.serCont .SCA{width:15.36rem;height:25.38rem;background: url(../../img/ser1.png);background-size:100% ;}
+.serCont .SCB{width:100%;height:5rem;background: yellow;}
+.serCont .SCC{width:100%;height:8rem;background: purple;}
+#baozhang .yuding_progress{margin-top:1.28rem;margin-bottom:2.35rem;}
+.baoC{width:15.36rem;height:7.5rem;border-bottom:1px double purple;}
+.baoC li{float:left;width:3.84rem;height:7.5rem;text-align:center;}
+.baoC li img{width:3.1rem;height:3.1rem;margin:0 auto;border-radius: 150px;}
+.baoC li .head{margin-top:0.28rem;height:1.152rem;line-height:1.152rem;font-size:0.39rem;}
+.baoC li .cont{font-size:0.3rem;line-height:0.7rem;}
+#liuc .ysfw{margin-top:1.8rem;margin-bottom:1.3rem;}
+
+#eq2{width:100%;min-height:5rem;background: yellowgreen;/*border:1px solid blue;*/}
+#about .ysfw{margin-bottom:0rem;}
+#zuji .ysfw{margin-bottom:0rem;}
+
+
+
+
+
+
+
+
+#eq3{width:100%;height:800px;background: orange;margin-bottom:30px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #returnTop{width:50px;height:50px;line-height:50px;text-align:center;border-radius: 50px;background: red;position:fixed;bottom:20px;right:5px;font-size:.5rem;}
+
 
