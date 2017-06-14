@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="views/submit_phone/submit_phone.css"/>
+		<div class="zuo l">
+			<p class="yued">预约月嫂</p>
+			<img src="img/ss.png" style="width:14.72rem;margin-bottom:1.024rem;"/>
+			<div class="nR">
+				<span class="mz l"><b>*</b>姓名</span>
+				<input type="text" class="inpm oc1" />
+			</div>
+			<div class="nR">
+				<span class="mz l"><b>*</b>电话</span>
+				<input type="number" class="inpm oc2" />
+			</div>
+			<div class="nR">
+				<div class="datev btn" id='demo1' data-options='{"type":"date","beginYear":1900,"endYear":2100}' ></div>
+				<span class="mz l"><b>*</b>预产期</span>
+				<input type="text" class="inpm oc3 ui-alert" id='result'/>
+			</div>
+			<div class="nR">
+				<div class="datev" id='showCityPicker3'></div>
+				<span class="mz l"><b>*</b>所在城市</span>
+				<input type="text"  class="inpm oc4" id='cityResult3'/>
+			</div>
+			<div class="nR">
+				<div class="datev" id='showUserPicker' class="mui-btn mui-btn-block"></div>
+				<span class="mz l">预约级别</span>
+				<input type="text" class="inpm oc5 ui-alert" id='userResult'/>
+			</div>
+
+			<div id="subm">
+				<p>"<span>*</span>"为必填</p>
+				<div class="submitm l" ng-click="subTn()">提交</div>
+			</div>
+		</div>
+<P ng-include="'views/commonArea/html/rem.html'"></P>
+<P ng-include="'views/commonArea/html/baidutongji.html'"></P>
+
+
+
+

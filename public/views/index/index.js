@@ -1,5 +1,8 @@
 app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfig","$interval","$timeout",function($scope,$rootScope,$location,$http,ServiceConfig,$interval,$timeout){
 	$scope.winH = $(window).width();
+	if($scope.winH<500){
+		$location.path("/test");
+	}else{
 		$scope.Img = $("#ban1 .banner .img img");
 		$("#mianCont").height($(window).height());
 		$scope.Img.width($scope.winH);
@@ -415,5 +418,5 @@ $scope.$on("$destroy", function() {
 			}
 		}	
 	}
-		
+}		
 }])

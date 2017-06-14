@@ -6,6 +6,7 @@
 			}]);
 /*服务的URL配置*/
 			app.constant('ServiceConfig', {		
+				yizhenjia_shoping:'https://test.yizhenjia.com/xcxapi/',
 				haoniangjia:'http://appapi.yizhenjia.com/'
 			});		
 			app.config(["$routeProvider",function($routeProvider){
@@ -53,6 +54,10 @@
 				.when("/webActivity",{				
 					templateUrl:"views/webActivity/webActivity.html",		
 					controller:"webActivity"
+				})
+				.when("/submit_phone",{				
+					templateUrl:"views/submit_phone/submit_phone.html",		
+					controller:"submit_phone"
 				})
 				.otherwise({
 					redirectTo:"/"

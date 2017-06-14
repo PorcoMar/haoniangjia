@@ -1,16 +1,16 @@
-<link rel="stylesheet" type="text/css" href="views/test/test.css"/>
 <!--百度地图-->
     <!--<div class="demo_main">
         <fieldset class="demo_content">
             <div id="map" class="map"> </div>
         </fieldset>
     </div>-->
-    
+<div id="displaym">	
 <div class="topFix">
-	<a class="li li1" ng-click="target1()">11</a>
-	<a class="li li2" ng-click="target2()">22</a>
-	<a class="li li3" ng-click="target3()">33</a>
-	<a class="li li4" ng-click="target4()">44</a>
+	<a class="li li1" ng-click="target1()">您的好娘家</a>
+	<a class="li li2" ng-click="target2()">月嫂服务</a>
+	<a class="li li3" ng-click="target3()">合作加盟</a>
+	<a class="li li4" ng-click="target4()">关于我们</a>
+</div>
 </div>
 <div id="block">
 <div id="logen">
@@ -19,13 +19,13 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-        	<a href="#/activity_phone"></a>
+        	<a class="aa" href="#/activity_phone"></a>
         </div>
         <div class="swiper-slide">
-        	<a href="#/activity_phone"></a>
+        	<a class="ab" href="#/activity_phone"></a>
         </div>
         <div class="swiper-slide">
-        	<a href="#/activity_phone"></a>
+        	<a class="ac" href="#/activity_phone"></a>
         </div>
     </div>
     <!-- 如果需要分页器 -->
@@ -40,11 +40,15 @@
 </div>				
 	
 <div id="nav">
-	<a class="li li1" ng-click="target1()">11</a>
-	<a class="li li2" ng-click="target2()">22</a>
-	<a class="li li3" ng-click="target3()">33</a>
-	<a class="li li4" ng-click="target4()">44</a>					
+	<a class="li li1" ng-click="target1()">您的好娘家</a>
+	<a class="li li2" ng-click="target2()">月嫂服务</a>
+	<a class="li li3" ng-click="target3()">合作加盟</a>
+	<a class="li li4" ng-click="target4()">关于我们</a>					
 </div>
+
+</div>	
+			
+<div id="eq">
 <div id="showBand">
 	<img class="imh" src="img/show1.png"/>
 	<img class="imh"  src="img/show2.png"/>
@@ -54,7 +58,8 @@
 </div>
 </div>	
 			
-<div id="eq">
+
+<div id="eq1">
 	<div class="ysfw">
 		<p>月嫂服务</p>
 		<img src="img/san.png"/>
@@ -75,20 +80,18 @@
 	      	</div>	
 	      	<div class="listm">
 	      		<p><span></span>月嫂行业1-3年工作经验</p>
-				<p><span></span>服务侧重于妈妈、宝宝的基础护理</p>
-				<p style="margin-left:0.2rem;">服务</p>
+				<p><span></span>服务侧重于妈妈、宝宝的基础护理服务</p>
 				<p><span></span>专业的月子餐（三餐）制作</p>
 				<p><span></span>基础的头部肩颈按摩</p>	      		
 	      	</div>
 			</li>
-	      <li><img src="img/a1.png">
+	      <li><img src="img/a2.png">
 	      	<div class="pri">
 	      		<p class="l">舒适型</p>
 	      		<p class="r">9,980元</p>
 	      	</div>	
 	      	<div class="listm">
-				<p><span></span>从事月嫂行业3年及以上，客户满意</p>
-				<p style="margin-left:0.2rem;">度高</p>
+				<p><span></span>从事月嫂行业3年及以上，客户满意度高</p>
 				<p><span></span>娴熟的产妇、宝宝的基础护理服务</p>
 				<p><span></span>专业月子餐（三餐两点）</p>
 				<p><span></span>会新生儿早期教育</p>
@@ -96,16 +99,14 @@
 				<p><span></span>除基础按摩外，提供专业子宫按摩</p>      		
 	      	</div>
 	      </li>
-	      <li><img src="img/a1.png">
+	      <li><img src="img/a3.png">
 	      	<div class="pri">
 	      		<p class="l">尊享型</p>
 	      		<p class="r">11,980元</p>
 	      	</div>	
 	      	<div class="listm">
-				<p><span></span>从事月嫂行业5年及以上，客户好评</p>
-				<p style="margin-left:0.2rem;">率高</p>
-				<p><span></span>技能娴熟，礼仪、情商得到客户的</p>
-				<p style="margin-left:0.2rem;">一致好评</p>
+				<p><span></span>从事月嫂行业5年及以上，客户好评率高</p>
+				<p><span></span>技能娴熟，礼仪、情商得到客户的一致好评</p>
 				<p><span></span>善于月子餐制作，三餐三点</p>
 				<p><span></span>会小儿推拿，解决宝宝常见小问题</p>
 				<p><span></span>科学指导妈妈和宝宝的互动</p>
@@ -118,11 +119,7 @@
     <div class="btnm btn_r"></div>  
 	</div>			
 	
-	<div class="submitm">预约享好礼</div>
-</div>	
-			
-
-<div id="eq1">
+	<div class="submitm" ng-click="know2()">预约享好礼</div>	
 	<div class="yuding_progress">
 		<p>订购服务流程</p>
 		<img src="img/san.png"/>
@@ -134,14 +131,14 @@
 	</div>	
 	<div id="pading">
 		<ul class="switchShow">
-			<li ng-click="Aclick()">服务A</li>+
-			<li ng-click="Bclick()">服务B</li>+
-			<li ng-click="Cclick()">服务C</li>
+			<li ng-click="Aclick()">产前家庭护理服务</li>+
+			<li ng-click="Bclick()">分娩期医院护理服务</li>+
+			<li ng-click="Cclick()">月子期家庭护理服务</li>
 		</ul>
 		<div class="serCont">
 			<div class="SCA" ng-show="sca"></div>
-			<div class="SCB" ng-show="scb">scb</div>
-			<div class="SCC" ng-show="scc">scc</div>
+			<div class="SCB" ng-show="scb"></div>
+			<div class="SCC" ng-show="scc"></div>
 		</div>	
 		<div id="baozhang">	
 			<div class="yuding_progress">
@@ -150,23 +147,7 @@
 			</div>
 		</div>
 		<div class="baoC">
-			<li>
-				<img src="img/cale1.png"/>
-				<p class="head">无理由全额退款</p>
-				<p class="cont">预订后，预产期一个月前随时无理由退款</p>
-			</li>
-			<li><img src="img/cale2.png"/>
-				<p class="head">三方保险保障</p>
-				<p class="cont">月嫂、客户、公司购买三方保险,确保您的合法利益</p>
-			</li>
-			<li><img src="img/cale3.png"/>
-				<p class="head">免费退换保障</p>
-				<p class="cont">服务期间如有不满免费退换</p>
-			</li>
-			<li><img src="img/cale4.png"/>
-				<p class="head">极速退款保障</p>
-				<p class="cont">如遇退款情况，承诺工作日24小时内办理</p>
-			</li>
+			<img src="img/va.png"/>			
 		</div>
 
 	</div>
@@ -202,20 +183,96 @@
 		<img src="img/san.png"/>
 	</div>			
 	</div>	
-	
-	
-	
+	<img src="img/zuji.png" style="width:100%;"/>
+	<div id="detail_pro">
+		<div class="header-title">
+			<div class="header-left l">
+				<img src="img/head-top.png"/>
+				<img src="img/head-bottom.png"/>
+			</div>
+			<div class="header-right l">集团发展历程</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2007年2月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">Cocodemer 珂珂朵谧高端产后修复品牌创立</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2012年1月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">Cocolove 爱的果实高端月嫂品牌创立</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2013年9月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">集团迁至淮海西路1000 平米办公区</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2015年2月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">集团乔迁至6000 平米5 层办公楼</div>
+		</div>
+		
+		<div class="header-title">
+			<div class="header-left l">
+				<img src="img/head-top.png"/>
+				<img src="img/head-bottom.png"/>
+			</div>
+			<div class="header-right l">建立标准化培训中心,员工突破2千人</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2015年3月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">Cocohome 好娘家月嫂品牌创立</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2015年4月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">收购芝麻开门高端儿童摄影品牌</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2015年4月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">蓁爱高端月子会所品牌创立</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2016年7月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">杭州互联网公司成立</div>
+		</div>
+		<div class="content-pro">
+			<div class="float-left l">2017年1月</div>
+			<img src="img/cont.png" class="l"/>
+			<div class="float-right l">集团启动IPO</div>
+		</div>
+		<div class="header-title">
+			<div class="header-left l">
+				<img src="img/head-top.png"/>
+			</div>
+			<div class="header-right l">线上线下立体发展</div>
+		</div>
+		
+	</div>
+	<div class="col"></div>
+	<div id="Company-band">	
+	<div class="ysfw">
+		<p>集团品牌</p>
+		<img src="img/san.png"/>
+	</div>			
+	</div>	
+	<img class="pingpai" src="img/pingpai.png"/>
+	<div class="foo">
+		<img src="img/foo.png"/>
+		<div id="returnTop"></div>
+	</div>
 	
 </div>
+<div id="footerg">
+	<div class="foot-left l" ><a href="http://www.haoniangjia.cn/dialog_3.htm">咨询客服</a></div>
+	<div class="foot-right l" ng-click="konw()">立即预约</div>
+</div>
+<div style="height:1.83rem;width:100%;"></div>	
 
-<!--areapicker-->
-	<button id='showCityPicker3' type='button'>三级联动省市区</button>
-	<div id='cityResult3'></div>	
-<!--timepicker-->	
-	<input id='demo1' data-options='{"type":"date","beginYear":1900,"endYear":2100}' class="btn" type="button" value="选择日期时间 ">
-	<div id='result' class="ui-alert"></div>	
-
-<div id="returnTop">return</div>
 <P ng-include="'views/commonArea/html/baidutongji.html'"></P>
 
  

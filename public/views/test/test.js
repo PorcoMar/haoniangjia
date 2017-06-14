@@ -7,33 +7,28 @@ function placeholderPic(){
 }
 placeholderPic();
 window.onresize = function(){
-	placeholderPic();
-}	
-
+	if($(window).width()>500){
+		$scope.hashVal = window.location.hash;
+		if($scope.hashVal != "#/"){
+			$location.path("/")
+		}	
+	}
+	else{placeholderPic();}
+}
   var mySwiper = new Swiper ('.swiper-container', {
   	//effect:'cube',
   	loop: true,autoplay: 3000,pagination: '.swiper-pagination',
   })
-
 $scope.nav = document.getElementById("nav");
 $scope.eq = document.getElementById("eq");
 $scope.eq1 = document.getElementById("eq1");
 $scope.eq2 = document.getElementById("eq2");
 $scope.eq3 = document.getElementById("eq3");
-
-$scope.target1 = function(){
-	$(window).scrollTop($scope.eq.offsetTop-50);
-}
-$scope.target2 = function(){
-	$(window).scrollTop($scope.eq1.offsetTop-50);
-}
-$scope.target3 = function(){
-	$(window).scrollTop($scope.eq2.offsetTop-50);
-}
-$scope.target4 = function(){
-	$(window).scrollTop($scope.eq3.offsetTop-50);
-}
-var $topFix = $(".topFix");
+$scope.target1 = function(){$(window).scrollTop($scope.eq.offsetTop-50);}
+$scope.target2 = function(){$(window).scrollTop($scope.eq1.offsetTop-50);}
+$scope.target3 = function(){$(window).scrollTop($scope.eq2.offsetTop-50);}
+$scope.target4 = function(){$(window).scrollTop($scope.eq3.offsetTop-50);}
+var $topFix = $("#displaym");
 var $top = $("#returnTop");
 var $fixLi = ".topFix .li";
 angular.element(window).bind('scroll',function(){
@@ -57,48 +52,40 @@ $top.click(function(){
 	$('body,html').animate({ scrollTop: 0}, 300);
 	return false;	
 })
-
-
+$scope.konw = function(){
+	$location.path("/submit_phone");
+}
+$scope.know2 = function(){
+	$location.path("/submit_phone");
+}
 /*选项卡*/
-$scope.sca = true;
+$scope.scc = true;
 $scope.Aclick = function(){$scope.sca = true;$scope.scb = false;$scope.scc = false;};
 $scope.Bclick = function(){$scope.sca = false;$scope.scb = true;$scope.scc = false;};
 $scope.Cclick = function(){$scope.sca = false;$scope.scb = false;$scope.scc = true;};
-$(".switchShow li").click(function(){$(this).css({"background":"#fc5a5f","color":"#fff","border":"0"}).siblings().css({"background":"#fff","color":"#333","border":"1px solid #999"})})
-function bord(obj,index){
-	return $(obj).eq(index).css({"border-bottom":"1px solid red"}).siblings().css({"border":"0"})
-};
+changeColor(".switchShow li");
+changeColor("#banmer .num li");
+function changeColor(obj){$(obj).click(function(){$(this).css({"background":"#fc5a5f","color":"#fff","border":"0"}).siblings().css({"background":"#fff","color":"#333","border":"1px solid #999"})})}
+function bord(obj,index){return $(obj).eq(index).css({"border-bottom":"2px solid #ff7076","color":"#ff7076"}).siblings().css({"border":"0","color":"#333"})};
 
 /*$interval*/
 	$scope.timer = $interval(function(){},80);
-	
 	$scope.timer.then(success, error, notify);
-	
-	function success(){
-	    //console.log("done");
-	}
-	
-	function error(){
-	    //console.log("error");
-	}
-	
-	function notify(){
-
-	}
-
+	function success(){};
+	function error(){};
+	function notify(){};
 	$scope.$on("$destroy", function() {
 	    if (angular.isDefined($scope.inTerver)) {
 	        $interval.cancel($scope.inTerver);
 	        $scope.inTerver = undefined;
 	    }
 	});		
-
- 	//ingSrc('#bamer0',3000);
- 	ingSrc('#banmer',3000);
+ 	ingSrc('#banmer',5000);
 	function ingSrc(obj,gapTime){
 	$(obj+" .banner .img img:first").on("load",function(){
 		var moving = false;		
-	    var width = $(this).width();
+	   //var width = $(this).width();
+		var width = document.documentElement.offsetWidth*0.6
 		var i=0;
 		var clone=$(obj+" .banner .img li").first().clone();
 		$(obj+" .banner .img").append(clone);	
@@ -129,7 +116,7 @@ function bord(obj,index){
 	$scope.inTerver.then(success, error, c1);		
 		function c1(){
 			i++;
-			//console.log("index--"+i)
+			//console.log(width)
 			move();			
 		}
 			
@@ -147,7 +134,7 @@ function bord(obj,index){
 		if ($(obj+" .btn_l")) {
 	
 		/*向左的按钮*/
-		$(obj+" .btn_l").stop(true).click(function(){// background:#f5aca6;
+		$(obj+" .btn_l").stop(true).click(function(){
 		$interval.cancel($scope.inTerver); 
 		if(moving){
 			return;
@@ -203,48 +190,4 @@ function bord(obj,index){
 		
 		});
 	}
-	
-		
-/*citypicker*/	
-	(function($, doc) {
-		$.init();
-		
-		$.ready(function() {
-			var cityPicker3 = new $.PopPicker({
-				layer: 3
-			});
-			cityPicker3.setData(cityData3);
-			var showCityPickerButton = doc.getElementById('showCityPicker3');
-			var cityResult3 = doc.getElementById('cityResult3');
-			showCityPickerButton.addEventListener('tap', function(event) {
-				cityPicker3.show(function(items) {
-					cityResult3.innerText = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
-					//返回 false 可以阻止选择框的关闭
-					//return false;
-				});
-			}, false);	
-		});
-	})(mui, document);
-		
-/*timepicker*/	
-	(function($) {
-		$.init();
-		var result = $('#result')[0];
-		var btns = $('.btn');
-		btns.each(function(i, btn) {
-			btn.addEventListener('tap', function() {
-				var optionsJson = this.getAttribute('data-options') || '{}';
-				var options = JSON.parse(optionsJson);
-				var id = this.getAttribute('id');
-				var picker = new $.DtPicker(options);
-				picker.show(function(rs) {
-					result.innerText = rs.text;
-					picker.dispose();
-				});
-			}, false);
-		});
-	})(mui);	
-
-
-
 }])

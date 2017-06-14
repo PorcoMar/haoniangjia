@@ -95,6 +95,25 @@ $scope.subTn = function(){
 
 /*citypicker*/	
 		mui.init();
+		//普通示例
+		var userPicker = new mui.PopPicker();
+		userPicker.setData([{
+			value: '经济型',
+			text: '经济型'
+		}, {
+			value: '舒适型',
+			text: '舒适型'
+		}, {
+			value: '尊享型',
+			text: '尊享型'
+		}]);
+		var showUserPickerButton = document.getElementById('showUserPicker');
+		var userResult = document.getElementById('userResult');
+		showUserPickerButton.addEventListener('tap', function(event) {
+			userPicker.show(function(items) {
+				userResult.value = items[0].value;
+			});
+		}, false);			
 		mui.ready(function() {
 			var cityPicker3 = new mui.PopPicker({
 				layer: 3
