@@ -14,20 +14,21 @@
 #express b{display:inline-block;font-weight:normal;color:#ff7077;margin-left:10px;margin-right:10px;}
 
 #hunm{padding-top:36px;height:774px;width:;}
-.zuo{width:591px;height:772px;border:1px solid #eeeeee;padding-left:5px;margin-right:13px;margin-left:170px;}
+.zuo{width:591px;height:772px;border:1px solid #eeeeee;padding-left:5px;margin-right:13px;margin-left:170px;position: relative;}
 
 .yued{padding-top:5px;color:#ff6e78;font-size:20px;height:45px;line-height:45px;}
-.kn{width:568px;height:67px;background:#fef2dc;color:#ff9800;border:1px solid #ffdba7;padding-left:14px;margin-top:16px;margin-bottom:36px;padding-top:9px;font-size:16px;line-height:29px;}
+.kn{width:568px;height:124px;background:#fef2dc;color:#ff9800;border:1px solid #ffdba7;padding-left:14px;margin-top:16px;margin-bottom:36px;padding-top:9px;font-size:16px;line-height:29px;}
 .nR{width:590px;height:50px;margin-bottom:40px;position:relative;}
 .nR span{display:inline-block;width:98px;text-align:right;font-size:15px;height:50px;line-height:50px;margin-right:24px;}
 .nR span b{color:#ff6f79;font-weight:normal;display:inline-block;line-height:50px;height:40px;margin-right:10px;}
+.nR p{color:#ff7177;font-size:14px;margin-left:120px;line-height:30px;}
 .nR .inpm{width:426px;height:48px;padding-left:20px;}
 .nR .datev{position:absolute;top:2px;right:20px;width:446px;height:48px;cursor: pointer;}
-
-#subm{width:300px;height:50px;margin-left:120px;}
-#subm .submitm{width:148px;height:50px;line-height:50px;color:#fff;background:#ff7177;text-align:center;margin-right:30px;cursor: pointer;}
-#subm p{font-size:16px;height:50px;line-height:50px;}
-#subm p span{color:#ff6f78}
+#float_yuyeu{width:590px;height:340px;background:#fff;position: absolute;top:242px;left:1px;display:none;}
+.subm{width:300px;height:50px;margin-left:120px;}
+.subm .submitm{width:148px;height:50px;line-height:50px;color:#fff;background:#ff7177;text-align:center;margin-right:30px;cursor: pointer;}
+.subm p{font-size:16px;height:50px;line-height:50px;}
+.subm p span{color:#ff6f78}
 
 /*.mui-poppicker{height:400px;}
 .mui-poppicker-body{height:400px;}

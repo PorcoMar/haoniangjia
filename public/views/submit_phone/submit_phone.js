@@ -1,15 +1,21 @@
 app.controller("submit_phone", ["$scope","$location","$http","ServiceConfig","$interval",function($scope,$location,$http,ServiceConfig,$interval){
-
-$scope.subTn = function(){
+$scope.yuenima = function(){
 	$scope.name = $(".oc1").val();
 	$scope.numb = $(".oc2").val();
-	$scope.daten = $(".oc3").val();
 	$scope.city = $(".oc4").val();
-	$scope.lev = $(".oc5").val();
-	if(!$scope.name || !$scope.numb || !$scope.daten || !$scope.city){
+	if(!$scope.name || !$scope.numb || !$scope.city){
 		alert("请填写完整信息")
 	}else{
-		
+		$("#tijiao_yuyeu").fadeIn();
+	}
+}
+
+$scope.subTn = function(){
+	$scope.daten = $(".oc3").val();
+	$scope.lev = $(".oc5").val();
+	if(!$scope.daten){
+		alert("请填写完整信息")
+	}else{
 		$.ajax({
 		    url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentSave",
 		    type: "POST",
@@ -22,7 +28,7 @@ $scope.subTn = function(){
 		    },
 		    success: function(data) {
 		    	console.log(JSON.parse(data))
-		    	alert("提交成功！")
+		    	alert("提交成功！我们会尽快与您取得联系")
 		    	location.reload()
 		    },
 		    error : function(){

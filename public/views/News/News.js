@@ -58,17 +58,23 @@ demoScro2.style.height=demoScro.offsetHeight+"px";
 		$scope.timer = $interval(function(){},80);
 		$scope.timer.then(success, error, notify);
 	}
-	
-$scope.subTn = function(){
+$scope.lost = function(){
 	$scope.name = $(".oc1").val();
 	$scope.numb = $(".oc2").val();
-	$scope.daten = $(".oc3").val();
 	$scope.city = $(".oc4").val();
-	$scope.lev = $(".oc5").val();
-	if(!$scope.name || !$scope.numb || !$scope.daten || !$scope.city){
+	if(!$scope.name || !$scope.numb ||!$scope.city){
 		alert("请填写完整信息")
 	}else{
-		
+		$("#float_yuyeu").fadeIn();		
+	}
+};
+$scope.subTn = function(){
+	$scope.daten = $(".oc3").val();
+	$scope.lev = $(".oc5").val();
+	if(!$scope.daten){
+		alert("请填写完整信息")
+	}else{
+		//console.log($scope.name,$scope.numb,$scope.city,$scope.daten,$scope.lev)
 		$.ajax({
 		    url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentSave",
 		    type: "POST",
@@ -81,7 +87,7 @@ $scope.subTn = function(){
 		    },
 		    success: function(data) {
 		    	console.log(JSON.parse(data))
-		    	alert("提交成功！")
+		    	alert("提交成功！我们会尽快与您取得联系")
 		    	location.reload()
 		    },
 		    error : function(){
@@ -92,7 +98,6 @@ $scope.subTn = function(){
 	}
 	
 }
-
 /*citypicker*/	
 		mui.init();
 		//普通示例

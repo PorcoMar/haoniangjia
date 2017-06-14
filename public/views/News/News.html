@@ -4,14 +4,18 @@
 		
 	<div id="banTun">
 		<div id="naver" class="w">
-			<a href="#/index">您的位置： 首页 - </a><a href="#/AboutUs">关于我们 - </a><span>预约月嫂</span>
+			<a href="#/index">您的位置： 首页 - </a><span>预约月嫂</span>
 		</div>
 	</div>
 	<div id="hunm" class="w">
 		<div class="zuo l">
 			<p class="yued">预约月嫂</p>
 			<img src="img/sss.png"/>
-			<div class="kn">马上预约，会有专职母婴顾问为您解答月嫂相关问题，也便于提前为您进入月嫂<br/>派工匹配，更能优先匹配到好月嫂</div>
+			<div class="kn">现在填写预约信息，您将享受三大预约特权：<br/>
+				1、预定加送专业绑腹带一条；<br/>
+				2、提前享受母婴顾问一对一服务；<br/>
+				3、优先进入月嫂派工匹配，更能匹配到满意月嫂。
+			</div>
 			<div class="nR">
 				<span class="mz l"><b>*</b>姓名</span>
 				<input type="text" placeholder="李美丽" class="inpm oc1" />
@@ -20,25 +24,34 @@
 				<span class="mz l"><b>*</b>电话</span>
 				<input type="text" placeholder="" class="inpm oc2" />
 			</div>
-			<div class="nR">
-				<div class="datev btn" id='demo1' data-options='{"type":"date","beginYear":1900,"endYear":2100}' ></div>
-				<span class="mz l"><b>*</b>预产期</span>
-				<input type="text" placeholder="2018-05-07" class="inpm oc3 ui-alert" id='result'/>
-			</div>
+			<!---->
 			<div class="nR">
 				<div class="datev" id='showCityPicker3'></div>
 				<span class="mz l"><b>*</b>所在城市</span>
-				<input type="text" placeholder="上海市" class="inpm oc4" id='cityResult3'/>
+				<input type="text" class="inpm oc4" id='cityResult3'/>
+				<p>亦蓁母婴承诺您的手机号码不会被泄露，请放心填写。</p>
 			</div>
-			<div class="nR" style="margin-bottom:64px;">
-				<div class="datev" id='showUserPicker' class="mui-btn mui-btn-block"></div>
-				<span class="mz l">预约级别</span>
-				<input type="text" placeholder="经济型/舒适性/尊享型" class="inpm oc5 ui-alert" id='userResult'/>
-			</div>
+			<!---->
 			
-			<div id="subm">
+			<div class="subm">
+				<div class="submitm l" ng-click="lost()">预约享好礼</div>
+				<p>"<span>*</span>"为必填</p>
+			</div>
+			<div id="float_yuyeu">
+				<div class="nR">
+					<div class="datev btn" id='demo1' data-options='{"type":"date","beginYear":1900,"endYear":2100}' ></div>
+					<span class="mz l"><b>*</b>预产期</span>
+					<input type="text" class="inpm oc3 ui-alert" id='result'/>
+				</div>
+				<div class="nR" style="margin-bottom:64px;">
+					<div class="datev" id='showUserPicker' class="mui-btn mui-btn-block"></div>
+					<span class="mz l">预约级别</span>
+					<input type="text" class="inpm oc5 ui-alert" id='userResult'/>
+				</div>
+			<div class="subm">
 				<div class="submitm l" ng-click="subTn()">提交</div>
 				<p>"<span>*</span>"为必填</p>
+			</div>				
 			</div>
 		</div>
 

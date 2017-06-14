@@ -11,25 +11,31 @@
 				<input type="number" class="inpm oc2" />
 			</div>
 			<div class="nR">
-				<div class="datev btn" id='demo1' data-options='{"type":"date","beginYear":1900,"endYear":2100}' ></div>
-				<span class="mz l"><b>*</b>预产期</span>
-				<input type="text" class="inpm oc3 ui-alert" id='result'/>
-			</div>
-			<div class="nR">
 				<div class="datev" id='showCityPicker3'></div>
 				<span class="mz l"><b>*</b>所在城市</span>
 				<input type="text"  class="inpm oc4" id='cityResult3'/>
 			</div>
-			<div class="nR">
-				<div class="datev" id='showUserPicker' class="mui-btn mui-btn-block"></div>
-				<span class="mz l">预约级别</span>
-				<input type="text" class="inpm oc5 ui-alert" id='userResult'/>
+			<div class="subm">
+				<p>1. "<span>*</span>"为必填</p>
+				<div class="pmm2">2.亦蓁母婴承诺您的手机号码不会被泄露，请放心填写。</div>
+				<div class="submitm l" ng-click="yuenima()">预约享好礼</div>
 			</div>
-
-			<div id="subm">
+			<div id="tijiao_yuyeu">
+				<div class="nR">
+					<div class="datev btn" id='demo1' data-options='{"type":"date","beginYear":1900,"endYear":2100}' ></div>
+					<span class="mz l"><b>*</b>预产期</span>
+					<input type="text" class="inpm oc3 ui-alert" id='result'/>
+				</div>
+				<div class="nR">
+					<div class="datev" id='showUserPicker' class="mui-btn mui-btn-block"></div>
+					<span class="mz l">预约级别</span>
+					<input type="text" class="inpm oc5 ui-alert" id='userResult'/>
+				</div>
+			<div class="subm">
 				<p>"<span>*</span>"为必填</p>
-				<div class="submitm l" ng-click="subTn()">提交</div>
-			</div>
+				<div class="submitm l" ng-click="subTn()" style="margin-top:2.56rem;">提交</div>
+			</div>				
+			</div>			
 		</div>
 <P ng-include="'views/commonArea/html/rem.html'"></P>
 <P ng-include="'views/commonArea/html/baidutongji.html'"></P>

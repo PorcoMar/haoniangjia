@@ -29,7 +29,7 @@ $scope.target2 = function(){$(window).scrollTop($scope.eq1.offsetTop-50);}
 $scope.target3 = function(){$(window).scrollTop($scope.eq2.offsetTop-50);}
 $scope.target4 = function(){$(window).scrollTop($scope.eq3.offsetTop-50);}
 var $topFix = $("#displaym");
-var $top = $("#returnTop");
+var $top = $("#returnT");
 var $fixLi = ".topFix .li";
 angular.element(window).bind('scroll',function(){
 	var scrollTop = $(window).scrollTop();
