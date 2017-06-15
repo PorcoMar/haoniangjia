@@ -23,11 +23,11 @@
 
 #wenzi{height:55px;width:1200px;margin:0 auto;margin-bottom:60px;}
 #wenzi [wz]{height:55px;line-height:23px;font-weight:bold;float:left;}
-#wenzi [wz="w1"]{margin-right:129px;}
-#wenzi [wz="w2"]{margin-right:144px;}
-#wenzi [wz="w3"]{margin-right:123px;}
-#wenzi [wz="w4"]{margin-right:124px;}
-#wenzi [wz="w5"]{margin-right:150px;}
+#wenzi [wz="w1"]{margin-right:88px;margin-left:106px;}
+#wenzi [wz="w2"]{margin-right:104px;}
+#wenzi [wz="w3"]{margin-right:85px;}
+#wenzi [wz="w4"]{margin-right:82px;}
+#wenzi [wz="w5"]{margin-right:113px;}
 
 .oHe{font-size:25px;height:25px;line-height:25px;font-weight:bold;text-align:center;margin-bottom:30px;}
 .line{font-size:16px;height:50px;line-height:50px;text-align:center;}
