@@ -18,6 +18,8 @@ window.onresize = function(){
   var mySwiper = new Swiper ('.swiper-container', {
   	//effect:'cube',
   	loop: true,autoplay: 3000,pagination: '.swiper-pagination',
+  	autoplayDisableOnInteraction : false, //手动滑动后继续自动播放
+  	paginationClickable: true,//点击导航切换 
   })
 $scope.nav = document.getElementById("nav");
 $scope.eq = document.getElementById("eq");

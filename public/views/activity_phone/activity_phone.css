@@ -1,1 +1,6 @@
 .actiy{width:100%;height:22.45rem;background: url(../../img/avtiy.jpg) no-repeat;background-size:100% ;/*border-bottom:1px solid red;*/}
+#footerg{height:1.83rem;width:100%;position:fixed;bottom:0;font-size:0.6rem;}
+#footerg .foot-left,#footerg .foot-right{width:50%;height:1.83rem;line-height:1.83rem;text-align:center;color:#fff;}
+#footerg .foot-left a{color:#fff;}
+#footerg .foot-left{background:#999999;}
+#footerg .foot-right{background:#ff7177;}
