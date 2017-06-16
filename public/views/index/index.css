@@ -71,14 +71,14 @@
 #zunxiang .zun li,#shushi .shu li,#eco .economic li{font-size:14px;line-height:28px;}
 .box_le li span{display:inline-block;width:3px;height:3px;border-radius: 3px;background: #333;line-height:3px;margin-bottom: 5px;margin-right:4px;}
 #zunxiang .zun p span,#shushi .shu p span,#eco .economic p span{font-size:20px;}
-[hovern]{width:100%;height:100%;position: absolute;bottom:-440px;background:#cba67f;z-index:99;opacity: 0.9;}
+[hovern]{width:100%;height:100%;position: absolute;bottom:440px;background:#cba67f;z-index:99;opacity: 0.9;}
 .he_n,.he_m{width:calc(100%-48px);height:65px;line-height:65px;font-size:20px;color:#fff}
 .he_m{padding:13px 24px 0px 24px;}
 .he_n{padding-right:24px;}
 .cont_in{width:calc(100%-40px);height:208px;padding:0 16px 0px 24px;margin-bottom:48px;}
 .cont_in p{line-height:28px;color:#fff;font-size:14px;}
-[buton]{width:158px;height:46px;line-height:46px;text-align:center;border:1px solid #fff;margin:0 auto;border-radius: 6px;color:#fff;}
-[buton]:hover{background:#fff;color:#cda67f;cursor: pointer;}
+[buton]{width:158px;height:46px;line-height:46px;text-align:center;border:1px solid #fff;margin:0 auto;border-radius: 6px;color:#cda67f;background: #fff;}
+[buton]:hover{background:#fff;color:#ff7177;cursor: pointer;}
 .cont_in span{display:inline-block;width:3px;height:3px;border-radius: 3px;background: #fff;line-height:3px;margin-bottom: 5px;margin-right:4px;}
 #contBoxn #box_ri{width:297px;height:440px;border:1px solid #ededed;box-sizing:border-box;overflow: hidden;position: relative;float:right;}
 #contBoxn #box_ri .botomm{position:absolute;bottom:0;width:100%;height:30px;background: #fff;}
@@ -113,9 +113,9 @@
 [cla="pm3"] .pn1,[cla="pm3"] .pn2{margin-left:30px;}
 
 #bgColor{width:100%;height:575px;background:#fafafa;}
-#baozhang{width:172px;height:77px;padding-top:7px;margin:0 auto;text-align:center;}
-#baozhang [pro="a0"]{font-size:25px;height:47px;line-height:47px;}
-#baozhang [pro="a1"]{font-size:16px;line-height:16px;}
+.baozhang{width:180px;height:77px;padding-top:7px;margin:0 auto;text-align:center;}
+.baozhang [pro="a0"]{font-size:25px;height:47px;line-height:47px;}
+.baozhang [pro="a1"]{font-size:16px;line-height:16px;}
 #baoCon{width:1200px;height:382px;margin-bottom:109px;}
 #baoCon [promis]{width:300px;height:100%;text-align:center;}
 #baoCon [promis] img{margin:0 auto;margin-top:62px;margin-bottom:42px;}
@@ -128,11 +128,11 @@
 #honor #honorLeft{width:788px;height:384px;float:left;}
 #honor #honorLeft .bord{width:232px;height:239px;border:1px solid #ececec;margin-right:25px;float:left;}
 #honor #honorLeft .bord p{text-align: center;font-size:14px;height:20px;line-height:20px;color:#474747}
-#honor #honorLeft .wh{font-size:20px;width:788px;float:left;line-height:94px;height:94px;font-weight:bold;}
+#honor #honorLeft .wh{font-size:20px;width:788px;float:left;line-height:94px;height:94px;}
 
 
 #honorRight{width:376px;height:384px;float:left;position:relative;padding-top:7px;padding-left:36px;}
-#honorRight .port{height:62px;line-height:62px;font-size:20px;width:380px;}
+#honorRight .port{height:62px;line-height:69px;font-size:20px;width:380px;margin-bottom:20px;}
 .bcm{width:376px;height:78px;margin-bottom:18px;}
 #honorRight .bcm .topn{height:37px;width:376px;}
 #honorRight .sec{height:65px;}

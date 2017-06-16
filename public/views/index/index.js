@@ -191,7 +191,7 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 		if ($scope.bao >= $scope.scrollTop && $scope.bao < $scope.sc_Height150) {
 			if(!$scope.onOffF){
 					active("[pro='a0']","fadeInUp" ,"1.5s","0s");
-					active("[pro='a1']","fadeInUp" ,"1.5s","0.3s");
+					active("[pro='a1']","fadeInUp" ,"1.5s","0.2s");
 					active("[promis]","fadeInUp" ,"1.5s","0.5s");
 					mySwiper();
 					$scope.onOffF =true;

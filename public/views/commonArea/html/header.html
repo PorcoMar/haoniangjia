@@ -6,14 +6,15 @@
 		</div>
 		<div class="r numb">
 			<img src="img/num.png"/>
+			<p class="h_num">400-668-0707</p>
 		</div>
 		<div id="float_right" class="r">
 			<ul class="headUl">
-				<li class="r">关于我们</li>
-				<li class="r">合作加盟</li>
-				<li class="r">月嫂风采</li>
-				<li class="r">月嫂服务</li>
-				<li class="r firP">首页</li>
+				<li class="r w1">关于我们</li>
+				<li class="r w2">合作加盟</li>
+				<li class="r w3">月嫂风采</li>
+				<li class="r w4">月嫂服务</li>
+				<li class="r w5">首页</li>
 			</ul>
 		</div>
 	</div>
@@ -23,24 +24,32 @@
 	hash.indexOf("?") > 0 ?hash = hash.split("?")[0] :hash;
 	//console.log(hash)
 	var $li = $(".headUl li");
-	if(hash=="index" || hash=="News"){
-		css($li.eq(4))
+	if(hash=="" || hash=="News"){
+		cssn(".headUl li:not(.w5)",4)
 	}else if(hash=="ServiceMatron"){
-		css($li.eq(3))
+		cssn(".headUl li:not(.w4)",3)
 	}else if(hash=="TeamMatron"){
-		css($li.eq(2))
+		cssn(".headUl li:not(.w3)",2)
 	}else if(hash=="Cooperation"){
-		css($li.eq(1))
+		cssn(".headUl li:not(.w2)",1)
 	}else if(hash=="AboutUs" || hash =="newDetial"){
-		css($li.eq(0))
+		cssn(".headUl li:not(.w1)",0)
 	}
 	else{
-		css($li.eq(4))
+		cssn(".headUl li:not(.w5)",4)
 	}	
 	
-	$li.mouseenter(function(){
-		$(this).css({"color":"#ed5259","font-weight":"bold","border-bottom":"3px solid #ff7077"}).siblings().css({"color":"#333333","font-weight":"normal","border":"0"})
-	})
+	function cssn(obj,num){
+		$li.eq(num).css({"color":"#ed5259","font-weight":"bold","border-bottom":"3px solid #ff7077"})
+		$(obj).mouseenter(function(){
+			$(this).css({"color":"#ed5259","font-weight":"bold","border-bottom":"3px solid #ff7077"}).siblings().css({"color":"#333333","font-weight":"normal","border":"0"})
+			$li.eq(num).css({"color":"#ed5259","font-weight":"bold","border-bottom":"3px solid #ff7077"})
+		})
+		$(obj).mouseleave(function(){
+			$(this).css({"color":"#333333","font-weight":"normal","border":"0"})
+		})
+	}
+
 	$(".ing_lt").click(function(){
 		window.location.href = "#/index"
 	})
