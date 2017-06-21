@@ -40,6 +40,16 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 	}).error(function(data,header,config,status){
 		console.log(data,header,config,status)
 	});
+	
+	
+	$http({
+		url:"http://192.168.1.121:8243/banner/queryAppCatList",
+//		url:"http://192.168.1.121:8243/information/list",
+		method:"post",		
+	}).success(function(data,header,config,status){
+		console.log(JSON.parse(data.result))
+		//console.log(data)
+	})
 /*数字滚动*/
 $scope.numStart1 = 0;$scope.numStart2 = 0;$scope.numStart3 = 0;$scope.numStart4 = 0;$scope.numStart5 = 0;
 inter(125,8,"[numB='numB1']",$scope.numStart1,1);

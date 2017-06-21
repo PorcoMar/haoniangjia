@@ -62,11 +62,22 @@ $scope.lost = function(){
 	$scope.name = $(".oc1").val();
 	$scope.numb = $(".oc2").val();
 	$scope.city = $(".oc4").val();
-	if(!$scope.name || !$scope.numb ||!$scope.city){
+	if(!$scope.name || !$scope.city){
 		alert("请填写完整信息")
 	}else{
-		$("#float_yuyeu").fadeIn();		
-	}
+		if($scope.numb.length == 0) {
+			alert('请输入手机号码！');
+			return false;
+		} else if($scope.numb.length != 11) {
+			alert('请输入有效的手机号码！');
+			return false;
+		} else if(!(/^1[34578]\d{9}$/.test($scope.numb))) {
+			alert("手机号码有误，请重填");
+			return false;
+		} else {
+			$("#float_yuyeu").fadeIn();
+		}
+	}	
 };
 $scope.subTn = function(){
 	$scope.daten = $(".oc3").val();
@@ -74,7 +85,6 @@ $scope.subTn = function(){
 	if(!$scope.daten){
 		alert("请填写完整信息")
 	}else{
-		//console.log($scope.name,$scope.numb,$scope.city,$scope.daten,$scope.lev)
 		$.ajax({
 		    url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentSave",
 		    type: "POST",

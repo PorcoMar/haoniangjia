@@ -1,10 +1,13 @@
 #bottom_footer{height:206px;background:#f7f7f7;}
+#bottom_footer .w{position: relative;}
 #fl_left{width:350px;height:100%;}
 #bottom_footer .ing_lt{margin-top:46px;}
 #fl_right{width:433px;height:206px;margin-left:50px;font-size:14px;color:#343434;}
-.ulFir{width:433px;height:14px;margin-bottom:10px;margin-top:66px;}
+.ulFir{width:480px;height:20px;margin-bottom:10px;margin-top:76px;}
 .ulFir .lat{margin-right:68px;border:0;}
-.ulFir li{height:14px;line-height:14px;font-size:14px;padding-right:6px;margin-left:6px;border-right:1px solid #343434;cursor: pointer;}
+.ulFir li{height:19px;line-height:19px;font-size:18px;padding-right:6px;margin-left:6px;border-right:1px solid #343434;cursor: pointer;}
 .pp,.pp2,.pp3{height:14px;line-height:14px;margin-bottom:10px;}
 #fl_right .pp2{margin-left:66px;}
 #fl_right .pp3{margin-left:36px;}
+#fl_right .pp{width:440px;}
+.cli_btn{position:absolute;right:65px;bottom:25px;background:#ff7177;border-radius: 5px;color:#fff;text-align:center;height:34px;line-height:34px;padding:0 15px;}
