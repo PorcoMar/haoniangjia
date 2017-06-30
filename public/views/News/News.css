@@ -24,7 +24,7 @@
 .nR .inpm{width:426px;height:48px;padding-left:20px;color:#666;}
 #float_yuyeu{width:590px;height:340px;background:#fff;position: absolute;top:225px;left:1px;display:none;}
 .subm{width:300px;height:50px;margin-left:120px;}
-.subm .submitm{width:148px;height:50px;line-height:50px;color:#fff;background:#ff7177;text-align:center;margin-right:30px;cursor: pointer;}
+.subm .submitm{width:148px;height:50px;line-height:50px;color:#fff;background:#ff7177;text-align:center;margin-right:30px;cursor: pointer;font-size:14px;}
 .subm p{font-size:16px;height:50px;line-height:50px;}
 .subm p span{color:#ff6f78}
 #localName{margin-left:123px;width:458px;height:50px;margin-bottom:7px;}

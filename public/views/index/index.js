@@ -39,6 +39,7 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 		url:local()+"/banner/queryAppCatList",
 		method:"post",		
 	}).success(function(data,header,config,status){
+		//console.log(data)
 		var dataBanner = JSON.parse(data.result).hnj_home_banner;
 		var imgList = new Array();
 		for(var i in dataBanner){

@@ -5,10 +5,14 @@ app.controller("ServiceMatron", ["$scope","$location","$sce","$http","$timeout",
 	}).success(function(data,header,config,status){
 		//console.log(JSON.parse(data.result))
 		var dataBanner = JSON.parse(data.result).hnj_yuesao_service_banner;
-		var index = dataBanner.length-1;
-		$scope.imgUrl = $scope.imgUrl = dataBanner[index].url;
-		$scope.serviceImg=imgUrl()+dataBanner[index].pcImgUrl;
-		console.log($scope.imgUrl)
+		!dataBanner ? dataBanner=new Array() :dataBanner
+		if(dataBanner.length){
+			var index = dataBanner.length-1;
+			$scope.imgUrl = dataBanner[index].url;
+			$scope.serviceImg=imgUrl()+dataBanner[index].pcImgUrl			
+		}else{
+			$scope.serviceImg = "img/月嫂服务-1.jpg"
+		}
 	}).error(function(){
 		console.log("error")
 	})	

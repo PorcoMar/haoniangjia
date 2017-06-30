@@ -38,11 +38,16 @@ app.controller("AboutUs", ["$scope","$rootScope","$location","$http",function($s
 		url:local()+"/banner/queryAppCatList",
 		method:"post",		
 	}).success(function(data,header,config,status){
-		console.log(data)
+		//console.log(data)
 		var dataBanner = JSON.parse(data.result).hnj_about_us_banner;
-		var index = dataBanner.length-1;
-		$scope.imgUrl = dataBanner[index].url;
-		$scope.aboutImg=imgUrl()+dataBanner[index].pcImgUrl
+		!dataBanner ? dataBanner=new Array() :dataBanner
+		if(dataBanner.length){
+			var index = dataBanner.length-1;
+			$scope.imgUrl = dataBanner[index].url;
+			$scope.aboutImg=imgUrl()+dataBanner[index].pcImgUrl			
+		}else{
+			$scope.aboutImg = "img/关于我们.jpg"
+		}
 	}).error(function(){
 		console.log("error")
 	})	

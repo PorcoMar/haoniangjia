@@ -15,10 +15,14 @@ app.controller("Cooperation", ["$scope", "$location", "$interval", "$http","Serv
 		//console.log(data)
 		//console.log(JSON.parse(data.result))
 		var dataBanner = JSON.parse(data.result).hnj_partnership_banner;
-		var index = dataBanner.length-1;
-		$scope.imgUrl = dataBanner[index].url;
-		$scope.cooperImg=imgUrl()+dataBanner[index].pcImgUrl;
-		console.log(dataBanner[index].url)
+		!dataBanner ? dataBanner=new Array() :dataBanner
+		if(dataBanner.length){
+			var index = dataBanner.length-1;
+			$scope.imgUrl = dataBanner[index].url;
+			$scope.cooperImg=imgUrl()+dataBanner[index].pcImgUrl			
+		}else{
+			$scope.cooperImg = "img/cooper-1.jpg"
+		}		
 	}).error(function(){
 		console.log("error")
 	})	
