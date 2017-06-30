@@ -35,7 +35,7 @@ function chargeUrl(a){
 	 		newURL = a.url;
 	 		return newURL;
 	 	}else{
-	 		newURL ="192.168.1.119:8020/haoniangjiaGW/public/index.html#/test"
+	 		newURL ="192.168.1.110:8020/haoniangjiaGW/public/index.html#/test"
 	 		return newURL;
 	 	}
 	}else{
