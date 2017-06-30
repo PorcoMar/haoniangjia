@@ -1,6 +1,6 @@
 function local(){
-	return "http://adminapi.yufa.yizhenjia.com"//预发接口
-	//return "http://admin.api.yizhenjia.com"//正式环境接口
+	//return "http://adminapi.yufa.yizhenjia.com"//预发接口
+	return "http://admin.api.yizhenjia.com"//正式环境接口
 	//return "http://admin.api-test.yizhenjia.com"//测试环境接口
 	//return "http://192.168.1.121:8243"
 }
