@@ -1,6 +1,9 @@
 #banTun{border-bottom:1px solid #f1f1f1;}
 #rightm{width:933px;height:100%;;float:left;box-sizing:border-box;}
 
-
 #naver b{font-weight:normal;color:#acacac;cursor: pointer;}
 #naver .nk{color:#333;}
+
+.contm{overflow:hidden;}
+.contm p,.contm strong{line-height:30px;}
+.contm img{display:block;max-width:800px;margin:0 auto;}

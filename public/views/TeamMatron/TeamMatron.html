@@ -4,9 +4,7 @@
 			<div id="anim">
 			  <div class="banner">
 			    <ul class="img">
-			      <li><a href="#"><img src="img/月嫂团队-1.jpg"></a></li>
-			      <li><a href="#"><img src="img/月嫂团队-2.jpg"></a></li>
-			      <li><a href="#"><img src="img/月嫂团队-3.jpg"></a></li>
+			      <li ng-repeat="i in imgUrlList"><a href="{{i.imgUrl}}"><img ng-src="{{i.pcImgurl}}"></a></li>
 			    </ul>
 			    <ul class="num">
 			    </ul>

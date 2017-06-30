@@ -1,126 +1,14 @@
-app.controller("newDetial", ["$scope","$rootScope","$location","$sce",function($scope,$rootScope,$location,$sce){
-	
-	$scope.hash = window.location.hash.split("?")[1];
-	if($scope.hash=="new1"){
-		$scope.boolen6 = true;
-		$scope.boolen7 = false;
-		$scope.boolen8 = false;
-		$scope.boolen9 = false;
-		$scope.boolen10 = false;		
-		$scope.boolen11 = false;
-		$scope.boolen12 = false;
-		$scope.boolen13 = false;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = false;		
-	}
-	else if($scope.hash=="new2"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = true;
-		$scope.boolen8 = false;
-		$scope.boolen9 = false;
-		$scope.boolen10 = false;	
-		$scope.boolen11 = false;
-		$scope.boolen12 = false;
-		$scope.boolen13 = false;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = false;			
-	}	
-	else if($scope.hash=="new3"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = false;
-		$scope.boolen8 = true;
-		$scope.boolen9 = false;
-		$scope.boolen10 = false;	
-		$scope.boolen11 = false;
-		$scope.boolen12 = false;
-		$scope.boolen13 = false;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = false;			
-	}	
-	else if($scope.hash=="new4"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = false;
-		$scope.boolen8 = false;
-		$scope.boolen9 = true;
-		$scope.boolen10 = false;	
-		$scope.boolen11 = false;
-		$scope.boolen12 = false;
-		$scope.boolen13 = false;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = false;			
-	}	
-	else if($scope.hash=="new5"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = false;
-		$scope.boolen8 = false;
-		$scope.boolen9 = false;
-		$scope.boolen10 = true;	
-		$scope.boolen11 = false;
-		$scope.boolen12 = false;
-		$scope.boolen13 = false;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = false;			
-	}	
-	else if($scope.hash=="new6"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = false;
-		$scope.boolen8 = false;
-		$scope.boolen9 = false;
-		$scope.boolen10 = false;	
-		$scope.boolen11 = true;
-		$scope.boolen12 = false;
-		$scope.boolen13 = false;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = false;			
-	}	
-	else if($scope.hash=="new7"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = false;
-		$scope.boolen8 = false;
-		$scope.boolen9 = false;
-		$scope.boolen10 = false;	
-		$scope.boolen11 = false;
-		$scope.boolen12 = true;
-		$scope.boolen13 = false;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = false;			
-	}	
-	else if($scope.hash=="new8"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = false;
-		$scope.boolen8 = false;
-		$scope.boolen9 = false;
-		$scope.boolen10 = false;	
-		$scope.boolen11 = false;
-		$scope.boolen12 = false;
-		$scope.boolen13 = true;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = false;			
-	}	
-	else if($scope.hash=="new9"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = false;
-		$scope.boolen8 = false;
-		$scope.boolen9 = false;
-		$scope.boolen10 = false;	
-		$scope.boolen11 = false;
-		$scope.boolen12 = false;
-		$scope.boolen13 = false;
-		$scope.boolen14 = true;		
-		$scope.boolen15 = false;			
-	}	
-	else if($scope.hash=="new10"){
-		$scope.boolen6 = false;
-		$scope.boolen7 = false;
-		$scope.boolen8 = false;
-		$scope.boolen9 = false;
-		$scope.boolen10 = false;	
-		$scope.boolen11 = false;
-		$scope.boolen12 = false;
-		$scope.boolen13 = false;
-		$scope.boolen14 = false;		
-		$scope.boolen15 = true;			
-	}	
+app.controller("newDetial", ["$scope","$rootScope","$http","$location","$routeParams",function($scope,$rootScope,$http,$location,$routeParams){
+	$http({
+		url:local()+"/banner/queryAppCatList",
+		method:"post",		
+	}).success(function(data,header,config,status){
+		var dataBanner = JSON.parse(data.result).hnj_about_us_banner;
+		var index = dataBanner.length-1;
+		$scope.newDetailImg=imgUrl()+dataBanner[index].pcImgUrl
+	}).error(function(){
+		console.log("error")
+	})		
 	$scope.comP = function(){
 		$scope.boolen1 = true;
 		$scope.boolen2 = false;
@@ -168,4 +56,27 @@ app.controller("newDetial", ["$scope","$rootScope","$location","$sce",function($
 
 		var speed=200;//滑动的速度
 		$('body,html').animate({ scrollTop: 0 }, speed);
+		console.log()
+	var Id = $routeParams.id;
+	$http({
+		url:local()+"/information/info",
+		method:"post",
+	    data: {
+			id:Id
+	    },
+		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        transformRequest: function(obj) { 
+          var str = [];    
+          for (var s in obj) {    
+            str.push(encodeURIComponent(s) + "=" + encodeURIComponent(obj[s]));    
+          }    
+          return str.join("&");    
+        } 		
+	}).success(function(data,header,config,status){
+		//console.log(data)
+		var datan = data.result;
+		$scope.content = datan.content
+		$(".contm").append(datan.content)
+	})
+
 }])

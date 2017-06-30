@@ -1,68 +1,19 @@
-			@charset "utf-8";
-			body,
-			ul,
-			ol,
-			dl,
-			li,
-			dt,
-			dd,
-			p,
-			h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6,
-			img,
-			a,
-			input {
-			    padding: 0;
-			    margin: 0;
-			    outline: none;
-			   /* -webkit-appearance: @none;*/
-			}
-			textarea{-webkit-appearance: @none;}
-			
-			button {
-			    outline: none;
-			}
-			
-			ul,
-			ol {
-			    list-style: none;
-			}
-			/* CSS Document */
-			li{list-style: none;}
-			img {
-			    border: 0;
-			    display: block;
-			}
-			
-			a {
-			    text-decoration: none;
-			    color:#343434;
-			}
-			
-			* {
-			    margin: 0;
-			    padding: 0;
-			}
-			
-			html,
-			body {
-			    width: 100%;
-			    height: 100%;
-			    background: #FFFFFF;
-			    font-family: "微软雅黑";
-			    color:#343434;
-			}
-			/*loading图片*/
-			.l{float:left;}.r{float:right;}.w{width:1200px;height:100%;margin:0 auto;}
-
-			#banTun{width:100%;height:100%;}
-			#naver{width:1200px;height:50px;font-size:14px;}
-			#naver a,#naver span{line-height:50px;}
-			#naver a{color:#acacac}
-			.oHeader{font-size:27px;height:27px;line-height:27px;color:#343434;font-weight:bold;text-align:center;}
-			.oDes{font-size:12px;height:42px;line-height:42px;color:#acacac;text-align:center;}
-			.tuwenjiehe{margin:0 auto;margin-bottom:10px;width:800px;}
+@charset "utf-8";
+body,ul,ol,dl,li,dt,dd,p,h1,h2,h3,h4,h5,h6,img,a,input {padding: 0; margin: 0; outline: none;}
+textarea{-webkit-appearance: @none;}
+button { outline: none;}
+ul,ol {list-style: none;}
+li{list-style: none;}
+img {border: 0;display: block;}
+a {text-decoration: none;color:#343434;}
+* {margin: 0;padding: 0;}
+html,body { width: 100%;height: 100%;background: #FFFFFF;font-family: "微软雅黑";color:#343434;}
+.l{float:left;}.r{float:right;}.w{width:1200px;height:100%;margin:0 auto;}
+#banTun{width:100%;height:100%;}
+#naver{width:1200px;height:50px;font-size:14px;}
+#naver a,#naver span{line-height:50px;}
+#naver a{color:#acacac}
+.oHeader{font-size:27px;height:27px;line-height:27px;color:#343434;font-weight:bold;text-align:center;}
+.oDes{font-size:12px;height:42px;line-height:42px;color:#acacac;text-align:center;}
+.tuwenjiehe{margin:0 auto;margin-bottom:10px;width:800px;}
+.bannerImg{width:100%;max-height:500px;}

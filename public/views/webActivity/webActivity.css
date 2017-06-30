@@ -1,2 +1,10 @@
-.webActivity{width:1000px;height:1406px;margin:0 auto;margin-bottom:50px;margin-top:10px;}
-.webActivity img{width:1000px;height:1406px;}
+.webActivity{width:1000px;/*height:1406px;*/margin:0 auto;margin-bottom:50px;margin-top:10px;}
+.webActivity img{width:1000px;/*height:1406px;*/}
+
+.actiy{width:100%;}
+.actiy img{width:100%;}
+#footerg{height:1.83rem;width:100%;position:fixed;bottom:0;font-size:0.6rem;}
+#footerg .foot-left,#footerg .foot-right{width:50%;height:1.83rem;line-height:1.83rem;text-align:center;color:#fff;}
+#footerg .foot-left a{color:#fff;}
+#footerg .foot-left{background:#999999;}
+#footerg .foot-right{background:#ff7177;}

@@ -1,6 +1,13 @@
-
+function local(){
+	return "http://admin.api.yizhenjia.com"
+	//return "http://admin.api-test.yizhenjia.com"
+	//return "http://192.168.1.121:8243"
+}
 function req(){
 	return "http://appapi.yizhenjia.com/"
+}
+function imgUrl(){
+	return "http://appimg.yizhenjia.com"
 }
 function name(a){
 	return a.substr(0,1)+"女士";
@@ -15,6 +22,25 @@ function createTime(){
 function preBirthTime(a){
 	var time =  new Date(a);
 	return time.getMonth()+1;
+}
+function toStandTime(a){
+	var time = new Date(a);
+	return time.toLocaleDateString();
+}
+function chargeUrl(a){
+	var newURL = new String();
+	if(a.url.indexOf("192.168.1.119:8020/haoniangjiaGW/public/index.html") > 0 ){
+	 	if(a.url.indexOf("webActivity") > 0 ){
+	 		newURL = a.url;
+	 		return newURL;
+	 	}else{
+	 		newURL ="192.168.1.119:8020/haoniangjiaGW/public/index.html#/test"
+	 		return newURL;
+	 	}
+	}else{
+		newURL = a.url;
+		return newURL;
+	}	
 }
 function over(a){	
 	$(a).mouseenter(function(){

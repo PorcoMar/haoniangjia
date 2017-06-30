@@ -1,4 +1,4 @@
-app.controller("AboutUs", ["$scope","$rootScope","$location","$sce",function($scope,$rootScope,$location,$sce){
+app.controller("AboutUs", ["$scope","$rootScope","$location","$http",function($scope,$rootScope,$location,$http){
 	over(".comp")
 	if($rootScope.a){
 		$scope.boolen5 = true;	
@@ -13,35 +13,38 @@ app.controller("AboutUs", ["$scope","$rootScope","$location","$sce",function($sc
 		$scope.boolen1 = true;
 		$scope.boolen2 = false;
 		$scope.boolen3 = false;
-		$scope.boolen4 = false;
 		$scope.boolen5 = false;
 	}
 	$scope.conC = function(){
 		$scope.boolen1 = false;
 		$scope.boolen2 = true;
 		$scope.boolen3 = false;
-		$scope.boolen4 = false;
 		$scope.boolen5 = false;
 	}
 	$scope.way = function(){
 		$scope.boolen1 = false;
 		$scope.boolen2 = false;
 		$scope.boolen3 = true;
-		$scope.boolen4 = false;
-		$scope.boolen5 = false;
-	}
-	$scope.manage = function(){
-		$scope.boolen1 = false;
-		$scope.boolen2 = false;
-		$scope.boolen3 = false;
-		$scope.boolen4 = true;
 		$scope.boolen5 = false;
 	}
 	$scope.newS = function(){
 		$scope.boolen1 = false;
 		$scope.boolen2 = false;
 		$scope.boolen3 = false;
-		$scope.boolen4 = false;
 		$scope.boolen5 = true;
 	}
+	
+	$http({
+		url:local()+"/banner/queryAppCatList",
+		method:"post",		
+	}).success(function(data,header,config,status){
+		console.log(data)
+		var dataBanner = JSON.parse(data.result).hnj_about_us_banner;
+		var index = dataBanner.length-1;
+		$scope.imgUrl = dataBanner[index].url;
+		$scope.aboutImg=imgUrl()+dataBanner[index].pcImgUrl
+	}).error(function(){
+		console.log("error")
+	})	
+
 }])

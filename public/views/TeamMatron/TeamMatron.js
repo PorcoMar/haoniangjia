@@ -1,13 +1,40 @@
-app.controller("TeamMatron", ["$scope","$interval","$location",function($scope,$interval,$location){
+app.controller("TeamMatron", ["$scope","$interval","$location","$http","$timeout",function($scope,$interval,$location,$http,$timeout){
 	$scope.wid = $(window).width();
 	$scope.Img = $("#anim .banner .img img");
 	$scope.Img.width($scope.wid);
 	$scope.banH = Math.floor($("#anim .banner .img").find("img:first").width()/3.84);
 	$("#anim .banner").height($scope.banH);
 	$scope.Img.height($scope.banH);	
-	//console.log($scope.wid / $scope.banH)
-	Iscroll('#anim',3000);
-	
+	$http({
+		url:local()+"/banner/queryAppCatList",
+		method:"post",		
+	}).success(function(data,header,config,status){
+		//console.log(JSON.parse(data.result))
+		var dataBanner = JSON.parse(data.result).hnj_yuesao_nice_banner;
+		var imgList = new Array();
+		for(var i in dataBanner){
+			var datan = dataBanner[i];
+			var item = {
+				pcImgurl:imgUrl()+datan.pcImgUrl,
+				imgUrl:datan.url
+			}
+			imgList.push(item)
+		}
+		//console.log(imgList)
+		$scope.imgUrlList = imgList;
+		$timeout(function(){
+	$scope.Img = $("#anim .banner .img img");
+	$scope.Img.width($scope.wid);
+	$scope.banH = Math.floor($("#anim .banner .img").find("img:first").width()/3.84);
+	$("#anim .banner").height($scope.banH);
+	$scope.Img.height($scope.banH);	
+		Iscroll('#anim',3000);//启动轮播图
+		},1)
+	}).error(function(){
+		console.log("error")
+	})
+
+
 	
 	$scope.$on("$destroy", function() {
 	    if (angular.isDefined($scope.inTerver)) {

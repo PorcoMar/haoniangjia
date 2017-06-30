@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="views/News/News.css"/>
+<link rel="stylesheet" type="text/css" href="css/double-date.css"/>
 <P ng-include="'views/commonArea/html/header.html'"></P>
 <P ng-include="'views/commonArea/html/rightScrollBlock.html'"></P>
-		
 	<div id="banTun">
 		<div id="naver" class="w">
 			<a href="#/index">您的位置： 首页 - </a><span>预约月嫂</span>
@@ -26,9 +26,13 @@
 			</div>
 			<!---->
 			<div class="nR">
-				<div class="datev" id='showCityPicker3'></div>
 				<span class="mz l"><b>*</b>所在城市</span>
-				<input type="text" class="inpm oc4" id='cityResult3'/>
+				
+				<div id="localName">
+					<select name="province"></select>
+					<select name="city"></select>
+					<select name="area"></select>
+				</div>
 				<p>亦蓁母婴承诺您的个人信息不会被泄露，请放心填写。</p>
 			</div>
 			<!---->
@@ -39,19 +43,29 @@
 			</div>
 			<div id="float_yuyeu">
 				<div class="nR">
-					<div class="datev btn" id='demo1' data-options='{"type":"date","beginYear":1900,"endYear":2100}' ></div>
 					<span class="mz l"><b>*</b>预产期</span>
-					<input type="text" class="inpm oc3 ui-alert" id='result'/>
+					<!--<input name="control_date" class="inpm oc3" type="text" id="control_date" size="10" maxlength="10" onClick="new Calendar().show(this);" />-->
+				    <div class="date">
+				        <input type="text" class="date-check inpm oc3" style="width:450px;border-color:rgb(169, 169, 169);"/>
+				    </div>
+				    <div class="date fr" id="to">
+				        <input type="text" class="date-check" style="display:none;"/>
+				    </div>
+
 				</div>
 				<div class="nR" style="margin-bottom:64px;">
-					<div class="datev" id='showUserPicker' class="mui-btn mui-btn-block"></div>
 					<span class="mz l">预约级别</span>
-					<input type="text" class="inpm oc5 ui-alert" id='userResult'/>
+					<select name="status" class="oc8">
+						<option>经济型</option>
+						<option>舒适型</option>
+						<option>尊享型</option>
+					</select>
 				</div>
 			<div class="subm">
 				<div class="submitm l" ng-click="subTn()">提交</div>
 				<p>"<span>*</span>"为必填</p>
-			</div>				
+			</div>	
+			
 			</div>
 		</div>
 
@@ -60,11 +74,10 @@
 				<div id="demoScro" ng-mouseenter="mouover()" ng-mouseleave = "mouleave()">
 				  <div id="demoScro1" >
 				    <ul id="express">
-				    	<li ng-repeat="i in shopList"><a href="#"><b>{{i.name}}</b>({{i.cellPhone}}) <span>{{i.createdTime}}</span><p>预约 {{i.level}}服务 26天,预产期{{i.preBirthTime}}月</p></a></li>             
+				    	<li ng-repeat="i in shopList"><a><b>{{i.name}}</b>({{i.cellPhone}}) <span>{{i.createdTime}}</span><p>预约 {{i.level}}服务 26天，预产期{{i.preBirthTime}}月</p></a></li>             
 						<li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li>
 						<li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li>
 						<li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li><li><br/></li>
-
 				    </ul>
 				  </div>
 				  <div id="demoScro2"></div>
@@ -77,8 +90,6 @@
 	</div>
 
 <P ng-include="'views/commonArea/html/footer.html'"></P>
-<P ng-include="'views/commonArea/html/baidutongji.html'"></P>
-<script src="MUI/mui.min.js"></script>
-<script src="MUI/mui.picker.min.js"></script>
-<script src="MUI/mui.poppicker.js"></script>
-<script src="MUI/city.data-3.min.js"></script>
+<script type="text/javascript" src="js/PCASClass.js"></script>
+<script type="text/javascript" src="js/double-date.js"></script>
+

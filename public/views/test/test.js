@@ -1,4 +1,4 @@
-app.controller("test", ["$scope","$location","$http","ServiceConfig","$interval",function($scope,$location,$http,ServiceConfig,$interval){
+app.controller("test", ["$scope","$location","$http","ServiceConfig","$interval","$timeout",function($scope,$location,$http,ServiceConfig,$interval,$timeout){
 //	$(".map").height($(window).height())
 //	map_load();
 function placeholderPic(){
@@ -15,12 +15,35 @@ window.onresize = function(){
 	}
 	else{placeholderPic();}
 }
-  var mySwiper = new Swiper ('.swiper-container', {
-  	//effect:'cube',
-  	loop: true,autoplay: 3000,pagination: '.swiper-pagination',
-  	autoplayDisableOnInteraction : false, //手动滑动后继续自动播放
-  	paginationClickable: true,//点击导航切换 
-  })
+$http({
+	url:local()+"/banner/queryAppCatList",
+	method:"post",		
+}).success(function(data,header,config,status){
+	//console.log(JSON.parse(data.result))
+	var dataBanner = JSON.parse(data.result).hnj_home_banner;
+	var imgList = new Array();
+	for(var i in dataBanner){
+		var datan = dataBanner[i];
+		var item = {
+			pcImgurl:imgUrl()+datan.imgUrl,
+			url:chargeUrl(datan)
+		}
+		imgList.push(item)
+	}
+	console.log(imgList)
+	$scope.imgUrlList = imgList;
+	$timeout(function(){myswiper()},1)
+}).error(function(){
+	console.log("error")
+})
+;function myswiper(){
+	var mySwiper = new Swiper ('.swiper-container', {
+		//effect:'cube',
+		loop: true,autoplay: 3000,pagination: '.swiper-pagination',
+		autoplayDisableOnInteraction : false, //手动滑动后继续自动播放
+		paginationClickable: true,//点击导航切换 
+	})	
+}
 $scope.nav = document.getElementById("nav");
 $scope.eq = document.getElementById("eq");
 $scope.eq1 = document.getElementById("eq1");
@@ -101,7 +124,7 @@ function bord(obj,index){return $(obj).eq(index).css({"border-bottom":"2px solid
 			$interval.cancel($scope.inTerver); 
 			var index=$(this).index();
 			i=index;
-			$(obj+" .banner .img").stop().animate({left:-index*width},1000)	
+			$(obj+" .banner .img").stop().animate({left:-index*width},500)	
 			$(this).addClass("on").siblings().removeClass("on")	
 			$scope.inTerver = $interval(function(){},gapTime);
 			$scope.inTerver.then(success, error, c1);		
@@ -110,9 +133,7 @@ function bord(obj,index){return $(obj).eq(index).css({"border-bottom":"2px solid
 					move();			
 				}			
 		})
-		};
-	
-			
+		};	
 	/*自动轮播*/
 	$scope.inTerver = $interval(function(){},gapTime);
 	$scope.inTerver.then(success, error, c1);		
@@ -179,7 +200,7 @@ function bord(obj,index){return $(obj).eq(index).css({"border-bottom":"2px solid
 				$(obj+" .banner .img").css({left:-(size-1)*width})
 				i=size-2;
 			}	
-			$(obj+" .banner .img").stop(true).delay(200).animate({left:-i*width},1000,function(){
+			$(obj+" .banner .img").stop(true).delay(200).animate({left:-i*width},500,function(){
 				moving = false;
 			})
 			

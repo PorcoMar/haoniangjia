@@ -1,9 +1,20 @@
 <link rel="stylesheet" type="text/css" href="views/webActivity/webActivity.css"/>
+<div ng-show="pc">	
 <P ng-include="'views/commonArea/html/header.html'"></P>
-<div class="webActivity"><img src="img/活动1.jpg"/></div>
+<div class="webActivity"><img ng-src="{{actImg}}"/></div>
 <P ng-include="'views/commonArea/html/footer.html'"></P>
-<P ng-include="'views/commonArea/html/baidutongji.html'"></P>
+</div>
 
+<div ng-show="phone">	
+<div class="actiy"><img ng-src="{{actImg}}"/></div>
+<div id="footerg">
+	<a href="http://ala.zoosnet.net/LR/Chatpre.aspx?id=ALA86438417&lng=cn"><div class="foot-left l" >咨询客服</div></a>
+	<div class="foot-right l"><a style="color:#fff;" href="#/submit_phone">立即预约</a></div>
+</div>
+<div style="height:1.83rem;width:100%;"></div>	
+</div>
+
+<P ng-include="'views/commonArea/html/baidutongji.html'"></P>
 
 
 

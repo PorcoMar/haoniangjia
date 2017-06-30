@@ -5,8 +5,8 @@
 			    $rootScope.author = 'porcoMar_ZM';
 			}]);
 /*服务的URL配置*/
-			app.constant('ServiceConfig', {		
-				yizhenjia_shoping:'https://test.yizhenjia.com/xcxapi/',
+			app.constant('ServiceConfig', {
+				haoniangjiaTest:'http://mobile.api-test.yizhenjia.com/',
 				haoniangjia:'http://appapi.yizhenjia.com/'
 			});		
 			app.config(["$routeProvider",function($routeProvider){
@@ -43,15 +43,11 @@
 					templateUrl:"views/News/News.html",		
 					controller:"fuck"
 				})
-				.when("/newDetial",{				
+				.when("/newDetial/:id",{				
 					templateUrl:"views/newDetial/newDetial.html",		
 					controller:"newDetial"
 				})
-				.when("/activity_phone",{				
-					templateUrl:"views/activity_phone/activity_phone.html",		
-					controller:"activity_phone"
-				})
-				.when("/webActivity",{				
+				.when("/webActivity/:id",{				
 					templateUrl:"views/webActivity/webActivity.html",		
 					controller:"webActivity"
 				})

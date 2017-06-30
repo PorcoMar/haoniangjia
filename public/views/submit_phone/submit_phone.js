@@ -2,7 +2,10 @@ app.controller("submit_phone", ["$scope","$location","$http","ServiceConfig","$i
 $scope.yuenima = function(){
 	$scope.name = $(".oc1").val();
 	$scope.numb = $(".oc2").val();
-	$scope.city = $(".oc4").val();
+	$scope.PCA = $(".oc4").val();
+	$scope.province = $scope.PCA.split(" ")[0];
+	$scope.city = $scope.PCA.split(" ")[1];
+	$scope.arean = $scope.PCA.split(" ")[2];
 	if(!$scope.name || !$scope.city){
 		alert("请填写完整信息")
 	}else{
@@ -29,25 +32,35 @@ $scope.subTn = function(){
 	if(!$scope.daten){
 		alert("请填写完整信息")
 	}else{
-		$.ajax({
+		$http({
 		    url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentSave",
-		    type: "POST",
+		    method: "POST",
 		    data: {
 		        name:$scope.name,
-		        cellPhone: $scope.numb,
+		        cellPhone:$scope.numb,
+		        province:$scope.province,
 		        city:$scope.city,
+		        area:$scope.arean,
 		        level:$scope.lev,
 		        preBirthTime:$scope.daten
 		    },
-		    success: function(data) {
-		    	console.log(JSON.parse(data))
-		    	alert("提交成功！我们会尽快与您取得联系")
-		    	location.reload()
-		    },
-		    error : function(){
-		    	console.log("error")
-		    }
-		})	
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+	        transformRequest: function(obj) {  
+	          var str = [];    
+	          for (var s in obj) {    
+	            str.push(encodeURIComponent(s) + "=" + encodeURIComponent(obj[s]));    
+	          }    
+	          return str.join("&");    
+	        } 		    
+		}).success(function(data) {
+			console.log(data)
+			alert("提交成功！我们会尽快与您取得联系")
+			location.reload()
+		})
+		.error(function(){
+			alert("系统错误,请稍后提交!")
+			location.reload();
+		})
 	
 	}
 	

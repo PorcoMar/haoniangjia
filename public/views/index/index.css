@@ -96,9 +96,7 @@
 #express p{margin-top:10px;margin-left:13px;color:#343434}
 #express b{display:inline-block;font-weight:normal;color:#ff7077;margin-left:10px;margin-right:10px;}
 #bann{width:100%;height:320px;position:relative;background:url(../../img/sao.jpg) no-repeat;background-size:100% 100%;overflow:hidden;cursor: pointer;}
-
 #bann .flo_hot{width:256px;height:46px;position:absolute;top:218px;left:1166px;cursor: pointer;}
-
 #processCom{/*height:400px;*/width:100%;margin-top:60px;}
 #processCom img{margin:0 auto;}
 #processCom img.img1{margin-top:40px;}

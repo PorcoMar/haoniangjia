@@ -3,13 +3,7 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 	if($scope.winH<500){
 		$location.path("/test");
 	}else{
-		$scope.Img = $("#ban1 .banner .img img");
 		$("#mianCont").height($(window).height());
-		$scope.Img.width($scope.winH);
-		$scope.bannerH = Math.floor($scope.Img.width()/3);
-		$("#ban1 .banner").height($scope.bannerH);
-		$scope.Img.height($scope.bannerH);
-		//console.log($(window).height(),$(document).height(),$("body").height())
 		$scope.bannH = Math.floor($scope.winH/6);
 		$("#bann").height($scope.bannH);		
 	
@@ -21,7 +15,7 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 		url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentList",
 		method:'POST'
 	}).success(function(data,header,config,status){
-				//console.log(data)
+				console.log(data)
 				$scope.list=new Array();
 				var data = data.result;
 				for(var i in data){
@@ -41,25 +35,34 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 		console.log(data,header,config,status)
 	});
 	
-	
 	$http({
-		url:"http://192.168.1.121:8243/banner/queryAppCatList",
-//		url:"http://192.168.1.121:8243/information/list",
+		url:local()+"/banner/queryAppCatList",
 		method:"post",		
 	}).success(function(data,header,config,status){
-		console.log(JSON.parse(data.result))
-		//console.log(data)
+		var dataBanner = JSON.parse(data.result).hnj_home_banner;
+		var imgList = new Array();
+		for(var i in dataBanner){
+			var datan = dataBanner[i];
+			imgList.push('<li><a href="'+datan.url+'"><img src="'+imgUrl()+datan.pcImgUrl+'"></a></li>')
+		}
+		$("#ban1 .img").append(imgList.join(","))
+		$scope.Img = $("#ban1 .banner .img img");
+		$scope.Img.width($scope.winH);
+		$scope.bannerH = Math.floor($scope.Img.width()/3);
+		$("#ban1 .banner").height($scope.bannerH);
+		$scope.Img.height($scope.bannerH);
+		ingSrc('#ban1',4000);//启动轮播图
+	}).error(function(){
+		console.log("error")
 	})
 /*数字滚动*/
 $scope.numStart1 = 0;$scope.numStart2 = 0;$scope.numStart3 = 0;$scope.numStart4 = 0;$scope.numStart5 = 0;
 inter(125,8,"[numB='numB1']",$scope.numStart1,1);
 inter(100,10,"[numB='numB2']",$scope.numStart2,1);
 inter(20,50,"[numB='numB3']",$scope.numStart3,1);
-//inter(33,30,"[numB='numB4']",$scope.numStart4,1)
-//inter(50,20,"[numB='numB5']",$scope.numStart5,250)
 inter(25,40,"[numB='numB5']",$scope.numStart4,125);
 inter(20,50,"[numB='numB4']",$scope.numStart5,6000);
-function inter(time,times,obj,Start,lang){	
+function inter(time,times,obj,Start,lang){
 	$scope.numberScroll = $interval(function(){},time,times);
 	$scope.numberScroll.then(success, error, B1);
 		function B1(){
@@ -93,16 +96,11 @@ $timeout(function(){
 	$("[promis]").mouseleave(function(){
 		$(this).find(".head").css({"color":"#333"}).parent().find(".cont").css({"color":"#333"});
 	})
-	
-	
 /*contBoxn移入阴影*/
 	mouShade("#eco");
 	mouShade("#shushi");
 	mouShade("#zunxiang");
-//启动轮播图
- ingSrc('#ban1',3000);
- //imgscrool2('#ban2',5000);
- //imgscrool3('#logoband',8000);
+
 //移入变网点名称颜色
 $("#center .l").mouseenter(function(){
 	$(this).find(".wdTitle").css("color","#ff8188");	
@@ -123,12 +121,6 @@ $("#ban2 .banner2 .btn_l").mouseleave(function(){
 $("#ban2 .banner2 .btn_r").mouseleave(function(){
 	$("#ban2 .banner2 .btn2").css("background","#cecece");	
 })
-/*右滑块*/	
-//	var offsetTo = ($(window).height()-$("#div1").height())/2
-//	var h_div1 = document.getElementById('div1')
-//	var h_hvttop = offsetTo//移动后的距离顶部的高度
-/*--------*/	
-
 /*自动播放*/
 	//console.log($("#serviceLevel").offset().top)
 	active("[posAb]","fadeInDown" ,"1.5s","0s");
@@ -137,18 +129,11 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 	mySwiper();
 	
 	angular.element("#mianCont").bind('scroll',function(){
-	//$("#mianCont").scroll(function () {
-
-		/*右滑块*/
-		//HoverTreeMove(h_div1, h_hvttop);
-		/*--------*/
 		$scope.serviceLevel = document.getElementById("serviceLevel").offsetTop;	
 		$scope.contBoxn = document.getElementById("contBoxn").offsetTop;
 		$scope.process = document.getElementById("processCom").offsetTop;
 		$scope.bao = document.getElementById("bao").offsetTop;
-		$scope.honor = document.getElementById("honor").offsetTop;
-//		$scope.bigBanner = document.getElementById("bigBanner").offsetTop;
-//		$scope.logoband = document.getElementById("logoband").offsetTop;  
+		$scope.honor = document.getElementById("honor").offsetTop; 
 		$scope.shop = document.getElementById("shop").offsetTop;  
 		$scope.world = document.getElementById("world").offsetTop;  
 		
@@ -168,7 +153,6 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 					$scope.onOffA =true;
 			}
 		}
-	
 	/*contBoxn 区*/
 		if ($scope.contBoxn >= $scope.scrollTop && $scope.contBoxn < $scope.sc_Height150) {
 			if(!$scope.onOffD){
@@ -192,7 +176,6 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 					active("[ng='b5']","fadeInUp" ,"1.2s","0.6s");
 					active("[ng='b6']","fadeInUp" ,"1.3s","0.7s");
 					active("[ng='b7']","fadeInUp" ,"1.4s","0.8s");
-					
 					mySwiper();
 					$scope.onOffE =true;
 			}
@@ -217,16 +200,6 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 					$scope.onOffG =true;
 			}
 		}
-	
-		
-	/*bigbanner 区*/
-//		if ($scope.bigBanner >= $scope.scrollTop && $scope.bigBanner < $scope.sc_Height150) {
-//			if(!$scope.onOffB){
-//					active("[bigBanner]","fadeIn" ,"1.5s","0.2s")
-//					mySwiper();
-//					$scope.onOffB =true;
-//			}
-//		}
 	/*wangdian 区*/
 		if ($scope.shop >= $scope.scrollTop && $scope.shop < $scope.sc_Height0) {
 			if(!$scope.onOffH){
@@ -244,8 +217,6 @@ $("#ban2 .banner2 .btn_r").mouseleave(function(){
 					$scope.onOffC =true;
 			}
 		}
-
-	
 });
 
 /*滚动显示内容*/
@@ -345,7 +316,7 @@ $scope.$on("$destroy", function() {
 		var i=0;
 		var clone=$(obj+" .banner .img li").first().clone();
 		$(obj+" .banner .img").append(clone);	
-		var size=$(obj+" .banner .img li").size();	
+		var size=$(obj+" .banner .img li").size();
 		for(var j=0;j<size-1;j++){
 			$(obj+" .banner .num").append("<li></li>");
 		}
@@ -360,9 +331,7 @@ $scope.$on("$destroy", function() {
 			$(obj+" .banner .img").stop().animate({left:-index*width},1000)	
 			$(this).addClass("on").siblings().removeClass("on")		
 		})
-		};
-	
-			
+		};	
 	/*自动轮播*/
 	$scope.inTerver = $interval(function(){},gapTime);
 	$scope.inTerver.then(success, error, c1);		
@@ -371,7 +340,6 @@ $scope.$on("$destroy", function() {
 			//console.log("index--"+i)
 			move();			
 		}
-			
 		/*对banner定时器的操作*/
 		$(obj+" .banner").hover(function(){
 			//clearInterval(t);
@@ -386,14 +354,13 @@ $scope.$on("$destroy", function() {
 				}
 		})
 		if ($(obj+" .banner .btn_l")) {
-	
 		/*向左的按钮*/
 		$(obj+" .banner .btn_l").stop(true).click(function(){// background:#f5aca6;
 		if(moving){
 		return;
 		};
 		moving=true;
-			i--
+			i--;
 			move();	
 		})
 		/*向右的按钮*/
@@ -402,7 +369,7 @@ $scope.$on("$destroy", function() {
 		return;
 		}
 		moving=true;
-			i++
+			i++;
 			move()				
 		})
 		};

@@ -1,26 +1,25 @@
 app.controller("fuck", ["$scope","$location","$http","ServiceConfig","$interval",function($scope,$location,$http,ServiceConfig,$interval){
-
-$.ajax({
+new PCAS("province","city","area","","","");//三及联动
+$http({
 	url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentList",
-	type:"POST",
-		success:function(data){
-			$scope.list=new Array();
-			var data = JSON.parse(data).result;
-			//console.log(data);
-			for(var i in data){
-				var $list = data[i];
-				var item = {
-						name:name($list.name),
-						cellPhone:phoNumber($list.cellPhone),
-						createdTime:createTime(),
-						level:$list.level,
-						preBirthTime:preBirthTime($list.preBirthTime)
-					}
-				$scope.list.push(item)
+	method:"POST"
+}).success(function(data){
+	$scope.list=new Array();
+	var data =data.result;
+	for(var i in data){
+		var $list = data[i];
+		var item = {
+				name:name($list.name),
+				cellPhone:phoNumber($list.cellPhone),
+				createdTime:createTime(),
+				level:$list.level,
+				preBirthTime:preBirthTime($list.preBirthTime)
 			}
-			$scope.shopList = $scope.list;
-		}
+		$scope.list.push(item)
+	}
+	$scope.shopList = $scope.list;
 })
+
 /*滚动显示内容*/
 var demoScro=document.getElementById("demoScro");
 var demoScro1=document.getElementById("demoScro1");
@@ -61,9 +60,14 @@ demoScro2.style.height=demoScro.offsetHeight+"px";
 $scope.lost = function(){
 	$scope.name = $(".oc1").val();
 	$scope.numb = $(".oc2").val();
-	$scope.city = $(".oc4").val();
-	if(!$scope.name || !$scope.city){
+	$scope.province = $('[name="province"]').val();
+	$scope.city = $('[name="city"]').val();
+	$scope.arean = $('[name="area"]').val();
+	//console.log($scope.province,$scope.city,$scope.arean)
+	if(!$scope.name || !$scope.province){
 		alert("请填写完整信息")
+	}else if($scope.arean=="市辖区"){
+		alert("请填写市/区")
 	}else{
 		if($scope.numb.length == 0) {
 			alert('请输入手机号码！');
@@ -81,86 +85,43 @@ $scope.lost = function(){
 };
 $scope.subTn = function(){
 	$scope.daten = $(".oc3").val();
-	$scope.lev = $(".oc5").val();
+	$scope.lev = $("select[name=status]").val();
 	if(!$scope.daten){
 		alert("请填写完整信息")
 	}else{
-		$.ajax({
+		//console.log($scope.name,$scope.numb,$scope.province,$scope.city,$scope.arean,$scope.lev,$scope.daten)
+		$http({
 		    url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentSave",
-		    type: "POST",
+		    method: "POST",
 		    data: {
 		        name:$scope.name,
-		        cellPhone: $scope.numb,
+		        cellPhone:$scope.numb,
+		        province:$scope.province,
 		        city:$scope.city,
+		        area:$scope.arean,
 		        level:$scope.lev,
 		        preBirthTime:$scope.daten
 		    },
-		    success: function(data) {
-		    	console.log(JSON.parse(data))
-		    	alert("提交成功！我们会尽快与您取得联系")
-		    	location.reload()
-		    },
-		    error : function(){
-		    	console.log("error")
-		    }
-		})	
+		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },//POST表单请求提交时，使用的Content-Type是application/x-www-form-urlencoded，所以需要把Content-Type修改下！
+        transformRequest: function(obj) {//这时数据是放到了Form Data中但是发现是以对象的形式存在，所以需要进行序列化！    
+          var str = [];    
+          for (var s in obj) {    
+            str.push(encodeURIComponent(s) + "=" + encodeURIComponent(obj[s]));    
+          }    
+          return str.join("&");    
+        } 		    
+		}).success(function(data) {
+			console.log(data)
+			alert("提交成功！我们会尽快与您取得联系")
+			location.reload();
+		})
+		.error(function(){
+			alert("系统错误,请稍后提交!")
+			location.reload();
+		})
 	
 	}
 	
 }
-/*citypicker*/	
-		mui.init();
-		//普通示例
-		var userPicker = new mui.PopPicker();
-		userPicker.setData([{
-			value: '经济型',
-			text: '经济型'
-		}, {
-			value: '舒适型',
-			text: '舒适型'
-		}, {
-			value: '尊享型',
-			text: '尊享型'
-		}]);
-		var showUserPickerButton = document.getElementById('showUserPicker');
-		var userResult = document.getElementById('userResult');
-		showUserPickerButton.addEventListener('tap', function(event) {
-			userPicker.show(function(items) {
-				userResult.value = items[0].value;
-			});
-		}, false);			
-		mui.ready(function() {
-			var cityPicker3 = new mui.PopPicker({
-				layer: 3
-			});
-			cityPicker3.setData(cityData3);
-			var showCityPickerButton = document.getElementById('showCityPicker3');
-			var cityResult3 = document.getElementById('cityResult3');
-			showCityPickerButton.addEventListener('tap', function(event) {
-				cityPicker3.show(function(items) {
-					cityResult3.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
-					//返回 false 可以阻止选择框的关闭
-					//return false;
-				});
-			}, false);	
-		});
-	
-/*timepicker*/	
-	(function($) {
-		$.init();
-		var result = $('#result')[0];
-		var btns = $('.btn');
-		btns.each(function(i, btn) {
-			btn.addEventListener('tap', function() {
-				var optionsJson = this.getAttribute('data-options') || '{}';
-				var options = JSON.parse(optionsJson);
-				var id = this.getAttribute('id');
-				var picker = new $.DtPicker(options);
-				picker.show(function(rs) {
-					result.value = rs.text;
-					picker.dispose();
-				});
-			}, false);
-		});
-	})(mui);	
+
 }])

@@ -22,15 +22,15 @@
         <!--<div class="swiper-slide">
         	<a class="ad" href="#/activity_phone"></a>
         </div>-->
-        <div class="swiper-slide">
-        	<a class="aa"></a>
+        <div class="swiper-slide" ng-repeat="i in imgUrlList">
+        	<a href="{{i.url}}"><img ng-src="{{i.pcImgurl}}"/></a>
+        </div>
+        <!--<div class="swiper-slide">
+        	<a class="ab"><img src="img/banner-2.jpg"/></a>
         </div>
         <div class="swiper-slide">
-        	<a class="ab"></a>
-        </div>
-        <div class="swiper-slide">
-        	<a class="ac"></a>
-        </div>
+        	<a class="ac"><img src="img/banner-3.jpg"/></a>
+        </div>-->
     </div>
     <!-- 如果需要分页器 -->
     <div class="swiper-pagination"></div>
@@ -169,7 +169,7 @@
 	</div>			
 	</div>
 	<img src="img/liuc.png" style="width:15.36rem;margin:0 auto;"/>
-	<div class="guck_zixun"><a href="http://www.haoniangjia.cn/dialog_3.htm" style="color:#f66f75">立即咨询</a></div>
+	<a href="http://ala.zoosnet.net/LR/Chatpre.aspx?id=ALA86438417&lng=cn" style="color:#f66f75"><div class="guck_zixun">立即咨询</div></a>
 	<img src="img/ditu.png" style="width:100%;"/>		
 
 </div>
@@ -274,7 +274,7 @@
 	
 </div>
 <div id="footerg">
-	<div class="foot-left l" ><a href="http://www.haoniangjia.cn/dialog_3.htm">咨询客服</a></div>
+	<a href="http://ala.zoosnet.net/LR/Chatpre.aspx?id=ALA86438417&lng=cn"><div class="foot-left l" >咨询客服</div></a>
 	<div class="foot-right l" ng-click="konw()">立即预约</div>
 </div>
 <div style="height:1.83rem;width:100%;"></div>	

@@ -3,7 +3,7 @@
 <P ng-include="'views/commonArea/html/rightScrollBlock.html'"></P>
 	
 	<div id="banTun">
-		<img src="img/abou.jpg" style="width:100%;"/>
+		<a href="{{imgUrl}}"><img ng-src="{{aboutImg}}" class="bannerImg"/></a>
 		<div id="naver" class="w">
 			<a href="#/index">您的位置： 首页 - </a><a href="#/AboutUs">关于我们 - </a><span>公司介绍</span>
 		</div>
@@ -33,11 +33,9 @@
 		</div>
 		<div id="rightm" class="l">
 			 <div id="company" ng-include="'views/commonArea/html/companyIntroduce.html'" ng-show="boolen1"></div>
-			 <div id="conC" ng-include="'views/commonArea/html/contactPerson.html'" ng-show="boolen2"> </div>
-			 <div id="way" ng-include="'views/commonArea/html/way.html'" ng-show="boolen3"> </div>
-<!--			 <div id="manage" ng-include="'views/commonArea/html/manage.html'" ng-show="boolen4"> </div>-->
-			 <div id="newS" ng-include="'views/commonArea/html/newS.html'" ng-show="boolen5"> </div>
-
+			 <div id="conC" ng-include="'views/commonArea/html/contactPerson.html'" ng-show="boolen2"></div>
+			 <div id="way" ng-include="'views/commonArea/html/way.html'" ng-show="boolen3"></div>
+			 <div id="newS" ng-include="'views/commonArea/html/newS.html'" ng-show="boolen5"></div>
 		</div>
 	</div>
 

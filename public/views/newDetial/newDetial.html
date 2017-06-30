@@ -1,24 +1,14 @@
-
 <link rel="stylesheet" type="text/css" href="views/newDetial/newDetial.css"/>
 <P ng-include="'views/commonArea/html/header.html'"></P>
 <P ng-include="'views/commonArea/html/rightScrollBlock.html'"></P>
 
 	<div id="banTun">
-		<img src="img/abou.jpg" style="width:100%;"/>
+		<img ng-src="{{newDetailImg}}" style="width:100%;max-height: 500px;"/>
 		<div id="naver" class="w">
 			<a href="#/index">您的位置： 首页 - </a><b ng-click="bbm()")>关于我们 -</b><b ng-click="aam()")>好娘家资讯 - </b> <span class="nk">资讯详情</span>
 		</div>
 	</div>
-			 <div ng-include="'views/commonArea/html/zixun/new1.html'" ng-show="boolen6"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new2.html'" ng-show="boolen7"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new3.html'" ng-show="boolen8"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new4.html'" ng-show="boolen9"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new5.html'" ng-show="boolen10"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new6.html'" ng-show="boolen11"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new7.html'" ng-show="boolen12"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new8.html'" ng-show="boolen13"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new9.html'" ng-show="boolen14"> </div>
-			 <div ng-include="'views/commonArea/html/zixun/new10.html'" ng-show="boolen15"> </div>
+<div class="w contm"></div>
 <P ng-include="'views/commonArea/html/footer.html'"></P>
 <P ng-include="'views/commonArea/html/baidutongji.html'"></P>
 

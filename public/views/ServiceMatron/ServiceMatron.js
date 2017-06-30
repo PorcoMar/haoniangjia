@@ -1,10 +1,20 @@
-app.controller("ServiceMatron", ["$scope","$location","$sce",function($scope,$location,$sce){
+app.controller("ServiceMatron", ["$scope","$location","$sce","$http","$timeout",function($scope,$location,$sce,$http,$timeout){
+	$http({
+		url:local()+"/banner/queryAppCatList",
+		method:"post",		
+	}).success(function(data,header,config,status){
+		//console.log(JSON.parse(data.result))
+		var dataBanner = JSON.parse(data.result).hnj_yuesao_service_banner;
+		var index = dataBanner.length-1;
+		$scope.imgUrl = $scope.imgUrl = dataBanner[index].url;
+		$scope.serviceImg=imgUrl()+dataBanner[index].pcImgUrl;
+		console.log($scope.imgUrl)
+	}).error(function(){
+		console.log("error")
+	})	
 	$scope.turnIndex = function(){
 		$location.path("#/index")
 	}
-$scope.kkkk = function(){
-	$location.path("/test")
-}
 /*预约服务*/
 	$scope.ecoo = function(){
 		$location.path("/News")

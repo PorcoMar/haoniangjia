@@ -19,10 +19,7 @@
 }
 #swiperkkkkk .swiper-slide{width:100%;height:100%}
 #swiperkkkkk .swiper-slide a{display:block;width:100%;height:10.67rem;background-position: center;}
-#swiperkkkkk .swiper-slide a.ad{background: url(../../img/banner-4.jpg) no-repeat;background-size:100%}
-#swiperkkkkk .swiper-slide a.aa{background: url(../../img/banner-1.jpg) no-repeat;background-size:100%}
-#swiperkkkkk .swiper-slide a.ab{background: url(../../img/banner-2.jpg) no-repeat;background-size:100%}
-#swiperkkkkk .swiper-slide a.ac{background: url(../../img/banner-3.jpg) no-repeat;background-size:100%}
+#swiperkkkkk .swiper-slide a img{width:100%;height:10.67rem;}
 
 #eq{width:100%;margin-bottom:2.22rem;}
 .ysfw{font-size:0.555rem;width:100%;height:1.152rem;margin-top:1.07rem;margin-bottom:1.4rem;}
