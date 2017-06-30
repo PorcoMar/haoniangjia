@@ -30,7 +30,7 @@ function toStandTime(a){
 }
 function chargeUrl(a){
 	var newURL = new String();
-	if(a.url.indexOf("192.168.1.119:8020/haoniangjiaGW/public/index.html") > 0 ){
+	if(a.url.indexOf("haoniangjiaGW/public/index.html") > 0 ){
 	 	if(a.url.indexOf("webActivity") > 0 ){
 	 		newURL = a.url;
 	 		return newURL;
