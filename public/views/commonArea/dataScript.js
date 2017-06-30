@@ -30,12 +30,12 @@ function toStandTime(a){
 }
 function chargeUrl(a){
 	var newURL = new String();
-	if(a.url.indexOf("haoniangjiaGW/public/index.html") > 0 ){
+	if(a.url.indexOf("haoniangjia.cn") > 0 ){
 	 	if(a.url.indexOf("webActivity") > 0 ){
 	 		newURL = a.url;
 	 		return newURL;
 	 	}else{
-	 		newURL ="192.168.1.110:8020/haoniangjiaGW/public/index.html#/test"
+	 		newURL ="http://haoniangjia.cn/#/test"
 	 		return newURL;
 	 	}
 	}else{
