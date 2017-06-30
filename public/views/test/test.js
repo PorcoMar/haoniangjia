@@ -30,7 +30,7 @@ $http({
 		}
 		imgList.push(item)
 	}
-	console.log(imgList)
+	//console.log(imgList)
 	$scope.imgUrlList = imgList;
 	$timeout(function(){myswiper()},1)
 }).error(function(){
