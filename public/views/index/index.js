@@ -15,7 +15,7 @@ app.controller("index", ["$scope","$rootScope","$location","$http","ServiceConfi
 		url:ServiceConfig.haoniangjia+"h5_api/yuesaoAppointmentList",
 		method:'POST'
 	}).success(function(data,header,config,status){
-				console.log(data)
+				//console.log(data)
 				$scope.list=new Array();
 				var data = data.result;
 				for(var i in data){
