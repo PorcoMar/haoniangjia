@@ -34,7 +34,7 @@ app.controller("ServiceMatron", ["$scope","$location","$sce","$http","$timeout",
 		$(this).find(".head").css({"color":"#fff"}).parent().find(".cont").css({"color":"#fff"});
 	})
 	$("[promis]").mouseleave(function(){
-		$(this).find(".head").css({"color":"#333"}).parent().find(".cont").css({"color":"#333"});
+		$(this).find(".head").css({"color":"#333"}).parent().find(".cont").css({"color":"#8c8c8c"});
 	})	
 
 /*mouse animate effect*/

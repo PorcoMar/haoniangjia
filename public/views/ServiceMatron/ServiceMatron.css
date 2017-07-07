@@ -60,7 +60,7 @@ li span{display:inline-block;width:3px;height:3px;border-radius: 3px;background:
 .pn1,.pn2{text-align:center;}
 [cla="pm1"]{width:150px;height:172px;float:left;}
 .pn1{font-size:20px;font-weight:bold;line-height:20px;margin-bottom:15px;margin-top:10px;}
-.pn2{font-size:14px;line-height:18px;line-height:20px;}
+.pn2{font-size:14px;line-height:18px;line-height:20px;color:#8c8c8c;}
 [cla="pm2"]{width:182px;height:172px;float:left;}
 [cla="pm3"]{width:140px;height:172px;float:left;}
 [cla="pm1"] .pn1,[cla="pm1"] .pn2{margin-left:-30px;}
